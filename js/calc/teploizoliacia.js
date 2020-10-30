@@ -72,8 +72,8 @@ function sumAllSquareDvuskatRoof() {
 	let sum = 0;
 	let sum_height = 0;
 	$('.dvuskat_roof__form').each((i, el) => {
-		sum += parseFloat($(el).find('.notfront-karnizsves-length').val()) * parseFloat($(el).find('.notfront-karnizsves-height').val());
-		sum_height += parseFloat($(el).find('.notfront-karnizsves-height').val());
+		sum += parseFloat($(el).find('.dvuskat_roof__length').val()) * parseFloat($(el).find('.dvuskat_roof__height').val());
+		sum_height += parseFloat($(el).find('.dvuskat_roof__height').val());
 	});
 	$('.notfront-karnizsves-sum-square-all').val(sum);
 	$('.notfront-karnizsves-sum-height').val(sum_height);
