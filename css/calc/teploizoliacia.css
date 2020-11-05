@@ -27,6 +27,10 @@ input[placeholder] {
 	transition: opacity 0.3s ease;
 }
 
+.input_label {
+	font-size: 14px;
+}
+
 
 /*кастомный чекбокс (начало)*/
 
@@ -76,7 +80,7 @@ input[placeholder] {
 	background: #fff;
 	position: absolute;
 	left: 2px;
-	top: 1.5px;
+	/*top: 1.5px;*/
 	-webkit-transition: 0.15s;
 	-o-transition: 0.15s;
 	transition: 0.15s;
@@ -129,38 +133,7 @@ input[placeholder] {
 		-moz-transition: all 0.8s 0.6s ease;
 		-o-transition: all 0.8s 0.6s ease;
 	}
-	.teploizol_form_main .roof {
-		display: flex;
-		flex-direction: column;
-		flex-wrap: nowrap;
-		justify-content: center;
-		align-items: center;
-		align-content: center;
-	}
-	.teploizol_form_main .roof_title_h2 {
 
-		width: auto;
-		margin: 20px 0;
-		text-align: center;
-		color: white;
-		border-bottom: 3px solid #39a759bd;
-		padding: 10px;
-		background-color: #4bc970;
-		border-top-left-radius: 4px;
-		border-top-right-radius: 5px;
-		font-size: 19px;
-	}
-
-	.teploizol_form_main .dvuskat_roof__form {
-		position: relative;
-		width: 250px;
-		background-color: #f9fafa;
-    	border: 0.5px solid rgb(21 158 21 / 7%);
-		border-radius: 4px;
-		-webkit-box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0);
-		box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0);
-		margin: 2px;
-	}
 	.teploizol_form_main form {
 		width: 300px;
 		margin: 10px auto;
@@ -367,7 +340,7 @@ input[placeholder] {
 		background: #3ac162;
 	}
 	
-	.teploizol_form_main .bg-fon-fronton {
+	.teploizol_form_main .bg_fon_roof {
 		background-color: #b1ddb1;
 		background-image: -o-linear-gradient(315deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
 		background-image: linear-gradient(135deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
@@ -377,4 +350,79 @@ input[placeholder] {
 		background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
 		background-image: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
 	}
-	
+
+	.teploizol_form_main .roof {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+	}
+	.teploizol_form_main .roof_title__h2 {
+
+		width: auto;
+		margin: 20px 0;
+		text-align: center;
+		color: white;
+		border-bottom: 3px solid #39a759bd;
+		padding: 10px;
+		background-color: #4bc970;
+		border-top-left-radius: 4px;
+		border-top-right-radius: 5px;
+		font-size: 19px;
+	}
+
+	.teploizol_form_main .roof__type {
+		width: 300px;
+     	margin: 0 auto;
+	}
+
+	.teploizol_form_main .dvuskat_roof,
+	.teploizol_form_main .odnoskat_roof,
+	.teploizol_form_main .shatr_roof,
+	.teploizol_form_main .valm_roof  {
+		width: 300px;
+		margin: 1px;
+		margin: 0 auto;
+	}
+
+	.teploizol_form_main .dvuskat_roof__form,
+	.teploizol_form_main .odnoskat_roof__form,
+	.teploizol_form_main .shatr_roof__form,
+	.teploizol_form_main .valm_roof__form {
+		position: relative;
+		width: 295px;
+		background-color: #f9fafa;
+    	border: 0.5px solid rgb(21 158 21 / 7%);
+		border-radius: 4px;
+		-webkit-box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0);
+		box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0);
+		margin: 2px;
+	}
+
+	.teploizol_form_main .dvuskat_roof__checkbox,
+	.teploizol_form_main .odnoskat_roof__checkbox,
+	.teploizol_form_main .shatr_roof__checkbox,
+	.teploizol_form_main .valm_roof__checkbox {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 5px 5px;
+		align-items: center;
+		padding: 0 7px 0 7px;
+	}
+
+	.teploizol_form_main .checkbox__wrp {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+		gap: 10px 10px;
+		background: #7bb37b6b;
+    	padding: 8px 6px;
+    	text-transform: uppercase;
+    	color: #ffffff;
+    	font-size: 13px;
+		border-radius: 5px;
+		text-align: center;
+	}
+

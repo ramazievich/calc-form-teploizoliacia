@@ -11,116 +11,236 @@
    <body>
       <div class="teploizol_form_main">
          <section class="roof" aria-label="Форма расчёта теплоизоляционных материалов для кровли">
-            <div class="roof_wrp">
-               <h2 class="roof_title_h2" aria-label="Название раздела">Расчёт теплоизоляционных материалов для кровли</h2>
-               <!-- Начало формы для кровли-->
-               <h3 class="roof_h2" aria-label="Название раздела">Выберите тип крыши:</h3>
-              
-               <div class="roof_type">
-                  <div class="dvuskat_roof">
-                     <div class="bg_fon_roof2">
-                        <div class="dvuskat_roof_wrp">
-                           <img class="img_dvuskat_roof" src="../img/calc/teploizoliacia/dvuskatnaia-krisha(bw).svg" alt="двускатная крыша черно-белая" height="150" id="img_dvuskat_roof_bw-id">
-                           <img class="img-notfront-color hidden" src="../img/calc/teploizoliacia/dvuskatnaia-krisha(color).svg" alt="двускатная крыша цветная" height="150" id="img_dvuskat_roof_color-id">
-                        </div>
-                        <div class="checkbox-wrp">
-                           <label class="custom-lable" for="check-dvuskat_roof">
-                           <input type="checkbox" id="check-dvuskat_roof" value="interest_dvuskat_roof" name="dvuskat_roof" onchange='showDvuskatRoofItems(this)'>
-                           <i></i>
-                           <span class="dvuskat_roof_span">Двускатная крыша</span>
-                           </label>
-                        </div>
+            <h2 class="roof_title__h2" aria-label="Название раздела">Расчёт теплоизоляционных материалов для кровли</h2>
+            <!-- Начало формы для кровли-->
+            <h3 class="roof__h2" aria-label="Название раздела">Выберите тип крыши:</h3>
+            <div class="roof__type">
+               <div class="odnoskat_roof">
+                  <div class="odnoskat_roof__checkbox bg_fon_roof">
+                     <div class="odnoskat_roof__wrp">
+                        <img class="img__odnoskat_roof" src="../img/calc/teploizoliacia/odnoskatnaia-krisha(bw).svg" alt="односкатная крыша черно-белая" height="100" id="img_odnoskat_roof_bw-id">
+                        <img class="img__odnoskat_roof__color hidden" src="../img/calc/teploizoliacia/odnoskatnaia-krisha(color).svg" alt="односкатная крыша цветная" height="100" id="img_odnoskat_roof_color-id">
                      </div>
-                     <!-- Начало полей для дускатной крыши -->
-                     <div class="select_dvuskat_roof hidden" id="dvuskat_roof_item_field">
-                        <div class="dvuskat_form_wrp" id="dvuskat_form_wrp">
-                                 <form action="#" class="dvuskat_roof__form" id="dvuskat_roof__form-id"
-                                    name="dvuskat_roof__form-id"
-                                    aria-labelledby="dvuskat_roof__form-id dvuskat_roof__form-id">
-                                    <svg class="remove-form-btn" onclick="deleteFormDvuskatRoof(this)"
-                                       aria-label="Кнопка удаления формы для расчета теплоизоляции у двускатной крыши"
-                                       aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20">
-                                       <path class="st0"
-                                          d="M12.7,7.2c-0.3,0-0.5,0.2-0.5,0.5v8.9c0,0.3,0.2,0.5,0.5,0.5s0.5-0.2,0.5-0.5V7.7C13.2,7.5,13,7.2,12.7,7.2z"/>
-                                       <path class="st0"
-                                          d="M7.3,7.2C7,7.2,6.8,7.5,6.8,7.7v8.9C6.8,16.8,7,17,7.3,17c0.3,0,0.5-0.2,0.5-0.5V7.7C7.7,7.5,7.5,7.2,7.3,7.2z"/>
-                                       <path class="st0" d="M3.3,6v11.5c0,0.7,0.2,1.3,0.7,1.8C4.4,19.7,5,20,5.6,20h8.7c0.6,0,1.2-0.3,1.7-0.7c0.4-0.5,0.7-1.1,0.7-1.8V6
-                                          c0.9-0.2,1.4-1.1,1.3-2c-0.1-0.9-0.9-1.6-1.7-1.6h-2.4V1.9c0-0.5-0.2-1-0.5-1.3C13,0.2,12.5,0,12,0H7.9C7.5,0,7,0.2,6.6,0.5
-                                          C6.3,0.9,6.1,1.4,6.1,1.9v0.6H3.7C2.9,2.4,2.1,3.1,2,4C1.9,4.9,2.4,5.7,3.3,6z M14.4,19.1H5.6c-0.8,0-1.4-0.7-1.4-1.6V6h11.5v11.5
-                                          C15.8,18.4,15.1,19.1,14.4,19.1z M7,1.9c0-0.2,0.1-0.5,0.3-0.7C7.5,1,7.7,0.9,7.9,0.9H12c0.2,0,0.5,0.1,0.6,0.3
-                                          c0.2,0.2,0.3,0.4,0.3,0.7v0.6H7V1.9z M3.7,3.4h12.5c0.5,0,0.8,0.4,0.8,0.8s-0.4,0.8-0.8,0.8H3.7c-0.5,0-0.8-0.4-0.8-0.8
-                                          S3.3,3.4,3.7,3.4z"/>
-                                       <path class="st0"
-                                          d="M10,7.2c-0.3,0-0.5,0.2-0.5,0.5v8.9c0,0.3,0.2,0.5,0.5,0.5c0.3,0,0.5-0.2,0.5-0.5V7.7C10.5,7.5,10.2,7.2,10,7.2z"/>
-                                    </svg>
-                                    <svg class="copy-form-btn copy-form" onclick="copyFormDvuskatRoof(this)" 
-                                       aria-label="Кнопка копирования формы" 
-                                       xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0"
-                                       viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="20">
-                                       <path d="M74.7,512h256c29.4,0,53.3-23.9,53.3-53.3v-320c0-29.4-23.9-53.3-53.3-53.3h-256c-29.4,0-53.3,23.9-53.3,53.3v320
-                                          C21.3,488.1,45.3,512,74.7,512z M330.7,106.7c17.6,0,32,14.4,32,32v320c0,17.6-14.4,32-32,32h-256c-17.6,0-32-14.4-32-32v-320
-                                          c0-17.6,14.4-32,32-32H330.7z"/>
-                                       <path d="M416,448h21.3c29.4,0,53.3-23.9,53.3-53.3V53.3c0-29.4-23.9-53.3-53.3-53.3h-256C151.9,0,128,23.9,128,53.3
-                                          c0,5.9,4.8,10.7,10.7,10.7s10.7-4.8,10.7-10.7c0-17.6,14.4-32,32-32h256c17.6,0,32,14.4,32,32v341.3c0,17.6-14.4,32-32,32H416
-                                          c-5.9,0-10.7,4.8-10.7,10.7S410.1,448,416,448z"/>
-                                       <path d="M117.3,362.7H288c5.9,0,10.7-4.8,10.7-10.7c0-5.9-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7
-                                          C106.7,357.9,111.4,362.7,117.3,362.7z"/>
-                                       <path d="M117.3,448H288c5.9,0,10.7-4.8,10.7-10.7s-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,448,117.3,448z"/>
-                                       <path d="M117.3,277.3H288c5.9,0,10.7-4.8,10.7-10.7S293.9,256,288,256H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,277.3,117.3,277.3z"
-                                          />
-                                       <path d="M117.3,192H288c5.9,0,10.7-4.8,10.7-10.7s-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,192,117.3,192z"/>
-                                    </svg>
-                                    <span class="podskazka">Копировать</span>
-                                       <div class="dvuskat_roof__groups_item-wrp">
-                                          <div class="dvuskat_roof__length-wrp">
-                                             <label class="dvuskat_roof__length-label"
-                                                aria-label="Название поля ввода">Длина по карнизному свесу(L), м</label>
-                                             <input class="dvuskat_roof__length input-style"
-                                                type="number" name="dvuskat_roof__length-id[]" step="0.0001"
-                                                min="0"
-                                                oninput="validity.valid||(value='');"
-                                                onkeyup="sumAllSquareDvuskatRoof()">
-                                          </div>
-                                          <div class="dvuskat_roof__height-wrp">
-                                             <label class="dvuskat_roof__height-title"
-                                                aria-label="Название поля ввода">Высота ската(H),
-                                             м </label>
-                                             <input class="dvuskat_roof__height input-style"
-                                                type="number" name="dvuskat_roof__visota[]" step="0.0001" min="0"
-                                                oninput="validity.valid||(value='');"
-                                                onkeyup="sumAllSquareDvuskatRoof()">
-                                          </div>
-                                       </div>
-                                 </form>
-                        </div>
-                        <!-- Вывод общих значений ломаных фронтонов -->
-                        <div class="all-results-wrp hidden">
-                           <label class="dvuskat_roof__sum_square-all-title" aria-label="Название поля вывода">
-                           Общая площадь крыши, м&sup2; </label>
-                           <input class="filter_data dvuskat_roof__sum_square-all input-style" disabled
-                              id="dvuskat_roof__sum_square-all-id"
-                              type="number"
-                              name="data[Без фронтона][Площадь свесов]"
-                              step="0.0001" min="0"
-                              aria-labelledby="dvuskat_roof__form-id dvuskat_roof__sum_square-all-id">
-                           <label class="dvuskat_roof__sum_height-title">Сумарн. длина карнизных свесов когда нет
-                           фронтонов, м</label>
-                           <input class="filter_data dvuskat_roof__sum_height input-style" id="dvuskat_roof__sum_height-id"
-                              disabled
-                              type="number"
-                              name="data[Без фронтона][Длина карнизных свесов]"
-                              step="0.0001" min="0">
-                        </div>
+                     <div class="checkbox__wrp">
+                        <label class="custom-lable" for="check-odnoskat_roof">
+                        <input type="checkbox" id="check-odnoskat_roof" value="interest_odnoskat_roof" name="odnoskat_roof" onchange='showOdnoskatRoofItems(this)'>
+                        <i></i>
+                        <span class="odnoskat_roof__span">Односкатная крыша</span>
+                        </label>
                      </div>
                   </div>
+                  <!-- Начало полей для односкатной крыши -->
+                  <div class="odnoskat_form_wrp hidden" id="odnoskat_form_wrp">
+                     <form action="#" class="odnoskat_roof__form" id="odnoskat_roof__form-id"
+                        name="odnoskat_roof__form-id"
+                        aria-labelledby="odnoskat_roof__form-id odnoskat_roof__form-id">
+                        <div class="odnoskat_roof__groups_item-wrp">
+                           <div class="odnoskat_roof__length-wrp">
+                              <label class="input_label"
+                                 aria-label="Название поля ввода">Длина по карнизному свесу(L), м</label>
+                              <input class="odnoskat_roof__length input-style"
+                                 type="number" name="odnoskat_roof__length-id[]" step="0.0001"
+                                 min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareOdnoskatRoof()">
+                           </div>
+                           <div class="odnoskat_roof__height-wrp">
+                              <label class="input_label"
+                                 aria-label="Название поля ввода">Высота ската(H),
+                              м </label>
+                              <input class="odnoskat_roof__height input-style"
+                                 type="number" name="odnoskat_roof__visota[]" step="0.0001" min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareOdnoskatRoof()">
+                           </div>
+                        </div>
+                     </form>
+                  </div>
                </div>
-
-
-               
-               
-
-
-
+               <div class="dvuskat_roof">
+                  <div class="dvuskat_roof__checkbox bg_fon_roof2">
+                     <div class="dvuskat_roof__wrp">
+                        <img class="img__dvuskat_roof" src="../img/calc/teploizoliacia/dvuskatnaia-krisha(bw).svg" alt="двускатная крыша черно-белая" height="100" id="img_dvuskat_roof_bw-id">
+                        <img class="img__dvuskat_roof__color hidden" src="../img/calc/teploizoliacia/dvuskatnaia-krisha(color).svg" alt="двускатная крыша цветная" height="100" id="img_dvuskat_roof_color-id">
+                     </div>
+                     <div class="checkbox__wrp">
+                        <label class="custom-lable" for="check-dvuskat_roof">
+                        <input type="checkbox" id="check-dvuskat_roof" value="interest_dvuskat_roof" name="dvuskat_roof" onchange='showDvuskatRoofItems(this)'>
+                        <i></i>
+                        <span class="dvuskat_roof__span">Двускатная крыша</span>
+                        </label>
+                     </div>
+                  </div>
+                  <!-- Начало полей для дускатной крыши -->
+                  <div class="dvuskat_form_wrp hidden" id="dvuskat_form_wrp">
+                     <form action="#" class="dvuskat_roof__form" id="dvuskat_roof__form-id"
+                        name="dvuskat_roof__form-id"
+                        aria-labelledby="dvuskat_roof__form-id dvuskat_roof__form-id">
+                        <div class="dvuskat_roof__groups_item-wrp">
+                           <div class="dvuskat_roof__length-wrp">
+                              <label class="input_label"
+                                 aria-label="Название поля ввода">Длина по карнизному свесу(L), м</label>
+                              <input class="dvuskat_roof__length input-style"
+                                 type="number" name="dvuskat_roof__length-id[]" step="0.0001"
+                                 min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareDvuskatRoof()">
+                           </div>
+                           <div class="dvuskat_roof__height-wrp">
+                              <label class="input_label"
+                                 aria-label="Название поля ввода">Высота ската(H),
+                              м </label>
+                              <input class="dvuskat_roof__height input-style"
+                                 type="number" name="dvuskat_roof__visota[]" step="0.0001" min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareDvuskatRoof()">
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+               <div class="shatr_roof">
+                  <div class="shatr_roof__checkbox bg_fon_roof">
+                     <div class="shatr_roof__wrp">
+                        <img class="img__shatr_roof" src="../img/calc/teploizoliacia/shatrovaia-krisha(bw).svg" alt="шатровая крыша черно-белая" height="100" id="img_shatr_roof_bw-id">
+                        <img class="img__shatr_roof__color hidden" src="../img/calc/teploizoliacia/shatrovaia-krisha(color).svg" alt="шатровая крыша цветная" height="100" id="img_shatr_roof_color-id">
+                     </div>
+                     <div class="checkbox__wrp">
+                        <label class="custom-lable" for="check-shatr_roof">
+                        <input type="checkbox" id="check-shatr_roof" value="interest_shatr_roof" name="shatr_roof" onchange='showShatrRoofItems(this)'>
+                        <i></i>
+                        <span class="shatr_roof__span">Шатровая крыша</span>
+                        </label>
+                     </div>
+                  </div>
+                  <!-- Начало полей для дускатной крыши -->
+                  <div class="shatr_form_wrp hidden" id="shatr_form_wrp">
+                     <form action="#" class="shatr_roof__form" id="shatr_roof__form-id"
+                        name="shatr_roof__form-id"
+                        aria-labelledby="shatr_roof__form-id shatr_roof__form-id">
+                        <div class="shatr_roof__groups_item-wrp">
+                           <div class="shatr_roof__length-wrp">
+                              <label class="input_label"
+                                 aria-label="Название поля ввода">Длина по карнизному свесу(L1), м</label>
+                              <input class="shatr_roof__length input-style"
+                                 type="number" name="shatr_roof__length-id[]" step="0.0001"
+                                 min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareShatrRoof()">
+                           </div>
+                           <div class="shatr_roof__height-wrp">
+                              <label class="input_label"
+                                 aria-label="Название поля ввода">Длина по карнизному свесу(L2),
+                              м </label>
+                              <input class="shatr_roof__length2 input-style"
+                                 type="number" name="shatr_roof__length2-id[]" step="0.0001"
+                                 min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareShatrRoof()">
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+               <div class="valm_roof">
+                  <div class="valm_roof__checkbox bg_fon_roof2">
+                     <div class="valm_roof__wrp">
+                        <img class="img__valm_roof" src="../img/calc/teploizoliacia/valmovaia-krisha(bw).svg" alt="вальмовая крыша черно-белая" height="100" id="img_valm_roof_bw-id">
+                        <img class="img__valm_roof__color hidden" src="../img/calc/teploizoliacia/valmovaia-krisha(color).svg" alt="вальмовая крыша цветная" height="100" id="img_valm_roof_color-id">
+                     </div>
+                     <div class="checkbox__wrp">
+                        <label class="custom-lable" for="check-valm_roof">
+                        <input type="checkbox" id="check-valm_roof" value="interest_valm_roof" name="valm_roof" onchange='showValmRoofItems(this)'>
+                        <i></i>
+                        <span class="valm_roof__span">Вальмовая крыша</span>
+                        </label>
+                     </div>
+                  </div>
+                  <!-- Начало полей для дускатной крыши -->
+                  <div class="valm_form_wrp hidden" id="valm_form_wrp">
+                     <form action="#" class="valm_roof__form" id="valm_roof__form-id"
+                        name="valm_roof__form-id"
+                        aria-labelledby="valm_roof__form-id valm_roof__form-id">
+                        <div class="valm_roof__groups_item-wrp">
+                           <div class="valm_roof__length-wrp">
+                              <label class="input_label"
+                                 aria-label="Название поля ввода">Длина по карнизному свесу(L1), м</label>
+                              <input class="valm_roof__length input-style"
+                                 type="number" name="valm_roof__length-id[]" step="0.0001"
+                                 min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareValmRoof()">
+                           </div>
+                           <div class="valm_roof__height-wrp">
+                              <label class="input_label"
+                                 aria-label="Название поля ввода">Длина по карнизному свесу(L2),
+                              м </label>
+                              <input class="valm_roof__length2 input-style"
+                                 type="number" name="valm_roof__length2-id[]" step="0.0001"
+                                 min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareValmRoof()">
+                           </div>
+                           <div class="valm_roof__height-wrp">
+                              <label class="input_label"
+                                 aria-label="Название поля ввода">Длина конька(L3),
+                              м </label>
+                              <input class="valm_roof__length3 input-style"
+                                 type="number" name="valm_roof__length3-id[]" step="0.0001"
+                                 min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareValmRoof()">
+                           </div>
+                           <div class="valm_roof__height-wrp">
+                              <label class="input_label"
+                                 aria-label="Название поля ввода">Длина ската(B),
+                              м </label>
+                              <input class="valm_roof__length4 input-style"
+                                 type="number" name="valm_roof__length4-id[]" step="0.0001"
+                                 min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareValmRoof()">
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <!-- Вывод площади крыши-->
+            <div class="all-results-wrp hidden1">
+               <label class="input_label" aria-label="Название поля вывода">
+               Общая площадь односкат.крыши, м&sup2; </label>
+               <input class="filter_data odnoskat_roof__sum_square-all input-style" disabled
+                  id="odnoskat_roof__sum_square-all-id"
+                  type="number"
+                  name="data[Односкатная крыша][Площадь крыши]"
+                  step="0.0001" min="0"
+                  aria-labelledby="odnoskat_roof__form-id odnoskat_roof__sum_square-all-id">
+               <label class="input_label" aria-label="Название поля вывода">
+               Общая площадь двускат.крыши, м&sup2; </label>
+               <input class="filter_data dvuskat_roof__sum_square-all input-style" disabled
+                  id="dvuskat_roof__sum_square-all-id"
+                  type="number"
+                  name="data[Двускатная крыша][Площадь крыши]"
+                  step="0.0001" min="0"
+                  aria-labelledby="dvuskat_roof__form-id dvuskat_roof__sum_square-all-id">
+               <label class="input_label" aria-label="Название поля вывода">
+               Общая площадь шатр.крыши, м&sup2; </label>
+               <input class="filter_data shatr_roof__sum_square-all input-style" disabled
+                  id="shatr_roof__sum_square-all-id"
+                  type="number"
+                  name="data[Шатровая крыша][Площадь крыши]"
+                  step="0.0001" min="0"
+                  aria-labelledby="shatr_roof__form-id shatr_roof__sum_square-all-id">
+               <label class="input_label" aria-label="Название поля вывода">
+               Общая площадь вальмовой.крыши, м&sup2; </label>
+               <input class="filter_data valm_roof__sum_square-all input-style" disabled
+                  id="valm_roof__sum_square-all-id"
+                  type="number"
+                  name="data[Вальмовая крыша][Площадь крыши]"
+                  step="0.0001" min="0"
+                  aria-labelledby="valm_roof__form-id valm_roof__sum_square-all-id">         
+            </div>
          </section>
       </div>
    </body>
