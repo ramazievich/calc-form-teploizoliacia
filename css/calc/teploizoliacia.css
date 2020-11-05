@@ -375,13 +375,16 @@ input[placeholder] {
 
 	.teploizol_form_main .roof__type {
 		width: 300px;
-     	margin: 0 auto;
+		margin: 0 auto;
+		display: grid;
+		grid-gap: 1px 1px;
 	}
 
 	.teploizol_form_main .dvuskat_roof,
 	.teploizol_form_main .odnoskat_roof,
 	.teploizol_form_main .shatr_roof,
-	.teploizol_form_main .valm_roof  {
+	.teploizol_form_main .valm_roof,
+	.teploizol_form_main .mansard_roof  {
 		width: 300px;
 		margin: 1px;
 		margin: 0 auto;
@@ -390,7 +393,8 @@ input[placeholder] {
 	.teploizol_form_main .dvuskat_roof__form,
 	.teploizol_form_main .odnoskat_roof__form,
 	.teploizol_form_main .shatr_roof__form,
-	.teploizol_form_main .valm_roof__form {
+	.teploizol_form_main .valm_roof__form,
+	.teploizol_form_main .mansard_roof__form {
 		position: relative;
 		width: 295px;
 		background-color: #f9fafa;
@@ -404,12 +408,13 @@ input[placeholder] {
 	.teploizol_form_main .dvuskat_roof__checkbox,
 	.teploizol_form_main .odnoskat_roof__checkbox,
 	.teploizol_form_main .shatr_roof__checkbox,
-	.teploizol_form_main .valm_roof__checkbox {
+	.teploizol_form_main .valm_roof__checkbox,
+	.teploizol_form_main .mansard_roof__checkbox {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 5px 5px;
 		align-items: center;
-		padding: 0 7px 0 7px;
+		padding: 0 5px 0 3px;
 	}
 
 	.teploizol_form_main .checkbox__wrp {
@@ -425,4 +430,6 @@ input[placeholder] {
 		border-radius: 5px;
 		text-align: center;
 	}
+
+
 

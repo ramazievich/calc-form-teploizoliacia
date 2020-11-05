@@ -1,4 +1,7 @@
 'use strict';
+
+
+
 /**
  * Для чекбокса
  * показ формы расчета теплоизоляции для односкатной крыши
@@ -136,6 +139,40 @@ function clearAllFormValmRoof() {
 }
 
 /**
+ * Для чекбокса
+ * показ формы расчета теплоизоляции для мансардной крыши
+ * @function [showValmRoofItems] добавляет класс hidden к чекбоксу
+ * @param {remove} - удаляет класс hidden у формы
+ * @param {check}  - переменная к классу для чекбокса
+ * @param {add}  - добавляет hidden к форме
+ * @function [clearAllFormValmRoof] функция сброса всех данных в заполненых полях когда checkbox снят
+ */
+
+let checkboxMansardRoof = document.getElementById('check-mansard_roof');
+checkboxMansardRoof.addEventListener('click', clearAllFormMansardRoof);
+
+function showMansardRoofItems(check) {
+	check = document.getElementById("check-mansard_roof");
+	if (check.checked) {
+		document.getElementById("mansard_form_wrp").classList.remove("hidden");
+		document.getElementById("img_mansard_roof_color-id").classList.remove("hidden");
+		document.getElementById("img_mansard_roof_bw-id").classList.add("hidden");
+	} else {
+		document.getElementById("mansard_form_wrp").classList.add("hidden");
+		document.getElementById("img_mansard_roof_color-id").classList.add("hidden");
+		document.getElementById("img_mansard_roof_bw-id").classList.remove("hidden");
+		clearAllFormValmRoof();
+	}
+}
+
+function clearAllFormMansardRoof() {
+	let form = document.getElementById('mansard_form_wrp');
+	let inputs = form.getElementsByTagName('input');
+	for (let input of inputs)
+		input.value = '';
+}
+
+/**
  * @function [sumAllSquareOdnoskatRoof] Функция подсчета площади односкатной крыши
  */
 function sumAllSquareOdnoskatRoof() {
@@ -167,7 +204,7 @@ function sumAllSquareShatrRoof() {
 	let form = document.getElementById('shatr_form_wrp');
 	let dlina_L1 = Number(form.querySelector(".shatr_roof__length").value);
 	let dlina_L2 = Number(form.querySelector(".shatr_roof__length2").value);	
-	let result = (dlina_L1 * dlina_L2) * 4;
+	let result = (dlina_L1 * dlina_L2) * 1.1;
 	roof_block.querySelector("#shatr_roof__sum_square-all-id").value = result.toFixed(2);
 }
 
@@ -181,10 +218,23 @@ function sumAllSquareValmRoof() {
 	let dlina_L2 = Number(form.querySelector(".valm_roof__length2").value);
 	let dlina_L3 = Number(form.querySelector(".valm_roof__length3").value);
 	let dlina_B = Number(form.querySelector(".valm_roof__length4").value);
-	let B_kvadrat = Math.pow(dlina_B, 2);
-	let koren_B_kvadrat = Math.sqrt(B_kvadrat);
-	let result = ((dlina_L3 + dlina_L2 / 2) * koren_B_kvadrat - ((dlina_L1 - dlina_L3) / (2 * (dlina_L1 - dlina_L3)))) * 2;
+	/*let B_kvadrat = Math.pow(dlina_B, 2);
+	let koren_B_kvadrat = Math.sqrt(B_kvadrat);*/
+	let result = ((dlina_L3 + dlina_L2 / 2) * dlina_B - ((dlina_L1 - dlina_L3) / (2 * (dlina_L1 - dlina_L3)))) * 2;
 	roof_block.querySelector("#valm_roof__sum_square-all-id").value = result.toFixed(2);
+}
+
+/**
+ * @function [sumAllSquareDvuskatRoof] Функция подсчета площади мансардной крыши
+ */
+function sumAllSquareMansardRoof() {
+	let roof_block = document.querySelector('.roof');
+	let form = document.getElementById('mansard_form_wrp');
+	let dlina = Number(form.querySelector(".mansard_roof__length").value);
+	let visota1 = Number(form.querySelector(".mansard_roof__height1").value);
+	let visota2 = Number(form.querySelector(".mansard_roof__height2").value);
+	let result = ((visota1 * dlina) + (visota2 * dlina)) * 2;
+	roof_block.querySelector("#mansard_roof__sum_square-all-id").value = result.toFixed(2);
 }
 
 

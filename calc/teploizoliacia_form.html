@@ -35,16 +35,16 @@
                         name="odnoskat_roof__form-id"
                         aria-labelledby="odnoskat_roof__form-id odnoskat_roof__form-id">
                         <div class="odnoskat_roof__groups_item-wrp">
-                           <div class="odnoskat_roof__length-wrp">
+                           <div class="input_label-wrp">
                               <label class="input_label"
                                  aria-label="Название поля ввода">Длина по карнизному свесу(L), м</label>
                               <input class="odnoskat_roof__length input-style"
-                                 type="number" name="odnoskat_roof__length-id[]" step="0.0001"
+                                 type="number" name="odnoskat_roof__dlina[]" step="0.0001"
                                  min="0"
                                  oninput="validity.valid||(value='');"
                                  onkeyup="sumAllSquareOdnoskatRoof()">
                            </div>
-                           <div class="odnoskat_roof__height-wrp">
+                           <div class="input_label-wrp">
                               <label class="input_label"
                                  aria-label="Название поля ввода">Высота ската(H),
                               м </label>
@@ -77,16 +77,16 @@
                         name="dvuskat_roof__form-id"
                         aria-labelledby="dvuskat_roof__form-id dvuskat_roof__form-id">
                         <div class="dvuskat_roof__groups_item-wrp">
-                           <div class="dvuskat_roof__length-wrp">
+                           <div class="input_label-wrp">
                               <label class="input_label"
                                  aria-label="Название поля ввода">Длина по карнизному свесу(L), м</label>
                               <input class="dvuskat_roof__length input-style"
-                                 type="number" name="dvuskat_roof__length-id[]" step="0.0001"
+                                 type="number" name="dvuskat_roof__dlina[]" step="0.0001"
                                  min="0"
                                  oninput="validity.valid||(value='');"
                                  onkeyup="sumAllSquareDvuskatRoof()">
                            </div>
-                           <div class="dvuskat_roof__height-wrp">
+                           <div class="input_label-wrp">
                               <label class="input_label"
                                  aria-label="Название поля ввода">Высота ската(H),
                               м </label>
@@ -113,27 +113,27 @@
                         </label>
                      </div>
                   </div>
-                  <!-- Начало полей для дускатной крыши -->
+                  <!-- Начало полей для шатровой крыши -->
                   <div class="shatr_form_wrp hidden" id="shatr_form_wrp">
                      <form action="#" class="shatr_roof__form" id="shatr_roof__form-id"
                         name="shatr_roof__form-id"
                         aria-labelledby="shatr_roof__form-id shatr_roof__form-id">
                         <div class="shatr_roof__groups_item-wrp">
-                           <div class="shatr_roof__length-wrp">
+                           <div class="input_label-wrp">
                               <label class="input_label"
                                  aria-label="Название поля ввода">Длина по карнизному свесу(L1), м</label>
                               <input class="shatr_roof__length input-style"
-                                 type="number" name="shatr_roof__length-id[]" step="0.0001"
+                                 type="number" name="shatr_roof__dlina1[]" step="0.0001"
                                  min="0"
                                  oninput="validity.valid||(value='');"
                                  onkeyup="sumAllSquareShatrRoof()">
                            </div>
-                           <div class="shatr_roof__height-wrp">
+                           <div class="input_label-wrp">
                               <label class="input_label"
                                  aria-label="Название поля ввода">Длина по карнизному свесу(L2),
                               м </label>
                               <input class="shatr_roof__length2 input-style"
-                                 type="number" name="shatr_roof__length2-id[]" step="0.0001"
+                                 type="number" name="shatr_roof__dlina2[]" step="0.0001"
                                  min="0"
                                  oninput="validity.valid||(value='');"
                                  onkeyup="sumAllSquareShatrRoof()">
@@ -156,47 +156,47 @@
                         </label>
                      </div>
                   </div>
-                  <!-- Начало полей для дускатной крыши -->
+                  <!-- Начало полей для вальмовой крыши -->
                   <div class="valm_form_wrp hidden" id="valm_form_wrp">
                      <form action="#" class="valm_roof__form" id="valm_roof__form-id"
                         name="valm_roof__form-id"
                         aria-labelledby="valm_roof__form-id valm_roof__form-id">
                         <div class="valm_roof__groups_item-wrp">
-                           <div class="valm_roof__length-wrp">
+                           <div class="input_label-wrp">
                               <label class="input_label"
                                  aria-label="Название поля ввода">Длина по карнизному свесу(L1), м</label>
                               <input class="valm_roof__length input-style"
-                                 type="number" name="valm_roof__length-id[]" step="0.0001"
+                                 type="number" name="valm_roof__dlina[]" step="0.0001"
                                  min="0"
                                  oninput="validity.valid||(value='');"
                                  onkeyup="sumAllSquareValmRoof()">
                            </div>
-                           <div class="valm_roof__height-wrp">
+                           <div class="input_label-wrp">
                               <label class="input_label"
                                  aria-label="Название поля ввода">Длина по карнизному свесу(L2),
                               м </label>
                               <input class="valm_roof__length2 input-style"
-                                 type="number" name="valm_roof__length2-id[]" step="0.0001"
+                                 type="number" name="valm_roof__dlina2[]" step="0.0001"
                                  min="0"
                                  oninput="validity.valid||(value='');"
                                  onkeyup="sumAllSquareValmRoof()">
                            </div>
-                           <div class="valm_roof__height-wrp">
+                           <div class="input_label-wrp">
                               <label class="input_label"
                                  aria-label="Название поля ввода">Длина конька(L3),
                               м </label>
                               <input class="valm_roof__length3 input-style"
-                                 type="number" name="valm_roof__length3-id[]" step="0.0001"
+                                 type="number" name="valm_roof__dlina3[]" step="0.0001"
                                  min="0"
                                  oninput="validity.valid||(value='');"
                                  onkeyup="sumAllSquareValmRoof()">
                            </div>
-                           <div class="valm_roof__height-wrp">
+                           <div class="input_label-wrp">
                               <label class="input_label"
                                  aria-label="Название поля ввода">Длина ската(B),
                               м </label>
                               <input class="valm_roof__length4 input-style"
-                                 type="number" name="valm_roof__length4-id[]" step="0.0001"
+                                 type="number" name="valm_roof__dlina4[]" step="0.0001"
                                  min="0"
                                  oninput="validity.valid||(value='');"
                                  onkeyup="sumAllSquareValmRoof()">
@@ -205,6 +205,61 @@
                      </form>
                   </div>
                </div>
+               <div class="mansard_roof">
+                  <div class="mansard_roof__checkbox bg_fon_roof">
+                     <div class="mansard_roof__wrp">
+                        <img class="img__mansard_roof" src="../img/calc/teploizoliacia/mansardnaia-krisha(bw).svg" alt="Мансардная крыша черно-белая" height="100" id="img_mansard_roof_bw-id">
+                        <img class="img__mansard_roof__color hidden" src="../img/calc/teploizoliacia/mansardnaia-krisha(color).svg" alt="Мансардная крыша цветная" height="100" id="img_mansard_roof_color-id">
+                     </div>
+                     <div class="checkbox__wrp">
+                        <label class="custom-lable" for="check-mansard_roof">
+                        <input type="checkbox" id="check-mansard_roof" value="interest_mansard_roof" name="mansard_roof" onchange='showMansardRoofItems(this)'>
+                        <i></i>
+                        <span class="mansard_roof__span">Мансардная крыша</span>
+                        </label>
+                     </div>
+                  </div>
+                  <!-- Начало полей для мансардной крыши -->
+                  <div class="mansard_form_wrp hidden" id="mansard_form_wrp">
+                     <form action="#" class="mansard_roof__form" id="mansard_roof__form-id"
+                        name="mansard_roof__form-id"
+                        aria-labelledby="mansard_roof__form-id mansard_roof__form-id">
+                        <div class="mansard_roof__groups_item-wrp">
+                           <div class="input_label-wrp">
+                              <label class="input_label"
+                                 aria-label="Название поля ввода">Длина по карнизному свесу(L), м</label>
+                              <input class="mansard_roof__length input-style"
+                                 type="number" name="mansard_roof__dlina[]" step="0.0001"
+                                 min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareMansardRoof()">
+                           </div>
+                           <div class="input_label-wrp">
+                              <label class="input_label"
+                                 aria-label="Название поля ввода">Высота ската(H1),
+                              м </label>
+                              <input class="mansard_roof__height1 input-style"
+                                 type="number" name="mansard_roof__visota1[]" step="0.0001"
+                                 min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareMansardRoof()">
+                           </div>
+                           <div class="input_label-wrp">
+                              <label class="input_label"
+                                 aria-label="Название поля ввода">Высота ската(H2),
+                              м </label>
+                              <input class="mansard_roof__height2 input-style"
+                                 type="number" name="mansard_roof__visota2[]" step="0.0001"
+                                 min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareMansardRoof()">
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+			   
+			   
             </div>
             <!-- Вывод площади крыши-->
             <div class="all-results-wrp hidden1">
@@ -239,7 +294,15 @@
                   type="number"
                   name="data[Вальмовая крыша][Площадь крыши]"
                   step="0.0001" min="0"
-                  aria-labelledby="valm_roof__form-id valm_roof__sum_square-all-id">         
+                  aria-labelledby="valm_roof__form-id valm_roof__sum_square-all-id">
+               <label class="input_label" aria-label="Название поля вывода">
+                  Общая площадь мансардн.крыши, м&sup2; </label>
+                  <input class="filter_data mansard_roof__sum_square-all input-style" disabled
+                     id="mansard_roof__sum_square-all-id"
+                     type="number"
+                     name="data[Мансардная крыша][Площадь крыши]"
+                     step="0.0001" min="0"
+                     aria-labelledby="mansard_roof__form-id mansard_roof__sum_square-all-id">         
             </div>
          </section>
       </div>
