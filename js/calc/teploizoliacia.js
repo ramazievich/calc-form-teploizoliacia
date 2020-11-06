@@ -218,9 +218,23 @@ function sumAllSquareValmRoof() {
 	let dlina_L2 = Number(form.querySelector(".valm_roof__length2").value);
 	let dlina_L3 = Number(form.querySelector(".valm_roof__length3").value);
 	let dlina_B = Number(form.querySelector(".valm_roof__length4").value);
-	/*let B_kvadrat = Math.pow(dlina_B, 2);
-	let koren_B_kvadrat = Math.sqrt(B_kvadrat);*/
-	let result = ((dlina_L3 + dlina_L2 / 2) * dlina_B - ((dlina_L1 - dlina_L3) / (2 * (dlina_L1 - dlina_L3)))) * 2;
+	let L3_plus_L1_razd_na2 = (dlina_L3 + dlina_L1) / 2;/*L3+L1/2 */
+	let b_Kvadrat = Math.pow(dlina_B, 2); /*B квадрат*/
+	let koren_b_Kvadrat = Math.sqrt(b_Kvadrat);/*кореньиз B квадрат*/	
+	let L1_minus_L3 = (dlina_L1 - dlina_L3);/* L1 минус L3*/
+	let L1_minus_L3_kvadrat = Math.pow(L1_minus_L3, 2);/*квадрат из L1 минус L2*/
+	let L1_minus_L3_umn_2 = 2 * (L1_minus_L3);
+	let L1_minus_L3_obsh = L1_minus_L3_kvadrat / L1_minus_L3_umn_2;
+	let L1_minus_L3_obsh_Kvadrat = Math.pow(L1_minus_L3_obsh, 2); /*B квадрат*/
+	let s_Trapecia = (L3_plus_L1_razd_na2 * koren_b_Kvadrat - L1_minus_L3_obsh_Kvadrat) * 2;
+
+	let odnaVtoraia_L2 = (dlina_L2 / 2);
+	let kvadrat_odnaVtoraia_L2 = Math.pow(odnaVtoraia_L2, 2);
+	let b_kv_min_kvadrat_odnaVtoraia_L2 = b_Kvadrat - kvadrat_odnaVtoraia_L2;
+	let koren_B_kv_min_kvadrat_odnaVtoraia_L2 = Math.sqrt(b_kv_min_kvadrat_odnaVtoraia_L2);
+	let s_Treugol = (koren_B_kv_min_kvadrat_odnaVtoraia_L2 * dlina_L2);
+
+	let result = (s_Trapecia) + (s_Treugol);
 	roof_block.querySelector("#valm_roof__sum_square-all-id").value = result.toFixed(2);
 }
 
