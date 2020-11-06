@@ -233,7 +233,7 @@ function sumAllSquareValmRoof() {
 	let b_kv_min_kvadrat_odnaVtoraia_L2 = b_Kvadrat - kvadrat_odnaVtoraia_L2;
 	let koren_B_kv_min_kvadrat_odnaVtoraia_L2 = Math.sqrt(b_kv_min_kvadrat_odnaVtoraia_L2);
 	let s_Treugol = (koren_B_kv_min_kvadrat_odnaVtoraia_L2 * dlina_L2);
-
+	
 	let result = (s_Trapecia) + (s_Treugol);
 	roof_block.querySelector("#valm_roof__sum_square-all-id").value = result.toFixed(2);
 }
