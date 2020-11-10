@@ -1,11 +1,10 @@
 'use strict';
 
 
-
 /**
  * Для чекбокса
  * показ формы расчета теплоизоляции для односкатной крыши
- * @function [showDvuskatRoofItems] добавляет класс hidden к чекбоксу
+ * @function [showOdnoskatRoofItems] добавляет класс hidden к чекбоксу
  * @param {remove} - удаляет класс hidden у формы
  * @param {check}  - переменная к классу для чекбокса
  * @param {add}  - добавляет hidden к форме
@@ -34,7 +33,6 @@ function clearAllFormOdnoskatRoof() {
 	for (let input of inputs)
 		input.value = '';
 }
-
 
 /**
  * Для чекбокса
@@ -141,11 +139,11 @@ function clearAllFormValmRoof() {
 /**
  * Для чекбокса
  * показ формы расчета теплоизоляции для мансардной крыши
- * @function [showValmRoofItems] добавляет класс hidden к чекбоксу
+ * @function [showMansardRoofItems] добавляет класс hidden к чекбоксу
  * @param {remove} - удаляет класс hidden у формы
  * @param {check}  - переменная к классу для чекбокса
  * @param {add}  - добавляет hidden к форме
- * @function [clearAllFormValmRoof] функция сброса всех данных в заполненых полях когда checkbox снят
+ * @function [clearAllFormMansardRoof] функция сброса всех данных в заполненых полях когда checkbox снят
  */
 
 let checkboxMansardRoof = document.getElementById('check-mansard_roof');
@@ -167,6 +165,36 @@ function showMansardRoofItems(check) {
 
 function clearAllFormMansardRoof() {
 	let form = document.getElementById('mansard_form_wrp');
+	let inputs = form.getElementsByTagName('input');
+	for (let input of inputs)
+		input.value = '';
+}
+
+
+/**
+ * Для чекбокса
+ * показ формы расчета теплоизоляции для каркасной стены
+ * @function [showKarkasWallItems] добавляет класс hidden к чекбоксу
+ * @param {remove} - удаляет класс hidden у формы
+ * @param {check}  - переменная к классу для чекбокса
+ * @param {add}  - добавляет hidden к форме
+ * @function [clearAllFormKarkasWall] функция сброса всех данных в заполненых полях когда checkbox снят
+ */
+
+let checkboxKarkasWall = document.getElementById('check-karkas_wall');
+checkboxKarkasWall.addEventListener('click', clearAllFormKarkasWall);
+
+function showKarkasWallItems(check) {
+	check = document.getElementById("check-karkas_wall");
+	if (check.checked) {
+		document.getElementById("karkas_wall__all_wrp-id").classList.remove("hidden");
+	} else {
+		document.getElementById("karkas_wall__all_wrp-id").classList.add("hidden");
+		clearAllFormKarkasWall();
+	}
+}
+function clearAllFormKarkasWall() {
+	let form = document.getElementById('karkas_wall_wrp');
 	let inputs = form.getElementsByTagName('input');
 	for (let input of inputs)
 		input.value = '';
@@ -233,7 +261,7 @@ function sumAllSquareValmRoof() {
 	let b_kv_min_kvadrat_odnaVtoraia_L2 = b_Kvadrat - kvadrat_odnaVtoraia_L2;
 	let koren_B_kv_min_kvadrat_odnaVtoraia_L2 = Math.sqrt(b_kv_min_kvadrat_odnaVtoraia_L2);
 	let s_Treugol = (koren_B_kv_min_kvadrat_odnaVtoraia_L2 * dlina_L2);
-	
+
 	let result = (s_Trapecia) + (s_Treugol);
 	roof_block.querySelector("#valm_roof__sum_square-all-id").value = result.toFixed(2);
 }
@@ -251,6 +279,128 @@ function sumAllSquareMansardRoof() {
 	roof_block.querySelector("#mansard_roof__sum_square-all-id").value = result.toFixed(2);
 }
 
+/**
+ * @function [perimeterKarkasWall] Функция подсчета периметра стены для одной формы
+ * @param {allForms} form переменная для формы подсчета площади стен
+ * @param {number} dlina - поле ввода длины стен
+ * @param {number} result - результат подсчета
+ */
+function perimeterKarkasWall() {
+	for (let i = 0, max = allForms.length; i < max; i++) {
+		let form = allForms[i];
+		let dlina = Number(form.querySelector(".karkas_wall__length").value);
+		dlina = parseFloat(dlina);
+		let result = dlina;
+		form.querySelector(".karkas_wall__perimeter").value = result;
+	}
+}
+
+
+/**
+ * @function [sumPerimetersKarkasWall] Функция подсчета всех периметров стен со всех форм
+ * @param {number} perim - переменная для поля периметра из формы
+ * @param {forEach} function (el) - перебор полей периметра по всем формам
+ * @param {number} sum - складываем все поля периметра из всех созданных форм
+ */
+function sumPerimetersKarkasWall() {
+	let perim = document.getElementsByClassName("karkas_wall__perimeter");
+	let sum = 0;
+	[].forEach.call(perim, function (el) {
+		sum += parseFloat(el.value);
+		console.log(sum);
+	});
+	document.getElementById("karkas_wall__perimeter-all-id").value = sum;
+}
+
+/**
+ * @function [funcStenaKarkasWall] Функция подсчета площади стены для одной формы
+ * @param {allForms} allForms переменная для формы подсчета площади стен
+ * @param {number} dlina - поле ввода длины стены
+ * @param {number} visota - поле ввода высоты стены
+ * @param {number} result - результат подсчета
+ */
+let allForms = document.querySelectorAll(".karkas_wall__form");
+console.log(allForms);
+
+function funcStenaKarkasWall() {
+	allForms = document.querySelectorAll(".karkas_wall__form");
+	for (let i = 0, max = allForms.length; i < max; i++) {
+		let form = allForms[i];
+		let dlina = Number(form.querySelector(".karkas_wall__length").value);
+		dlina = parseFloat(dlina);
+		let visota = Number(form.querySelector(".karkas_wall__height").value);
+		visota = parseFloat(visota);
+		let result = (dlina * visota);
+		form.querySelector(".karkas_wall__result").value = result.toFixed(2);
+	}
+}
+
+/**
+ * @function [sumAreasKarkasWall] функция для сумирования всех площадей стен со всех форм
+ * @param {number} areas - переменная поля с площадью стены
+ * @param [function (el)] - функция перебора и сумирования всех полученных площадей из всех форм
+ * @param {number} sum - сумма всех площадей после сложения
+ */
+function sumAreasKarkasWall() {
+	let areas = document.getElementsByClassName("karkas_wall__result");
+	let sum = 0;
+	[].forEach.call(areas, function (el) {
+		sum += parseFloat(el.value);
+		console.log(sum);
+	});
+	document.getElementById("karkas_wall__area-all2-id").value = sum;
+}
+
+/**
+ * Кнопка добавления новой формы для стен в разделе стены
+ * @param {node} node - переменная для всей формы
+ * @param {cloneNode} newClonedNode - получаем форму и клонируем ее
+ * @param {newFormStenaId} newFormStenaId - добавляем новую форму
+ * @function [copyForm] el - функция копирования формы
+ */
+let newFormStenaId = 1;
+let node = document.getElementById("karkas_wall__form-id").cloneNode(true);
+
+// document.querySelector(".add-form").addEventListener("click", function () {
+$(document).on('click', '.add-form', function () {
+	let newClonedNode = node.cloneNode(true);
+	document.querySelector(".karkas_wall").appendChild(newClonedNode);
+	newClonedNode.id = "karkas_wall__form-id-" + newFormStenaId;
+	newClonedNode.querySelector(".karkas_wall__length").name = 'data[Стены][' + newFormStenaId + '][Длина]';
+	newClonedNode.querySelector(".karkas_wall__length").value = '';
+	newClonedNode.querySelector(".karkas_wall__height").name = 'data[Стены][' + newFormStenaId + '][Высота]';
+	newClonedNode.querySelector(".karkas_wall__height").value = '';
+	funcStenaKarkasWall();
+	newFormStenaId++;
+});
+
+function copyFormKarkasWall(el) {
+	let articleDiv = el.parentElement;
+	let newArticleDiv = articleDiv.cloneNode(true);
+	document.querySelector(".karkas_wall").appendChild(newArticleDiv);
+	newArticleDiv.id = "karkas_wall__form-id-" + newFormStenaId;
+	newArticleDiv.querySelector(".karkas_wall__length").name = 'data[Стены][' + newFormStenaId + '][Длина]';
+	newArticleDiv.querySelector(".karkas_wall__height").name = 'data[Стены][' + newFormStenaId + '][Высота]';
+	funcStenaKarkasWall();
+	newFormStenaId++;
+}
+
+
+/**
+ * @function [deleteFormKarkasWall] Функция удаления формы для стен
+ * @param {forms} forms - переменная для всей формы
+ * @param {remove} remove - удаляем форму
+ * @function [sumPerimetersKarkasWall] вызываем функцию подсчета всех периметров со всех форм для стен
+ * @function [sumAreas] вызываем функцию подсчета всех площадей со всех форм для стен
+ */
+function deleteFormKarkasWall(btn) {
+	let forms = document.getElementsByClassName('karkas_wall');
+	if (forms.length > 1) {
+		btn.parentElement.remove();
+		sumPerimetersKarkasWall();
+		sumAreasKarkasWall();
+	}
+}
 
 
 
