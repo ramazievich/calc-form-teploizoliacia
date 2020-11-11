@@ -31,6 +31,16 @@ body {
 	font-size: 14px;
 }
 
+/* Нумерация форм начало*/
+.teploizol_form_main .scetchik_formy {
+	counter-reset: items;
+}
+
+.teploizol_form_main .nomer_formy::after {
+	content: counter(items);
+	counter-increment: items;
+}
+/* Нумерация форм конец*/
 
 /*кастомный чекбокс2 - начало*/
 	
@@ -473,7 +483,9 @@ body {
 	.teploizol_form_main .shatr_roof,
 	.teploizol_form_main .valm_roof,
 	.teploizol_form_main .mansard_roof,
-	.teploizol_form_main .karkas_wall {
+	.teploizol_form_main .karkas_wall,
+	.teploizol_form_main .karkas_window,
+	.teploizol_form_main .karkas_door {
 		width: 300px;
 		margin: 1px;
 		margin: 0 auto;
@@ -484,7 +496,9 @@ body {
 	.teploizol_form_main .shatr_roof__form,
 	.teploizol_form_main .valm_roof__form,
 	.teploizol_form_main .mansard_roof__form,
-	.teploizol_form_main .karkas_wall__form {
+	.teploizol_form_main .karkas_wall__form,
+	.teploizol_form_main .karkas_window__form,
+	.teploizol_form_main .karkas_door__form {
 		position: relative;
 		width: 295px;
 		background-color: #f9fafa;
