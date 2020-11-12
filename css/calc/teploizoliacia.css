@@ -485,7 +485,10 @@ body {
 	.teploizol_form_main .mansard_roof,
 	.teploizol_form_main .karkas_wall,
 	.teploizol_form_main .karkas_window,
-	.teploizol_form_main .karkas_door {
+	.teploizol_form_main .karkas_door,
+	.teploizol_form_main .stone_wall,
+	.teploizol_form_main .stone_window,
+	.teploizol_form_main .stone_door {
 		width: 300px;
 		margin: 1px;
 		margin: 0 auto;
@@ -498,7 +501,10 @@ body {
 	.teploizol_form_main .mansard_roof__form,
 	.teploizol_form_main .karkas_wall__form,
 	.teploizol_form_main .karkas_window__form,
-	.teploizol_form_main .karkas_door__form {
+	.teploizol_form_main .karkas_door__form,
+	.teploizol_form_main .stone_wall__form,
+	.teploizol_form_main .stone_window__form,
+	.teploizol_form_main .stone_door__form {
 		position: relative;
 		width: 295px;
 		background-color: #f9fafa;
@@ -514,7 +520,8 @@ body {
 	.teploizol_form_main .shatr_roof__checkbox,
 	.teploizol_form_main .valm_roof__checkbox,
 	.teploizol_form_main .mansard_roof__checkbox,
-	.teploizol_form_main .karkas_wall__checkbox {
+	.teploizol_form_main .karkas_wall__checkbox,
+	.teploizol_form_main .stone_wall__checkbox {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 5px 5px;

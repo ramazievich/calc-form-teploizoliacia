@@ -233,6 +233,69 @@ function clearAllFormKarkasDoor() {
 		input.value = '';
 }
 
+
+/**
+ * Для чекбокса
+ * показ формы расчета теплоизоляции для каркасной стены
+ * @function [showStoneWallItems] добавляет класс hidden к чекбоксу
+ * @param {remove} - удаляет класс hidden у формы
+ * @param {check}  - переменная к классу для чекбокса
+ * @param {add}  - добавляет hidden к форме
+ * @function [clearAllFormStoneWall] функция сброса всех данных в заполненых полях когда checkbox снят
+ * @function [clearAllFormStoneWindow] функция сброса всех данных в заполненых полях когда checkbox снят
+ * @function [clearAllFormStoneDoor] функция сброса всех данных в заполненых полях когда checkbox снят
+ */
+
+let checkboxStoneWall = document.getElementById('check-stone_wall');
+checkboxStoneWall.addEventListener('click', clearAllFormStoneWall);
+
+function showStoneWallItems(check) {
+	check = document.getElementById("check-stone_wall");
+	if (check.checked) {
+		document.getElementById("stone_wall__all_wrp-id").classList.remove("hidden");
+	} else {
+		document.getElementById("stone_wall__all_wrp-id").classList.add("hidden");
+		clearAllFormStoneWall();
+		clearAllFormStoneWindow();
+		clearAllFormStoneDoor();
+
+		funcStenaStoneWindow();
+		perimeterStoneWindow();
+		sumPerimetersStoneWindow();
+		sumAreasStoneWindow();	
+
+		funcStenaStoneWall();
+		perimeterStoneWall();
+		sumPerimetersStoneWall();
+		sumAreasStoneWall();
+
+		funcStenaStoneDoor();
+		perimeterStoneDoor();
+		sumPerimetersStoneDoor();
+		sumAreasStoneDoor();
+	}
+}
+function clearAllFormStoneWall() {
+	let form = document.getElementById('stone_wall_wrp');
+	let inputs = form.getElementsByTagName('input');
+	for (let input of inputs)
+		input.value = '';
+}
+
+function clearAllFormStoneWindow() {
+	let form = document.getElementById('stone_window_wrp');
+	let inputs = form.getElementsByTagName('input');
+	for (let input of inputs)
+		input.value = '';
+}
+
+function clearAllFormStoneDoor() {
+	let form = document.getElementById('stone_door_wrp');
+	let inputs = form.getElementsByTagName('input');
+	for (let input of inputs)
+		input.value = '';
+}
+
 /**
  * @function [sumAllSquareOdnoskatRoof] Функция подсчета площади односкатной крыши
  */
@@ -329,6 +392,22 @@ function perimeterKarkasWall() {
 	}
 }
 
+/**
+ * @function [perimeterStoneWall] Функция подсчета периметра слойной стены для одной формы
+ * @param {allFormsStoneWall} form переменная для формы подсчета площади стен
+ * @param {number} dlina - поле ввода длины стен
+ * @param {number} result - результат подсчета
+ */
+function perimeterStoneWall() {
+	for (let i = 0, max = allFormsStoneWall.length; i < max; i++) {
+		let form = allFormsStoneWall[i];
+		let dlina = Number(form.querySelector(".stone_wall__length").value);
+		dlina = parseFloat(dlina);
+		let result = dlina;
+		form.querySelector(".stone_wall__perimeter").value = result;
+	}
+}
+
 
 /**
  * @function [perimeterKarkasWindow] Функция подсчета ширины окна каркасной стены для одной формы
@@ -347,6 +426,22 @@ function perimeterKarkasWindow() {
 } 
 
 /**
+ * @function [perimeterStoneWindow] Функция подсчета ширины окна слойной стены для одной формы
+ * @param {formStoneWindow} form переменная для формы подсчета площади стен
+ * @param {number} dlina - поле ввода длины стен
+ * @param {number} result - результат подсчета
+*/
+function perimeterStoneWindow() {
+	for (let i = 0, max = formStoneWindow.length; i < max; i++) {
+		let form = formStoneWindow[i];
+		let shirina = Number(form.querySelector(".stone_window__length").value);
+		shirina = parseFloat(shirina);
+		let result = shirina;
+		form.querySelector(".stone_window__perimeter").value = result;
+	}
+} 
+
+/**
  * @function [perimeterKarkasDoor] Функция подсчета ширины двери каркасной стены для одной формы
  * @param {formKarkasDoor} form переменная для формы подсчета площади стен
  * @param {number} dlina - поле ввода длины стен
@@ -359,6 +454,22 @@ function perimeterKarkasDoor() {
 		shirina = parseFloat(shirina);
 		let result = shirina;
 		form.querySelector(".karkas_door__perimeter").value = result;
+	}
+} 
+
+/**
+ * @function [perimeterStoneDoor] Функция подсчета ширины двери слойной стены для одной формы
+ * @param {formStoneDoor} form переменная для формы подсчета площади стен
+ * @param {number} dlina - поле ввода длины стен
+ * @param {number} result - результат подсчета
+*/
+function perimeterStoneDoor() {
+	for (let i = 0, max = formStoneDoor.length; i < max; i++) {
+		let form = formStoneDoor[i];
+		let shirina = Number(form.querySelector(".stone_door__length").value);
+		shirina = parseFloat(shirina);
+		let result = shirina;
+		form.querySelector(".stone_door__perimeter").value = result;
 	}
 } 
 
@@ -379,6 +490,23 @@ function sumPerimetersKarkasWall() {
 	document.getElementById("karkas_wall__perimeter-all-id").value = sum;
 }
 
+
+/**
+ * @function [sumPerimetersStoneWall] Функция подсчета всех периметров слойных стен со всех форм
+ * @param {number} perim - переменная для поля периметра из формы
+ * @param {forEach} function (el) - перебор полей периметра по всем формам
+ * @param {number} sum - складываем все поля периметра из всех созданных форм
+ */
+function sumPerimetersStoneWall() {
+	let perim = document.getElementsByClassName("stone_wall__perimeter");
+	let sum = 0;
+	[].forEach.call(perim, function (el) {
+		sum += parseFloat(el.value);
+		console.log(sum);
+	});
+	document.getElementById("stone_wall__perimeter-all-id").value = sum;
+}
+
 /**
  * @function [sumPerimetersKarkasWindow] Функция подсчета всех ширин окон в каркасных стенах со всех форм
  * @param {number} perim - переменная для поля периметра из формы
@@ -397,6 +525,23 @@ function sumPerimetersKarkasWindow() {
 
 
 /**
+ * @function [sumPerimetersStoneWindow] Функция подсчета всех ширин окон в слойных стенах со всех форм
+ * @param {number} perim - переменная для поля периметра из формы
+ * @param {forEach} function (el) - перебор полей периметра по всем формам
+ * @param {number} sum - складываем все поля периметра из всех созданных форм
+ */
+function sumPerimetersStoneWindow() {
+	let perim = document.getElementsByClassName("stone_window__perimeter");
+	let sum = 0;
+	[].forEach.call(perim, function (el) {
+		sum += parseFloat(el.value);
+		console.log(sum);
+	});
+	document.getElementById("stone_window__perimeter-all-id").value = sum;
+}
+
+
+/**
  * @function [sumPerimetersKarkasDoor] Функция подсчета всех ширин дверей в каркасных стенах со всех форм
  * @param {number} perim - переменная для поля периметра из формы
  * @param {forEach} function (el) - перебор полей периметра по всем формам
@@ -410,6 +555,23 @@ function sumPerimetersKarkasDoor() {
 		console.log(sum);
 	});
 	document.getElementById("karkas_door__perimeter-all-id").value = sum;
+}
+
+
+/**
+ * @function [sumPerimetersStoneDoor] Функция подсчета всех ширин дверей в слойных стенах со всех форм
+ * @param {number} perim - переменная для поля периметра из формы
+ * @param {forEach} function (el) - перебор полей периметра по всем формам
+ * @param {number} sum - складываем все поля периметра из всех созданных форм
+ */
+function sumPerimetersStoneDoor() {
+	let perim = document.getElementsByClassName("stone_door__perimeter");
+	let sum = 0;
+	[].forEach.call(perim, function (el) {
+		sum += parseFloat(el.value);
+		console.log(sum);
+	});
+	document.getElementById("stone_door__perimeter-all-id").value = sum;
 }
 
 /**
@@ -432,6 +594,29 @@ function funcStenaKarkasWall() {
 		visota = parseFloat(visota);
 		let result = (dlina * visota);
 		form.querySelector(".karkas_wall__result").value = result.toFixed(2);
+	}
+}
+
+/**
+ * @function [funcStenaStoneWall] Функция подсчета площади слойной стены для одной формы
+ * @param {allFormsStoneWall} allFormsStoneWall переменная для формы подсчета площади стен
+ * @param {number} dlina - поле ввода длины стены
+ * @param {number} visota - поле ввода высоты стены
+ * @param {number} result - результат подсчета
+ */
+let allFormsStoneWall = document.querySelectorAll(".stone_wall__form");
+console.log(allFormsStoneWall);
+
+function funcStenaStoneWall() {
+	allFormsStoneWall = document.querySelectorAll(".stone_wall__form");
+	for (let i = 0, max = allFormsStoneWall.length; i < max; i++) {
+		let form = allFormsStoneWall[i];
+		let dlina = Number(form.querySelector(".stone_wall__length").value);
+		dlina = parseFloat(dlina);
+		let visota = Number(form.querySelector(".stone_wall__height").value);
+		visota = parseFloat(visota);
+		let result = (dlina * visota);
+		form.querySelector(".stone_wall__result").value = result.toFixed(2);
 	}
 }
 
@@ -459,6 +644,29 @@ function funcStenaKarkasWindow() {
 }
 
 /**
+ * @function [funcStenaStoneWindow] Функция подсчета площади окна для одной формы в разделе слойная стена 
+ * @param {formStoneWindow} formStoneWindow переменная для формы подсчета площади окна
+ * @param {number} dlina - поле ввода длины стены
+ * @param {number} visota - поле ввода высоты стены
+ * @param {number} result - результат подсчета
+ */
+let formStoneWindow = document.querySelectorAll(".stone_window__form");
+console.log(formStoneWindow);
+
+function funcStenaStoneWindow() {
+	formStoneWindow = document.querySelectorAll(".stone_window__form");
+	for (let i = 0, max = formStoneWindow.length; i < max; i++) {
+		let form = formStoneWindow[i];
+		let dlina = Number(form.querySelector(".stone_window__length").value);
+		dlina = parseFloat(dlina);
+		let visota = Number(form.querySelector(".stone_window__height").value);
+		visota = parseFloat(visota);
+		let result = (dlina * visota);
+		form.querySelector(".stone_window__result").value = result.toFixed(2);
+	}
+}
+
+/**
  * @function [funcStenaKarkasDoor] Функция подсчета площади дверей для одной формы в разделе каркасная стена 
  * @param {formKarkasDoor} formKarkasDoor переменная для формы подсчета площади окна
  * @param {number} dlina - поле ввода длины стены
@@ -482,6 +690,29 @@ function funcStenaKarkasDoor() {
 }
 
 /**
+ * @function [funcStenaStoneDoor] Функция подсчета площади дверей для одной формы в разделе слойная стена 
+ * @param {formStoneDoor} formStoneDoor переменная для формы подсчета площади окна
+ * @param {number} dlina - поле ввода длины стены
+ * @param {number} visota - поле ввода высоты стены
+ * @param {number} result - результат подсчета
+ */
+let formStoneDoor = document.querySelectorAll(".stone_door__form");
+console.log(formStoneDoor);
+
+function funcStenaStoneDoor() {
+	formStoneDoor = document.querySelectorAll(".stone_door__form");
+	for (let i = 0, max = formStoneDoor.length; i < max; i++) {
+		let form = formStoneDoor[i];
+		let dlina = Number(form.querySelector(".stone_door__length").value);
+		dlina = parseFloat(dlina);
+		let visota = Number(form.querySelector(".stone_door__height").value);
+		visota = parseFloat(visota);
+		let result = (dlina * visota);
+		form.querySelector(".stone_door__result").value = result.toFixed(2);
+	}
+}
+
+/**
  * @function [sumAreasKarkasWall] функция для сумирования всех площадей каркасных стен со всех форм
  * @param {number} areas - переменная поля с площадью стены
  * @param [function (el)] - функция перебора и сумирования всех полученных площадей из всех форм
@@ -495,6 +726,23 @@ function sumAreasKarkasWall() {
 		console.log(sum);
 	});
 	document.getElementById("karkas_wall__area-all2-id").value = sum;
+}
+
+
+/**
+ * @function [sumAreasStoneWall] функция для сумирования всех площадей слойных стен со всех форм
+ * @param {number} areas - переменная поля с площадью стены
+ * @param [function (el)] - функция перебора и сумирования всех полученных площадей из всех форм
+ * @param {number} sum - сумма всех площадей после сложения
+ */
+function sumAreasStoneWall() {
+	let areas = document.getElementsByClassName("stone_wall__result");
+	let sum = 0;
+	[].forEach.call(areas, function (el) {
+		sum += parseFloat(el.value);
+		console.log(sum);
+	});
+	document.getElementById("stone_wall__area-all2-id").value = sum;
 }
 
 
@@ -515,6 +763,22 @@ function sumAreasKarkasWindow() {
 }
 
 /**
+ * @function [sumAreasStoneWindow] функция для сумирования всех площадей окон со всех форм слойных стен
+ * @param {number} areas - переменная поля с площадью стены
+ * @param [function (el)] - функция перебора и сумирования всех полученных площадей из всех форм
+ * @param {number} sum - сумма всех площадей после сложения
+ */
+function sumAreasStoneWindow() {
+	let areas = document.getElementsByClassName("stone_window__result");
+	let sum = 0;
+	[].forEach.call(areas, function (el) {
+		sum += parseFloat(el.value);
+		console.log(sum);
+	});
+	document.getElementById("stone_window__area-all2-id").value = sum;
+}
+
+/**
  * @function [sumAreasKarkasDoor] функция для сумирования всех площадей дверей со всех форм каркасных стен
  * @param {number} areas - переменная поля с площадью стены
  * @param [function (el)] - функция перебора и сумирования всех полученных площадей из всех форм
@@ -528,6 +792,22 @@ function sumAreasKarkasDoor() {
 		console.log(sum);
 	});
 	document.getElementById("karkas_door__area-all2-id").value = sum;
+}
+
+/**
+ * @function [sumAreasStoneDoor] функция для сумирования всех площадей дверей со всех форм слойных стен
+ * @param {number} areas - переменная поля с площадью стены
+ * @param [function (el)] - функция перебора и сумирования всех полученных площадей из всех форм
+ * @param {number} sum - сумма всех площадей после сложения
+ */
+function sumAreasStoneDoor() {
+	let areas = document.getElementsByClassName("stone_door__result");
+	let sum = 0;
+	[].forEach.call(areas, function (el) {
+		sum += parseFloat(el.value);
+		console.log(sum);
+	});
+	document.getElementById("stone_door__area-all2-id").value = sum;
 }
 
 /**
@@ -572,6 +852,46 @@ function copyFormKarkasWall(el) {
 
 
 /**
+ * Кнопка добавления новой формы для стен в разделе слойные стены
+ * @param {nodeStone} nodeStone - переменная для всей формы
+ * @param {cloneNode} newClonedNode - получаем форму и клонируем ее
+ * @param {newFormStoneStenaId} newFormStoneStenaId - добавляем новую форму
+ * @function [copyFormStoneWall] - Функция копирования формы для слойных стен
+ */
+let newFormStoneStenaId = 1;
+let nodeStone = document.getElementById("stone_wall__form-id").cloneNode(true);
+
+// document.querySelector(".add-form").addEventListener("click", function () {
+$(document).on('click', '.add-form', function () {
+	let newClonedNode = nodeStone.cloneNode(true);
+	document.querySelector("#stone_wall_wrp").appendChild(newClonedNode);
+	newClonedNode.id = "stone_wall__form-id-" + newFormStoneStenaId;
+	newClonedNode.querySelector(".stone_wall__length").name = 'data[Стены][' + newFormStoneStenaId + '][Длина]';
+	newClonedNode.querySelector(".stone_wall__length").value = '';
+	newClonedNode.querySelector(".stone_wall__height").name = 'data[Стены][' + newFormStoneStenaId + '][Высота]';
+	newClonedNode.querySelector(".stone_wall__height").value = '';
+	newFormStoneStenaId++;
+	funcStenaStoneWall();
+	perimeterStoneWall();
+	sumPerimetersStoneWall();
+	sumAreasStoneWall();	
+});
+
+function copyFormStoneWall(el) {
+	let articleDiv = el.parentElement;
+	let newArticleDiv = articleDiv.cloneNode(true);
+	document.querySelector("#stone_wall_wrp").appendChild(newArticleDiv);
+	newArticleDiv.id = "stone_wall__form-id-" + newFormStoneStenaId;
+	newArticleDiv.querySelector(".stone_wall__length").name = 'data[Стены][' + newFormStoneStenaId + '][Длина]';
+	newArticleDiv.querySelector(".stone_wall__height").name = 'data[Стены][' + newFormStoneStenaId + '][Высота]';
+	newFormStoneStenaId++;
+	funcStenaStoneWall();
+	perimeterStoneWall();
+	sumPerimetersStoneWall();
+	sumAreasStoneWall();	
+}
+
+/**
  * Кнопка добавления новой формы для окон в разделе каркасные стены
  * @param {nodeKarkasWindow} nodeKarkasWindow - переменная для всей формы
  * @param {cloneNode} newClonedNode - получаем форму и клонируем ее
@@ -609,6 +929,46 @@ function copyFormKarkasWindow(el) {
 	perimeterKarkasWindow();
 	sumPerimetersKarkasWindow();
 	sumAreasKarkasWindow();	
+}
+
+/**
+ * Кнопка добавления новой формы для окон в разделе слойные стены
+ * @param {nodeStoneWindow} nodeStoneWindow - переменная для всей формы
+ * @param {cloneNode} newClonedNode - получаем форму и клонируем ее
+ * @param {newFormStoneWindowId} newFormStoneWindowId - добавляем новую форму
+ * @function [copyFormStoneWindow] - Функция копирования формы окон для каркасных стен
+ */
+let newFormStoneWindowId = 1;
+let nodeStoneWindow = document.getElementById("stone_window__form-id").cloneNode(true);
+
+// document.querySelector(".add-form").addEventListener("click", function () {
+$(document).on('click', '.add-form__stone_window', function () {
+	let newClonedNode = nodeStoneWindow.cloneNode(true);
+	document.querySelector("#stone_window_wrp").appendChild(newClonedNode);
+	newClonedNode.id = "stone_window__form-id-" + newFormStoneWindowId;
+	newClonedNode.querySelector(".stone_window__length").name = 'data[Окна][' + newFormStoneWindowId + '][Ширина]';
+	newClonedNode.querySelector(".stone_window__length").value = '';
+	newClonedNode.querySelector(".stone_window__height").name = 'data[Окна][' + newFormStoneWindowId + '][Высота]';
+	newClonedNode.querySelector(".stone_window__height").value = '';
+	newFormStoneWindowId++;
+	funcStenaStoneWindow();
+	perimeterStoneWindow();
+	sumPerimetersStoneWindow();
+	sumAreasStoneWindow();	
+});
+
+function copyFormStoneWindow(el) {
+	let articleDiv = el.parentElement;
+	let newArticleDiv = articleDiv.cloneNode(true);
+	document.querySelector("#stone_window_wrp").appendChild(newArticleDiv);
+	newArticleDiv.id = "stone_window__form-id-" + newFormStoneWindowId;
+	newArticleDiv.querySelector(".stone_window__length").name = 'data[Окна][' + newFormStoneWindowId + '][Ширина]';
+	newArticleDiv.querySelector(".stone_window__height").name = 'data[Окна][' + newFormStoneWindowId + '][Высота]';
+	newFormStoneWindowId++;
+	funcStenaStoneWindow();
+	perimeterStoneWindow();
+	sumPerimetersStoneWindow();
+	sumAreasStoneWindow();	
 }
 
 /**
@@ -651,6 +1011,46 @@ function copyFormKarkasDoor(el) {
 	sumAreasKarkasDoor();	
 }
 
+/**
+ * Кнопка добавления новой формы для дверей в разделе слойные стены
+ * @param {nodeStoneDoor} nodeStoneDoor - переменная для всей формы
+ * @param {cloneNode} newClonedNode - получаем форму и клонируем ее
+ * @param {newFormStoneDoorId} newFormStoneDoorId - добавляем новую форму
+ * @function [copyFormStoneDoor] - Функция копирования формы дверей для каркасных стен
+ */
+let newFormStoneDoorId = 1;
+let nodeStoneDoor = document.getElementById("stone_door__form-id").cloneNode(true);
+
+// document.querySelector(".add-form").addEventListener("click", function () {
+$(document).on('click', '.add-form__stone_door', function () {
+	let newClonedNode = nodeStoneDoor.cloneNode(true);
+	document.querySelector("#stone_door_wrp").appendChild(newClonedNode);
+	newClonedNode.id = "stone_door__form-id-" + newFormStoneDoorId;
+	newClonedNode.querySelector(".stone_door__length").name = 'data[Двери][' + newFormStoneDoorId + '][Ширина]';
+	newClonedNode.querySelector(".stone_door__length").value = '';
+	newClonedNode.querySelector(".stone_door__height").name = 'data[Двери][' + newFormStoneDoorId + '][Высота]';
+	newClonedNode.querySelector(".stone_door__height").value = '';
+	newFormStoneDoorId++;
+	funcStenaStoneDoor();
+	perimeterStoneDoor();
+	sumPerimetersStoneDoor();
+	sumAreasStoneDoor();	
+});
+
+function copyFormStoneDoor(el) {
+	let articleDiv = el.parentElement;
+	let newArticleDiv = articleDiv.cloneNode(true);
+	document.querySelector("#stone_door_wrp").appendChild(newArticleDiv);
+	newArticleDiv.id = "stone_door__form-id-" + newFormStoneDoorId;
+	newArticleDiv.querySelector(".stone_door__length").name = 'data[Двери][' + newFormStoneDoorId + '][Ширина]';
+	newArticleDiv.querySelector(".stone_door__height").name = 'data[Двери][' + newFormStoneDoorId + '][Высота]';
+	newFormStoneDoorId++;
+	funcStenaStoneDoor();
+	perimeterStoneDoor();
+	sumPerimetersStoneDoor();
+	sumAreasStoneDoor();	
+}
+
 
 /**
  * @function [deleteFormKarkasWall] Функция удаления формы стена для каркасных стен
@@ -665,6 +1065,22 @@ function deleteFormKarkasWall(btn) {
 		btn.parentElement.remove();
 		sumPerimetersKarkasWall();
 		sumAreasKarkasWall();
+	}
+}
+
+/**
+ * @function [deleteFormStoneWall] Функция удаления формы стена для слойных стен
+ * @param {forms} forms - переменная для всей формы
+ * @param {remove} remove - удаляем форму
+ * @function [sumPerimetersStoneWall] вызываем функцию подсчета всех периметров со всех форм для стен
+ * @function [sumAreas] вызываем функцию подсчета всех площадей со всех форм для стен
+ */
+function deleteFormStoneWall(btn) {
+	let forms = document.getElementsByClassName('stone_wall__form');
+	if (forms.length > 1) {
+		btn.parentElement.remove();
+		sumPerimetersStoneWall();
+		sumAreasStoneWall();
 	}
 }
 
@@ -689,6 +1105,25 @@ function deleteFormKarkasWindow(btn) {
 }
 
 /**
+ * @function [deleteFormStoneWindow] Функция удаления формы для окон в слойных стенах
+ * @param {forms} forms - переменная для всей формы
+ * @param {remove} remove - удаляем форму
+ * @function [sumPerimetersStoneWindow] вызываем функцию подсчета всех периметров со всех форм для стен
+ * @function [sumAreas] вызываем функцию подсчета всех площадей со всех форм для стен
+ */
+function deleteFormStoneWindow(btn) {
+	let forms = document.getElementsByClassName('stone_window__form');
+	if (forms.length > 0) {
+		btn.parentElement.remove();
+		sumPerimetersStoneWindow();
+		sumAreasStoneWindow();
+		document.querySelector(".stone_window_wrp").classList.remove("hidden");
+		document.querySelector(".add-form__stone_window").classList.add("hidden");
+		document.querySelector(".show-form__stone_window").classList.remove("hidden");		
+	}
+}
+
+/**
  * @function [deleteFormKarkasDoor] Функция удаления формы для дверей в каркасных стенах
  * @param {forms} forms - переменная для всей формы
  * @param {remove} remove - удаляем форму
@@ -707,11 +1142,30 @@ function deleteFormKarkasDoor(btn) {
 	}
 }
 
+/**
+ * @function [deleteFormStoneDoor] Функция удаления формы для дверей в слойных стенах
+ * @param {forms} forms - переменная для всей формы
+ * @param {remove} remove - удаляем форму
+ * @function [sumPerimetersStoneDoor] вызываем функцию подсчета всех периметров со всех форм для стен
+ * @function [sumAreas] вызываем функцию подсчета всех площадей со всех форм для стен
+ */
+function deleteFormStoneDoor(btn) {
+	let forms = document.getElementsByClassName('stone_door__form');
+	if (forms.length > 0) {
+		btn.parentElement.remove();
+		sumPerimetersStoneDoor();
+		sumAreasStoneDoor();
+		document.querySelector(".stone_door_wrp").classList.remove("hidden");
+		document.querySelector(".add-form__stone_door").classList.add("hidden");
+		document.querySelector(".show-form__stone_door").classList.remove("hidden");		
+	}
+}
+
 
 /**
  * Кнопка показа формы для количества окон в разделе каркасные стены
  * @param {remove} - удаляет класс hidden у формы
- * @function [remuveBtnWindow] remuveBtnWindow - добавляет класс hidden к кнопке показать форму
+ * @param {add} - добавляет класс hidden у формы
  */
 // document.querySelector(".show-form-windows").addEventListener("click", function () {
 	$(document).on('click', '.show-form__karkas_window', function () {
@@ -720,10 +1174,23 @@ function deleteFormKarkasDoor(btn) {
 		document.querySelector(".show-form__karkas_window").classList.add("hidden");
 	});
 
+
+/**
+ * Кнопка показа формы для количества окон в разделе слойные стены
+ * @param {remove} - удаляет класс hidden у формы
+ * @param {add} - добавляет класс hidden у формы
+ */
+// document.querySelector(".show-form-windows").addEventListener("click", function () {
+	$(document).on('click', '.show-form__stone_window', function () {
+		document.querySelector(".stone_window_wrp").classList.remove("hidden");
+		document.querySelector(".add-form__stone_window").classList.remove("hidden");
+		document.querySelector(".show-form__stone_window").classList.add("hidden");
+	});	
+
 /**
  * Кнопка показа формы для количества дверей в разделе каркасные стены
  * @param {remove} - удаляет класс hidden у формы
- * @function [remuveBtnDoor] remuveBtnWindow - добавляет класс hidden к кнопке показать форму
+ * @param {add} - добавляет класс hidden у формы
  */
 // document.querySelector(".show-form-windows").addEventListener("click", function () {
 	$(document).on('click', '.show-form__karkas_door', function () {
@@ -731,7 +1198,19 @@ function deleteFormKarkasDoor(btn) {
 		document.querySelector(".add-form__karkas_door").classList.remove("hidden");
 		document.querySelector(".show-form__karkas_door").classList.add("hidden");
 	});	
-	
+
+
+/**
+ * Кнопка показа формы для количества дверей в разделе слойные стены
+ * @param {remove} - удаляет класс hidden у формы
+ * @param {add} - добавляет класс hidden у формы
+ */
+// document.querySelector(".show-form-windows").addEventListener("click", function () {
+	$(document).on('click', '.show-form__stone_door', function () {
+		document.querySelector(".stone_door_wrp").classList.remove("hidden");
+		document.querySelector(".add-form__stone_door").classList.remove("hidden");
+		document.querySelector(".show-form__stone_door").classList.add("hidden");
+	});		
 
 
 
