@@ -448,7 +448,7 @@ body {
 	}
 
 	.teploizol_form_main .roof,
-	.teploizol_form_main .wall {
+	.teploizol_form_main .walls {
 		display: flex;
 		flex-direction: column;
 		flex-wrap: nowrap;
@@ -457,7 +457,7 @@ body {
 		align-content: center;
 	}
 	.teploizol_form_main .roof_title__h2,
-	.teploizol_form_main .wall_title__h2 {
+	.teploizol_form_main .wall_title__h2{
 		width: auto;
 		margin: 20px 0;
 		text-align: center;
@@ -488,7 +488,10 @@ body {
 	.teploizol_form_main .karkas_door,
 	.teploizol_form_main .stone_wall,
 	.teploizol_form_main .stone_window,
-	.teploizol_form_main .stone_door {
+	.teploizol_form_main .stone_door,
+	.teploizol_form_main .peregor_wall,
+	.teploizol_form_main .peregor_window,
+	.teploizol_form_main .peregor_door {
 		width: 300px;
 		margin: 1px;
 		margin: 0 auto;
@@ -504,7 +507,10 @@ body {
 	.teploizol_form_main .karkas_door__form,
 	.teploizol_form_main .stone_wall__form,
 	.teploizol_form_main .stone_window__form,
-	.teploizol_form_main .stone_door__form {
+	.teploizol_form_main .stone_door__form,
+	.teploizol_form_main .peregor_wall__form,
+	.teploizol_form_main .peregor_window__form,
+	.teploizol_form_main .peregor_door__form {
 		position: relative;
 		width: 295px;
 		background-color: #f9fafa;
@@ -521,7 +527,8 @@ body {
 	.teploizol_form_main .valm_roof__checkbox,
 	.teploizol_form_main .mansard_roof__checkbox,
 	.teploizol_form_main .karkas_wall__checkbox,
-	.teploizol_form_main .stone_wall__checkbox {
+	.teploizol_form_main .stone_wall__checkbox,
+	.teploizol_form_main .peregor_wall__checkbox {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 5px 5px;

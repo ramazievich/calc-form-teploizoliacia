@@ -297,6 +297,68 @@ function clearAllFormStoneDoor() {
 }
 
 /**
+ * Для чекбокса
+ * показ формы расчета теплоизоляции для перегородок
+ * @function [showPeregorWallItems] добавляет класс hidden к чекбоксу
+ * @param {remove} - удаляет класс hidden у формы
+ * @param {check}  - переменная к классу для чекбокса
+ * @param {add}  - добавляет hidden к форме
+ * @function [clearAllFormPeregorWall] функция сброса всех данных в заполненых полях когда checkbox снят
+ * @function [clearAllFormPeregorWindow] функция сброса всех данных в заполненых полях когда checkbox снят
+ * @function [clearAllFormPeregorDoor] функция сброса всех данных в заполненых полях когда checkbox снят
+ */
+
+let checkboxPeregorWall = document.getElementById('check-peregor_wall');
+checkboxPeregorWall.addEventListener('click', clearAllFormPeregorWall);
+
+function showPeregorWallItems(check) {
+	check = document.getElementById("check-peregor_wall");
+	if (check.checked) {
+		document.getElementById("peregor_wall__all_wrp-id").classList.remove("hidden");
+	} else {
+		document.getElementById("peregor_wall__all_wrp-id").classList.add("hidden");
+		clearAllFormPeregorWall();
+		clearAllFormPeregorWindow();
+		clearAllFormPeregorDoor();
+
+		funcStenaPeregorWindow();
+		perimeterPeregorWindow();
+		sumPerimetersPeregorWindow();
+		sumAreasPeregorWindow();	
+
+		funcStenaPeregorWall();
+		perimeterPeregorWall();
+		sumPerimetersPeregorWall();
+		sumAreasPeregorWall();
+
+		funcStenaPeregorDoor();
+		perimeterPeregorDoor();
+		sumPerimetersPeregorDoor();
+		sumAreasPeregorDoor();
+	}
+}
+function clearAllFormPeregorWall() {
+	let form = document.getElementById('peregor_wall_wrp');
+	let inputs = form.getElementsByTagName('input');
+	for (let input of inputs)
+		input.value = '';
+}
+
+function clearAllFormPeregorWindow() {
+	let form = document.getElementById('peregor_window_wrp');
+	let inputs = form.getElementsByTagName('input');
+	for (let input of inputs)
+		input.value = '';
+}
+
+function clearAllFormPeregorDoor() {
+	let form = document.getElementById('peregor_door_wrp');
+	let inputs = form.getElementsByTagName('input');
+	for (let input of inputs)
+		input.value = '';
+}
+
+/**
  * @function [sumAllSquareOdnoskatRoof] Функция подсчета площади односкатной крыши
  */
 function sumAllSquareOdnoskatRoof() {
@@ -408,6 +470,22 @@ function perimeterStoneWall() {
 	}
 }
 
+/**
+ * @function [perimeterPeregorWall] Функция подсчета периметра перегородки для одной формы
+ * @param {allFormsPeregorWall} form переменная для формы подсчета площади стен
+ * @param {number} dlina - поле ввода длины стен
+ * @param {number} result - результат подсчета
+ */
+function perimeterPeregorWall() {
+	for (let i = 0, max = allFormsPeregorWall.length; i < max; i++) {
+		let form = allFormsPeregorWall[i];
+		let dlina = Number(form.querySelector(".peregor_wall__length").value);
+		dlina = parseFloat(dlina);
+		let result = dlina;
+		form.querySelector(".peregor_wall__perimeter").value = result;
+	}
+}
+
 
 /**
  * @function [perimeterKarkasWindow] Функция подсчета ширины окна каркасной стены для одной формы
@@ -442,6 +520,22 @@ function perimeterStoneWindow() {
 } 
 
 /**
+ * @function [perimeterPeregorWindow] Функция подсчета ширины окна перегородки для одной формы
+ * @param {formPeregorWindow} form переменная для формы подсчета площади стен
+ * @param {number} dlina - поле ввода длины стен
+ * @param {number} result - результат подсчета
+*/
+function perimeterPeregorWindow() {
+	for (let i = 0, max = formPeregorWindow.length; i < max; i++) {
+		let form = formPeregorWindow[i];
+		let shirina = Number(form.querySelector(".peregor_window__length").value);
+		shirina = parseFloat(shirina);
+		let result = shirina;
+		form.querySelector(".peregor_window__perimeter").value = result;
+	}
+} 
+
+/**
  * @function [perimeterKarkasDoor] Функция подсчета ширины двери каркасной стены для одной формы
  * @param {formKarkasDoor} form переменная для формы подсчета площади стен
  * @param {number} dlina - поле ввода длины стен
@@ -470,6 +564,23 @@ function perimeterStoneDoor() {
 		shirina = parseFloat(shirina);
 		let result = shirina;
 		form.querySelector(".stone_door__perimeter").value = result;
+	}
+} 
+
+
+/**
+ * @function [perimeterPeregorDoor] Функция подсчета ширины двери перегородки для одной формы
+ * @param {formPeregorDoor} form переменная для формы подсчета площади стен
+ * @param {number} dlina - поле ввода длины стен
+ * @param {number} result - результат подсчета
+*/
+function perimeterPeregorDoor() {
+	for (let i = 0, max = formPeregorDoor.length; i < max; i++) {
+		let form = formPeregorDoor[i];
+		let shirina = Number(form.querySelector(".peregor_door__length").value);
+		shirina = parseFloat(shirina);
+		let result = shirina;
+		form.querySelector(".peregor_door__perimeter").value = result;
 	}
 } 
 
@@ -508,6 +619,22 @@ function sumPerimetersStoneWall() {
 }
 
 /**
+ * @function [sumPerimetersPeregorWall] Функция подсчета всех периметров перегородок со всех форм
+ * @param {number} perim - переменная для поля периметра из формы
+ * @param {forEach} function (el) - перебор полей периметра по всем формам
+ * @param {number} sum - складываем все поля периметра из всех созданных форм
+ */
+function sumPerimetersPeregorWall() {
+	let perim = document.getElementsByClassName("peregor_wall__perimeter");
+	let sum = 0;
+	[].forEach.call(perim, function (el) {
+		sum += parseFloat(el.value);
+		console.log(sum);
+	});
+	document.getElementById("peregor_wall__perimeter-all-id").value = sum;
+}
+
+/**
  * @function [sumPerimetersKarkasWindow] Функция подсчета всех ширин окон в каркасных стенах со всех форм
  * @param {number} perim - переменная для поля периметра из формы
  * @param {forEach} function (el) - перебор полей периметра по всем формам
@@ -538,6 +665,22 @@ function sumPerimetersStoneWindow() {
 		console.log(sum);
 	});
 	document.getElementById("stone_window__perimeter-all-id").value = sum;
+}
+
+/**
+ * @function [sumPerimetersPeregorWindow] Функция подсчета всех ширин окон в перегородках со всех форм
+ * @param {number} perim - переменная для поля периметра из формы
+ * @param {forEach} function (el) - перебор полей периметра по всем формам
+ * @param {number} sum - складываем все поля периметра из всех созданных форм
+ */
+function sumPerimetersPeregorWindow() {
+	let perim = document.getElementsByClassName("peregor_window__perimeter");
+	let sum = 0;
+	[].forEach.call(perim, function (el) {
+		sum += parseFloat(el.value);
+		console.log(sum);
+	});
+	document.getElementById("peregor_window__perimeter-all-id").value = sum;
 }
 
 
@@ -572,6 +715,22 @@ function sumPerimetersStoneDoor() {
 		console.log(sum);
 	});
 	document.getElementById("stone_door__perimeter-all-id").value = sum;
+}
+
+/**
+ * @function [sumPerimetersPeregorDoor] Функция подсчета всех ширин дверей в перегородках со всех форм
+ * @param {number} perim - переменная для поля периметра из формы
+ * @param {forEach} function (el) - перебор полей периметра по всем формам
+ * @param {number} sum - складываем все поля периметра из всех созданных форм
+ */
+function sumPerimetersPeregorDoor() {
+	let perim = document.getElementsByClassName("peregor_door__perimeter");
+	let sum = 0;
+	[].forEach.call(perim, function (el) {
+		sum += parseFloat(el.value);
+		console.log(sum);
+	});
+	document.getElementById("peregor_door__perimeter-all-id").value = sum;
 }
 
 /**
@@ -617,6 +776,29 @@ function funcStenaStoneWall() {
 		visota = parseFloat(visota);
 		let result = (dlina * visota);
 		form.querySelector(".stone_wall__result").value = result.toFixed(2);
+	}
+}
+
+/**
+ * @function [funcStenaPeregorWall] Функция подсчета площади перегородки для одной формы
+ * @param {allFormsPeregorWall} allFormsPeregorWall переменная для формы подсчета площади стен
+ * @param {number} dlina - поле ввода длины стены
+ * @param {number} visota - поле ввода высоты стены
+ * @param {number} result - результат подсчета
+ */
+let allFormsPeregorWall = document.querySelectorAll(".peregor_wall__form");
+console.log(allFormsPeregorWall);
+
+function funcStenaPeregorWall() {
+	allFormsPeregorWall = document.querySelectorAll(".peregor_wall__form");
+	for (let i = 0, max = allFormsPeregorWall.length; i < max; i++) {
+		let form = allFormsPeregorWall[i];
+		let dlina = Number(form.querySelector(".peregor_wall__length").value);
+		dlina = parseFloat(dlina);
+		let visota = Number(form.querySelector(".peregor_wall__height").value);
+		visota = parseFloat(visota);
+		let result = (dlina * visota);
+		form.querySelector(".peregor_wall__result").value = result.toFixed(2);
 	}
 }
 
@@ -667,6 +849,29 @@ function funcStenaStoneWindow() {
 }
 
 /**
+ * @function [funcStenaPeregorWindow] Функция подсчета площади окна для одной формы в разделе перегородки 
+ * @param {formPeregorWindow} formPeregorWindow переменная для формы подсчета площади окна
+ * @param {number} dlina - поле ввода длины стены
+ * @param {number} visota - поле ввода высоты стены
+ * @param {number} result - результат подсчета
+ */
+let formPeregorWindow = document.querySelectorAll(".peregor_window__form");
+console.log(formPeregorWindow);
+
+function funcStenaPeregorWindow() {
+	formPeregorWindow = document.querySelectorAll(".peregor_window__form");
+	for (let i = 0, max = formPeregorWindow.length; i < max; i++) {
+		let form = formPeregorWindow[i];
+		let dlina = Number(form.querySelector(".peregor_window__length").value);
+		dlina = parseFloat(dlina);
+		let visota = Number(form.querySelector(".peregor_window__height").value);
+		visota = parseFloat(visota);
+		let result = (dlina * visota);
+		form.querySelector(".peregor_window__result").value = result.toFixed(2);
+	}
+}
+
+/**
  * @function [funcStenaKarkasDoor] Функция подсчета площади дверей для одной формы в разделе каркасная стена 
  * @param {formKarkasDoor} formKarkasDoor переменная для формы подсчета площади окна
  * @param {number} dlina - поле ввода длины стены
@@ -713,6 +918,29 @@ function funcStenaStoneDoor() {
 }
 
 /**
+ * @function [funcStenaPeregorDoor] Функция подсчета площади дверей для одной формы в разделе перегородки
+ * @param {formPeregorDoor} formPeregorDoor переменная для формы подсчета площади окна
+ * @param {number} dlina - поле ввода длины стены
+ * @param {number} visota - поле ввода высоты стены
+ * @param {number} result - результат подсчета
+ */
+let formPeregorDoor = document.querySelectorAll(".peregor_door__form");
+console.log(formPeregorDoor);
+
+function funcStenaPeregorDoor() {
+	formPeregorDoor = document.querySelectorAll(".peregor_door__form");
+	for (let i = 0, max = formPeregorDoor.length; i < max; i++) {
+		let form = formPeregorDoor[i];
+		let dlina = Number(form.querySelector(".peregor_door__length").value);
+		dlina = parseFloat(dlina);
+		let visota = Number(form.querySelector(".peregor_door__height").value);
+		visota = parseFloat(visota);
+		let result = (dlina * visota);
+		form.querySelector(".peregor_door__result").value = result.toFixed(2);
+	}
+}
+
+/**
  * @function [sumAreasKarkasWall] функция для сумирования всех площадей каркасных стен со всех форм
  * @param {number} areas - переменная поля с площадью стены
  * @param [function (el)] - функция перебора и сумирования всех полученных площадей из всех форм
@@ -743,6 +971,22 @@ function sumAreasStoneWall() {
 		console.log(sum);
 	});
 	document.getElementById("stone_wall__area-all2-id").value = sum;
+}
+
+/**
+ * @function [sumAreasPeregorWall] функция для сумирования всех площадей перегородок со всех форм
+ * @param {number} areas - переменная поля с площадью стены
+ * @param [function (el)] - функция перебора и сумирования всех полученных площадей из всех форм
+ * @param {number} sum - сумма всех площадей после сложения
+ */
+function sumAreasPeregorWall() {
+	let areas = document.getElementsByClassName("peregor_wall__result");
+	let sum = 0;
+	[].forEach.call(areas, function (el) {
+		sum += parseFloat(el.value);
+		console.log(sum);
+	});
+	document.getElementById("peregor_wall__area-all2-id").value = sum;
 }
 
 
@@ -779,6 +1023,22 @@ function sumAreasStoneWindow() {
 }
 
 /**
+ * @function [sumAreasPeregorWindow] функция для сумирования всех площадей окон со всех форм перегородок
+ * @param {number} areas - переменная поля с площадью стены
+ * @param [function (el)] - функция перебора и сумирования всех полученных площадей из всех форм
+ * @param {number} sum - сумма всех площадей после сложения
+ */
+function sumAreasPeregorWindow() {
+	let areas = document.getElementsByClassName("peregor_window__result");
+	let sum = 0;
+	[].forEach.call(areas, function (el) {
+		sum += parseFloat(el.value);
+		console.log(sum);
+	});
+	document.getElementById("peregor_window__area-all2-id").value = sum;
+}
+
+/**
  * @function [sumAreasKarkasDoor] функция для сумирования всех площадей дверей со всех форм каркасных стен
  * @param {number} areas - переменная поля с площадью стены
  * @param [function (el)] - функция перебора и сумирования всех полученных площадей из всех форм
@@ -809,6 +1069,24 @@ function sumAreasStoneDoor() {
 	});
 	document.getElementById("stone_door__area-all2-id").value = sum;
 }
+
+
+/**
+ * @function [sumAreasPeregorDoor] функция для сумирования всех площадей дверей со всех форм перегородок
+ * @param {number} areas - переменная поля с площадью стены
+ * @param [function (el)] - функция перебора и сумирования всех полученных площадей из всех форм
+ * @param {number} sum - сумма всех площадей после сложения
+ */
+function sumAreasPeregorDoor() {
+	let areas = document.getElementsByClassName("peregor_door__result");
+	let sum = 0;
+	[].forEach.call(areas, function (el) {
+		sum += parseFloat(el.value);
+		console.log(sum);
+	});
+	document.getElementById("peregor_door__area-all2-id").value = sum;
+}
+
 
 /**
  * Кнопка добавления новой формы для стен в разделе каркасные стены
@@ -891,6 +1169,48 @@ function copyFormStoneWall(el) {
 	sumAreasStoneWall();	
 }
 
+
+/**
+ * Кнопка добавления новой формы для стен в разделе перегородки
+ * @param {nodePeregor} nodePeregor - переменная для всей формы
+ * @param {cloneNode} newClonedNode - получаем форму и клонируем ее
+ * @param {newFormPeregorStenaId} newFormPeregorStenaId - добавляем новую форму
+ * @function [copyFormPeregorWall] - Функция копирования формы для перегородок
+ */
+let newFormPeregorStenaId = 1;
+let nodePeregor = document.getElementById("peregor_wall__form-id").cloneNode(true);
+
+// document.querySelector(".add-form").addEventListener("click", function () {
+$(document).on('click', '.add-form', function () {
+	let newClonedNode = nodePeregor.cloneNode(true);
+	document.querySelector("#peregor_wall_wrp").appendChild(newClonedNode);
+	newClonedNode.id = "peregor_wall__form-id-" + newFormPeregorStenaId;
+	newClonedNode.querySelector(".peregor_wall__length").name = 'data[Перегородки][' + newFormPeregorStenaId + '][Длина]';
+	newClonedNode.querySelector(".peregor_wall__length").value = '';
+	newClonedNode.querySelector(".peregor_wall__height").name = 'data[Перегородки][' + newFormPeregorStenaId + '][Высота]';
+	newClonedNode.querySelector(".peregor_wall__height").value = '';
+	newFormPeregorStenaId++;
+	funcStenaPeregorWall();
+	perimeterPeregorWall();
+	sumPerimetersPeregorWall();
+	sumAreasPeregorWall();	
+});
+
+function copyFormPeregorWall(el) {
+	let articleDiv = el.parentElement;
+	let newArticleDiv = articleDiv.cloneNode(true);
+	document.querySelector("#peregor_wall_wrp").appendChild(newArticleDiv);
+	newArticleDiv.id = "peregor_wall__form-id-" + newFormPeregorStenaId;
+	newArticleDiv.querySelector(".peregor_wall__length").name = 'data[Перегородки][' + newFormPeregorStenaId + '][Длина]';
+	newArticleDiv.querySelector(".peregor_wall__height").name = 'data[Перегородки][' + newFormPeregorStenaId + '][Высота]';
+	newFormPeregorStenaId++;
+	funcStenaPeregorWall();
+	perimeterPeregorWall();
+	sumPerimetersPeregorWall();
+	sumAreasPeregorWall();	
+}
+
+
 /**
  * Кнопка добавления новой формы для окон в разделе каркасные стены
  * @param {nodeKarkasWindow} nodeKarkasWindow - переменная для всей формы
@@ -936,7 +1256,7 @@ function copyFormKarkasWindow(el) {
  * @param {nodeStoneWindow} nodeStoneWindow - переменная для всей формы
  * @param {cloneNode} newClonedNode - получаем форму и клонируем ее
  * @param {newFormStoneWindowId} newFormStoneWindowId - добавляем новую форму
- * @function [copyFormStoneWindow] - Функция копирования формы окон для каркасных стен
+ * @function [copyFormStoneWindow] - Функция копирования формы окон для слоистой стены
  */
 let newFormStoneWindowId = 1;
 let nodeStoneWindow = document.getElementById("stone_window__form-id").cloneNode(true);
@@ -970,6 +1290,48 @@ function copyFormStoneWindow(el) {
 	sumPerimetersStoneWindow();
 	sumAreasStoneWindow();	
 }
+
+
+/**
+ * Кнопка добавления новой формы для окон в разделе перегородки
+ * @param {nodePeregorWindow} nodePeregorWindow - переменная для всей формы
+ * @param {cloneNode} newClonedNode - получаем форму и клонируем ее
+ * @param {newFormPeregorWindowId} newFormPeregorWindowId - добавляем новую форму
+ * @function [copyFormPeregorWindow] - Функция копирования формы окон для перегородок
+ */
+let newFormPeregorWindowId = 1;
+let nodePeregorWindow = document.getElementById("peregor_window__form-id").cloneNode(true);
+
+// document.querySelector(".add-form").addEventListener("click", function () {
+$(document).on('click', '.add-form__peregor_window', function () {
+	let newClonedNode = nodePeregorWindow.cloneNode(true);
+	document.querySelector("#peregor_window_wrp").appendChild(newClonedNode);
+	newClonedNode.id = "peregor_window__form-id-" + newFormPeregorWindowId;
+	newClonedNode.querySelector(".peregor_window__length").name = 'data[Окна][' + newFormPeregorWindowId + '][Ширина]';
+	newClonedNode.querySelector(".peregor_window__length").value = '';
+	newClonedNode.querySelector(".peregor_window__height").name = 'data[Окна][' + newFormPeregorWindowId + '][Высота]';
+	newClonedNode.querySelector(".peregor_window__height").value = '';
+	newFormPeregorWindowId++;
+	funcStenaPeregorWindow();
+	perimeterPeregorWindow();
+	sumPerimetersPeregorWindow();
+	sumAreasPeregorWindow();	
+});
+
+function copyFormPeregorWindow(el) {
+	let articleDiv = el.parentElement;
+	let newArticleDiv = articleDiv.cloneNode(true);
+	document.querySelector("#peregor_window_wrp").appendChild(newArticleDiv);
+	newArticleDiv.id = "peregor_window__form-id-" + newFormPeregorWindowId;
+	newArticleDiv.querySelector(".peregor_window__length").name = 'data[Окна][' + newFormPeregorWindowId + '][Ширина]';
+	newArticleDiv.querySelector(".peregor_window__height").name = 'data[Окна][' + newFormPeregorWindowId + '][Высота]';
+	newFormPeregorWindowId++;
+	funcStenaPeregorWindow();
+	perimeterPeregorWindow();
+	sumPerimetersPeregorWindow();
+	sumAreasPeregorWindow();	
+}
+
 
 /**
  * Кнопка добавления новой формы для дверей в разделе каркасные стены
@@ -1016,7 +1378,7 @@ function copyFormKarkasDoor(el) {
  * @param {nodeStoneDoor} nodeStoneDoor - переменная для всей формы
  * @param {cloneNode} newClonedNode - получаем форму и клонируем ее
  * @param {newFormStoneDoorId} newFormStoneDoorId - добавляем новую форму
- * @function [copyFormStoneDoor] - Функция копирования формы дверей для каркасных стен
+ * @function [copyFormStoneDoor] - Функция копирования формы дверей для слойных стен
  */
 let newFormStoneDoorId = 1;
 let nodeStoneDoor = document.getElementById("stone_door__form-id").cloneNode(true);
@@ -1053,6 +1415,47 @@ function copyFormStoneDoor(el) {
 
 
 /**
+ * Кнопка добавления новой формы для дверей в разделе перегородки
+ * @param {nodePeregorDoor} nodePeregorDoor - переменная для всей формы
+ * @param {cloneNode} newClonedNode - получаем форму и клонируем ее
+ * @param {newFormPeregorDoorId} newFormPeregorDoorId - добавляем новую форму
+ * @function [copyFormPeregorDoor] - Функция копирования формы дверей для перегородок
+ */
+let newFormPeregorDoorId = 1;
+let nodePeregorDoor = document.getElementById("peregor_door__form-id").cloneNode(true);
+
+// document.querySelector(".add-form").addEventListener("click", function () {
+$(document).on('click', '.add-form__peregor_door', function () {
+	let newClonedNode = nodePeregorDoor.cloneNode(true);
+	document.querySelector("#peregor_door_wrp").appendChild(newClonedNode);
+	newClonedNode.id = "peregor_door__form-id-" + newFormPeregorDoorId;
+	newClonedNode.querySelector(".peregor_door__length").name = 'data[Двери][' + newFormPeregorDoorId + '][Ширина]';
+	newClonedNode.querySelector(".peregor_door__length").value = '';
+	newClonedNode.querySelector(".peregor_door__height").name = 'data[Двери][' + newFormPeregorDoorId + '][Высота]';
+	newClonedNode.querySelector(".peregor_door__height").value = '';
+	newFormPeregorDoorId++;
+	funcStenaPeregorDoor();
+	perimeterPeregorDoor();
+	sumPerimetersPeregorDoor();
+	sumAreasPeregorDoor();	
+});
+
+function copyFormPeregorDoor(el) {
+	let articleDiv = el.parentElement;
+	let newArticleDiv = articleDiv.cloneNode(true);
+	document.querySelector("#peregor_door_wrp").appendChild(newArticleDiv);
+	newArticleDiv.id = "peregor_door__form-id-" + newFormPeregorDoorId;
+	newArticleDiv.querySelector(".peregor_door__length").name = 'data[Двери][' + newFormPeregorDoorId + '][Ширина]';
+	newArticleDiv.querySelector(".peregor_door__height").name = 'data[Двери][' + newFormPeregorDoorId + '][Высота]';
+	newFormPeregorDoorId++;
+	funcStenaPeregorDoor();
+	perimeterPeregorDoor();
+	sumPerimetersPeregorDoor();
+	sumAreasPeregorDoor();		
+}
+
+
+/**
  * @function [deleteFormKarkasWall] Функция удаления формы стена для каркасных стен
  * @param {forms} forms - переменная для всей формы
  * @param {remove} remove - удаляем форму
@@ -1081,6 +1484,23 @@ function deleteFormStoneWall(btn) {
 		btn.parentElement.remove();
 		sumPerimetersStoneWall();
 		sumAreasStoneWall();
+	}
+}
+
+
+/**
+ * @function [deleteFormPeregorWall] Функция удаления формы стена для перегородок
+ * @param {forms} forms - переменная для всей формы
+ * @param {remove} remove - удаляем форму
+ * @function [sumPerimetersPeregorWall] вызываем функцию подсчета всех периметров со всех форм для стен
+ * @function [sumAreas] вызываем функцию подсчета всех площадей со всех форм для стен
+ */
+function deleteFormPeregorWall(btn) {
+	let forms = document.getElementsByClassName('peregor_wall__form');
+	if (forms.length > 1) {
+		btn.parentElement.remove();
+		sumPerimetersPeregorWall();
+		sumAreasPeregorWall();
 	}
 }
 
@@ -1123,6 +1543,28 @@ function deleteFormStoneWindow(btn) {
 	}
 }
 
+
+
+/**
+ * @function [deleteFormPeregorWindow] Функция удаления формы для окон в перегородках
+ * @param {forms} forms - переменная для всей формы
+ * @param {remove} remove - удаляем форму
+ * @function [sumPerimetersPeregorWindow] вызываем функцию подсчета всех периметров со всех форм для стен
+ * @function [sumAreas] вызываем функцию подсчета всех площадей со всех форм для стен
+ */
+function deleteFormPeregorWindow(btn) {
+	let forms = document.getElementsByClassName('peregor_window__form');
+	if (forms.length > 0) {
+		btn.parentElement.remove();
+		sumPerimetersPeregorWindow();
+		sumAreasPeregorWindow();
+		document.querySelector(".peregor_window_wrp").classList.remove("hidden");
+		document.querySelector(".add-form__peregor_window").classList.add("hidden");
+		document.querySelector(".show-form__peregor_window").classList.remove("hidden");		
+	}
+}
+
+
 /**
  * @function [deleteFormKarkasDoor] Функция удаления формы для дверей в каркасных стенах
  * @param {forms} forms - переменная для всей формы
@@ -1163,6 +1605,26 @@ function deleteFormStoneDoor(btn) {
 
 
 /**
+ * @function [deleteFormPeregorDoor] Функция удаления формы для дверей в перегородках
+ * @param {forms} forms - переменная для всей формы
+ * @param {remove} remove - удаляем форму
+ * @function [sumPerimetersPeregorDoor] вызываем функцию подсчета всех периметров со всех форм для стен
+ * @function [sumAreas] вызываем функцию подсчета всех площадей со всех форм для стен
+ */
+function deleteFormPeregorDoor(btn) {
+	let forms = document.getElementsByClassName('peregor_door__form');
+	if (forms.length > 0) {
+		btn.parentElement.remove();
+		sumPerimetersPeregorDoor();
+		sumAreasPeregorDoor();
+		document.querySelector(".peregor_door_wrp").classList.remove("hidden");
+		document.querySelector(".add-form__peregor_door").classList.add("hidden");
+		document.querySelector(".show-form__peregor_door").classList.remove("hidden");		
+	}
+}
+
+
+/**
  * Кнопка показа формы для количества окон в разделе каркасные стены
  * @param {remove} - удаляет класс hidden у формы
  * @param {add} - добавляет класс hidden у формы
@@ -1186,6 +1648,20 @@ function deleteFormStoneDoor(btn) {
 		document.querySelector(".add-form__stone_window").classList.remove("hidden");
 		document.querySelector(".show-form__stone_window").classList.add("hidden");
 	});	
+
+
+/**
+ * Кнопка показа формы для количества окон в разделе перегородки
+ * @param {remove} - удаляет класс hidden у формы
+ * @param {add} - добавляет класс hidden у формы
+ */
+// document.querySelector(".show-form-windows").addEventListener("click", function () {
+	$(document).on('click', '.show-form__peregor_window', function () {
+		document.querySelector(".peregor_window_wrp").classList.remove("hidden");
+		document.querySelector(".add-form__peregor_window").classList.remove("hidden");
+		document.querySelector(".show-form__peregor_window").classList.add("hidden");
+	});		
+
 
 /**
  * Кнопка показа формы для количества дверей в разделе каркасные стены
@@ -1212,6 +1688,18 @@ function deleteFormStoneDoor(btn) {
 		document.querySelector(".show-form__stone_door").classList.add("hidden");
 	});		
 
+
+/**
+ * Кнопка показа формы для количества дверей в разделе перегородки
+ * @param {remove} - удаляет класс hidden у формы
+ * @param {add} - добавляет класс hidden у формы
+ */
+// document.querySelector(".show-form-windows").addEventListener("click", function () {
+	$(document).on('click', '.show-form__peregor_door', function () {
+		document.querySelector(".peregor_door_wrp").classList.remove("hidden");
+		document.querySelector(".add-form__peregor_door").classList.remove("hidden");
+		document.querySelector(".show-form__peregor_door").classList.add("hidden");
+	});		
 
 
 

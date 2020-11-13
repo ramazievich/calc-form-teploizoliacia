@@ -276,7 +276,7 @@
                   step="0.0001" min="0">         
             </div>
          </section>
-         <section class="wall">
+         <section class="walls">
             <h2 class="wall_title__h2">Расчёт теплоизоляционных материалов для стен</h2>
             <!-- Начало формы для стен-->
             <h3 class="wall__h2">Выберите тип стены:</h3>
@@ -833,6 +833,269 @@
                      </div>
                   </div>
                </div>
+               <div class="peregor_wall">
+                  <div class="peregor_wall__checkbox bg_fon_roof">
+                     <div class="peregor_wall__wrp">
+                        <img class="img__peregor_wall" src="../img/calc/teploizoliacia/peregorodka_stena.svg" alt="перегородка" height="150" id="img__peregor_wall-id">
+                     </div>
+                     <div class="checkbox__wrp">
+                        <label class="custom-lable" for="check-peregor_wall">
+                        <input type="checkbox" id="check-peregor_wall" value="interest_peregor_wall" name="peregor_wall_item" onchange='showPeregorWallItems(this)'>
+                        <i></i>
+                        <span class="peregor_wall__span">Перегородка</span>
+                        </label>
+                     </div>
+                  </div>
+                  <div class="peregor_wall__all_wrp hidden" id="peregor_wall__all_wrp-id">
+                     <div class="peregor_wall__form_wrp">
+                        <div class="peregor_wall_item scetchik_formy" id="peregor_wall_wrp">
+                           <form action="#" class="peregor_wall__form" id="peregor_wall__form-id">
+                              <span class="peregor_wall__label nomer_formy">Перегородка №</span>
+                              <svg class="remove-form-btn remove-form" id="close-formPeregorWall" onclick="deleteFormPeregorWall(this)"
+                                 focusable="false" width="20" height="20" viewBox="0 0 20 20">
+                                 <path class="st0"
+                                    d="M12.7,7.2c-0.3,0-0.5,0.2-0.5,0.5v8.9c0,0.3,0.2,0.5,0.5,0.5s0.5-0.2,0.5-0.5V7.7C13.2,7.5,13,7.2,12.7,7.2z"/>
+                                 <path class="st0"
+                                    d="M7.3,7.2C7,7.2,6.8,7.5,6.8,7.7v8.9C6.8,16.8,7,17,7.3,17c0.3,0,0.5-0.2,0.5-0.5V7.7C7.7,7.5,7.5,7.2,7.3,7.2z"/>
+                                 <path class="st0" d="M3.3,6v11.5c0,0.7,0.2,1.3,0.7,1.8C4.4,19.7,5,20,5.6,20h8.7c0.6,0,1.2-0.3,1.7-0.7c0.4-0.5,0.7-1.1,0.7-1.8V6
+                                    c0.9-0.2,1.4-1.1,1.3-2c-0.1-0.9-0.9-1.6-1.7-1.6h-2.4V1.9c0-0.5-0.2-1-0.5-1.3C13,0.2,12.5,0,12,0H7.9C7.5,0,7,0.2,6.6,0.5
+                                    C6.3,0.9,6.1,1.4,6.1,1.9v0.6H3.7C2.9,2.4,2.1,3.1,2,4C1.9,4.9,2.4,5.7,3.3,6z M14.4,19.1H5.6c-0.8,0-1.4-0.7-1.4-1.6V6h11.5v11.5
+                                    C15.8,18.4,15.1,19.1,14.4,19.1z M7,1.9c0-0.2,0.1-0.5,0.3-0.7C7.5,1,7.7,0.9,7.9,0.9H12c0.2,0,0.5,0.1,0.6,0.3
+                                    c0.2,0.2,0.3,0.4,0.3,0.7v0.6H7V1.9z M3.7,3.4h12.5c0.5,0,0.8,0.4,0.8,0.8s-0.4,0.8-0.8,0.8H3.7c-0.5,0-0.8-0.4-0.8-0.8
+                                    S3.3,3.4,3.7,3.4z"/>
+                                 <path class="st0"
+                                    d="M10,7.2c-0.3,0-0.5,0.2-0.5,0.5v8.9c0,0.3,0.2,0.5,0.5,0.5c0.3,0,0.5-0.2,0.5-0.5V7.7C10.5,7.5,10.2,7.2,10,7.2z"/>
+                              </svg>
+                              <svg class="copy-form-btn copy-form" onclick="copyFormPeregorWall(this)"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0"
+                                 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="20">
+                                 <path d="M74.7,512h256c29.4,0,53.3-23.9,53.3-53.3v-320c0-29.4-23.9-53.3-53.3-53.3h-256c-29.4,0-53.3,23.9-53.3,53.3v320
+                                    C21.3,488.1,45.3,512,74.7,512z M330.7,106.7c17.6,0,32,14.4,32,32v320c0,17.6-14.4,32-32,32h-256c-17.6,0-32-14.4-32-32v-320
+                                    c0-17.6,14.4-32,32-32H330.7z"/>
+                                 <path d="M416,448h21.3c29.4,0,53.3-23.9,53.3-53.3V53.3c0-29.4-23.9-53.3-53.3-53.3h-256C151.9,0,128,23.9,128,53.3
+                                    c0,5.9,4.8,10.7,10.7,10.7s10.7-4.8,10.7-10.7c0-17.6,14.4-32,32-32h256c17.6,0,32,14.4,32,32v341.3c0,17.6-14.4,32-32,32H416
+                                    c-5.9,0-10.7,4.8-10.7,10.7S410.1,448,416,448z"/>
+                                 <path d="M117.3,362.7H288c5.9,0,10.7-4.8,10.7-10.7c0-5.9-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7
+                                    C106.7,357.9,111.4,362.7,117.3,362.7z"/>
+                                 <path d="M117.3,448H288c5.9,0,10.7-4.8,10.7-10.7s-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,448,117.3,448z"/>
+                                 <path d="M117.3,277.3H288c5.9,0,10.7-4.8,10.7-10.7S293.9,256,288,256H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,277.3,117.3,277.3z"
+                                    />
+                                 <path d="M117.3,192H288c5.9,0,10.7-4.8,10.7-10.7s-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,192,117.3,192z"/>
+                              </svg>
+                              <span class="podskazka">Копировать</span>
+                              <div class="input_label__groups_item-wrp">
+                                 <div class="input_label__groups-wrp">
+                                    <div class="input_label-wrp">
+                                       <label class="input_label">Длина, м</label>
+                                       <input class="filter_data peregor_wall__length input-style" type="number"
+                                          name="data[Перегородки][0][Длина]" step="0.0001" min="0"
+                                          oninput="validity.valid||(value='');"
+                                          onkeyup="funcStenaPeregorWall(); perimeterPeregorWall(); sumPerimetersPeregorWall(); sumAreasPeregorWall();">
+                                    </div>
+                                    <div class="input_label-wrp">
+                                       <label class="input_label">
+                                       Высота, м </label>
+                                       <input class="filter_data peregor_wall__height input-style" type="number"
+                                          name="data[Перегородки][0][Высота]" step="0.0001" min="0"
+                                          oninput="validity.valid||(value='');"
+                                          onkeyup="funcStenaPeregorWall(); perimeterPeregorWall(); sumAreasPeregorWall();">
+                                    </div>
+                                 </div>
+                                 <div class="hidden">
+                                    <label class="input_label">Периметр перегородки, м </label>
+                                    <input class="peregor_wall__perimeter input-style" disabled type="number"
+                                       name="peregor_wall__perimeter"
+                                       step="0.0001" min="0">
+                                 </div>
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Площадь, м&sup2;</label>
+                                    <input class="peregor_wall__result input-style" type="text"
+                                       name="peregor_wall__result[]" disabled>
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                        <button class="add-form-btn add-form" id="add__peregor_wall" type="button">
+                           <svg class="add-icon" focusable="false" width="20" height="20" viewBox="0 0 20 20">
+                              <path class="st0" d="M10,0C4.48,0,0,4.48,0,10s4.48,10,10,10s10-4.48,10-10S15.52,0,10,0z M14.38,10.83h-3.54v3.54
+                                 c0,0.46-0.38,0.83-0.83,0.83s-0.83-0.38-0.83-0.83v-3.54H5.62c-0.46,0-0.83-0.38-0.83-0.83s0.38-0.83,0.83-0.83h3.54V5.62
+                                 c0-0.46,0.38-0.83,0.83-0.83s0.83,0.38,0.83,0.83v3.54h3.54c0.46,0,0.83,0.38,0.83,0.83S14.83,10.83,14.38,10.83z"/>
+                           </svg>
+                           <span class="txt-btn">добавить стену</span>
+                        </button>
+                     </div>
+                     <div class="peregor_window__form_wrp">
+                        <div class="peregor_window_wrp scetchik_formy hidden" id="peregor_window_wrp">
+                           <form action="#" class="peregor_window__form" id="peregor_window__form-id">
+                              <span class="peregor_window__label nomer_formy">Окно №</span>
+                              <svg class="remove-form-btn remove-form" id="close-formPeregorWindow" onclick="deleteFormPeregorWindow(this)"
+                                 focusable="false" width="20" height="20" viewBox="0 0 20 20">
+                                 <path class="st0"
+                                    d="M12.7,7.2c-0.3,0-0.5,0.2-0.5,0.5v8.9c0,0.3,0.2,0.5,0.5,0.5s0.5-0.2,0.5-0.5V7.7C13.2,7.5,13,7.2,12.7,7.2z"/>
+                                 <path class="st0"
+                                    d="M7.3,7.2C7,7.2,6.8,7.5,6.8,7.7v8.9C6.8,16.8,7,17,7.3,17c0.3,0,0.5-0.2,0.5-0.5V7.7C7.7,7.5,7.5,7.2,7.3,7.2z"/>
+                                 <path class="st0" d="M3.3,6v11.5c0,0.7,0.2,1.3,0.7,1.8C4.4,19.7,5,20,5.6,20h8.7c0.6,0,1.2-0.3,1.7-0.7c0.4-0.5,0.7-1.1,0.7-1.8V6
+                                    c0.9-0.2,1.4-1.1,1.3-2c-0.1-0.9-0.9-1.6-1.7-1.6h-2.4V1.9c0-0.5-0.2-1-0.5-1.3C13,0.2,12.5,0,12,0H7.9C7.5,0,7,0.2,6.6,0.5
+                                    C6.3,0.9,6.1,1.4,6.1,1.9v0.6H3.7C2.9,2.4,2.1,3.1,2,4C1.9,4.9,2.4,5.7,3.3,6z M14.4,19.1H5.6c-0.8,0-1.4-0.7-1.4-1.6V6h11.5v11.5
+                                    C15.8,18.4,15.1,19.1,14.4,19.1z M7,1.9c0-0.2,0.1-0.5,0.3-0.7C7.5,1,7.7,0.9,7.9,0.9H12c0.2,0,0.5,0.1,0.6,0.3
+                                    c0.2,0.2,0.3,0.4,0.3,0.7v0.6H7V1.9z M3.7,3.4h12.5c0.5,0,0.8,0.4,0.8,0.8s-0.4,0.8-0.8,0.8H3.7c-0.5,0-0.8-0.4-0.8-0.8
+                                    S3.3,3.4,3.7,3.4z"/>
+                                 <path class="st0"
+                                    d="M10,7.2c-0.3,0-0.5,0.2-0.5,0.5v8.9c0,0.3,0.2,0.5,0.5,0.5c0.3,0,0.5-0.2,0.5-0.5V7.7C10.5,7.5,10.2,7.2,10,7.2z"/>
+                              </svg>
+                              <svg class="copy-form-btn copy-form" onclick="copyFormPeregorWindow(this)"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0"
+                                 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="20">
+                                 <path d="M74.7,512h256c29.4,0,53.3-23.9,53.3-53.3v-320c0-29.4-23.9-53.3-53.3-53.3h-256c-29.4,0-53.3,23.9-53.3,53.3v320
+                                    C21.3,488.1,45.3,512,74.7,512z M330.7,106.7c17.6,0,32,14.4,32,32v320c0,17.6-14.4,32-32,32h-256c-17.6,0-32-14.4-32-32v-320
+                                    c0-17.6,14.4-32,32-32H330.7z"/>
+                                 <path d="M416,448h21.3c29.4,0,53.3-23.9,53.3-53.3V53.3c0-29.4-23.9-53.3-53.3-53.3h-256C151.9,0,128,23.9,128,53.3
+                                    c0,5.9,4.8,10.7,10.7,10.7s10.7-4.8,10.7-10.7c0-17.6,14.4-32,32-32h256c17.6,0,32,14.4,32,32v341.3c0,17.6-14.4,32-32,32H416
+                                    c-5.9,0-10.7,4.8-10.7,10.7S410.1,448,416,448z"/>
+                                 <path d="M117.3,362.7H288c5.9,0,10.7-4.8,10.7-10.7c0-5.9-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7
+                                    C106.7,357.9,111.4,362.7,117.3,362.7z"/>
+                                 <path d="M117.3,448H288c5.9,0,10.7-4.8,10.7-10.7s-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,448,117.3,448z"/>
+                                 <path d="M117.3,277.3H288c5.9,0,10.7-4.8,10.7-10.7S293.9,256,288,256H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,277.3,117.3,277.3z"
+                                    />
+                                 <path d="M117.3,192H288c5.9,0,10.7-4.8,10.7-10.7s-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,192,117.3,192z"/>
+                              </svg>
+                              <span class="podskazka">Копировать</span>
+                              <div class="input_label__groups_item-wrp">
+                                 <div class="input_label__groups-wrp">
+                                    <div class="input_label-wrp">
+                                       <label class="input_label">Ширина, м</label>
+                                       <input class="filter_data peregor_window__length input-style" type="number"
+                                          name="data[Окна][0][Ширина]" step="0.0001" min="0"
+                                          oninput="validity.valid||(value='');"
+                                          onkeyup="funcStenaPeregorWindow(); perimeterPeregorWindow(); sumPerimetersPeregorWindow(); sumAreasPeregorWindow();">
+                                    </div>
+                                    <div class="input_label-wrp">
+                                       <label class="input_label">
+                                       Высота, м </label>
+                                       <input class="filter_data peregor_window__height input-style" type="number"
+                                          name="data[Окна][0][Высота]" step="0.0001" min="0"
+                                          oninput="validity.valid||(value='');"
+                                          onkeyup="funcStenaPeregorWindow(); perimeterPeregorWindow(); sumAreasPeregorWindow();">
+                                    </div>
+                                 </div>
+                                 <div class="hidden">
+                                    <label class="input_label">Ширина окна, м </label>
+                                    <input class="peregor_window__perimeter input-style" disabled type="number"
+                                       name="peregor_window__perimeter"
+                                       step="0.0001" min="0">
+                                 </div>
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Площадь, м&sup2;</label>
+                                    <input class="peregor_window__result input-style" type="text"
+                                       name="peregor_window__result[]" disabled>
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                        <button class="add-form-btn add-form__peregor_window hidden" id="add__peregor_window" type="button">
+                           <svg class="add-icon" focusable="false" width="20" height="20" viewBox="0 0 20 20">
+                              <path class="st0" d="M10,0C4.48,0,0,4.48,0,10s4.48,10,10,10s10-4.48,10-10S15.52,0,10,0z M14.38,10.83h-3.54v3.54
+                                 c0,0.46-0.38,0.83-0.83,0.83s-0.83-0.38-0.83-0.83v-3.54H5.62c-0.46,0-0.83-0.38-0.83-0.83s0.38-0.83,0.83-0.83h3.54V5.62
+                                 c0-0.46,0.38-0.83,0.83-0.83s0.83,0.38,0.83,0.83v3.54h3.54c0.46,0,0.83,0.38,0.83,0.83S14.83,10.83,14.38,10.83z"/>
+                           </svg>
+                           <span class="txt-btn">добавить окно</span>
+                        </button>
+                        <button class="show-form-btn show-form__peregor_window" id="show-form__peregor_window-id" type="button">
+                           <svg class="add-icon" focusable="false" width="20" height="20" viewBox="0 0 20 20">
+                              <path class="st0" d="M10,0C4.48,0,0,4.48,0,10s4.48,10,10,10s10-4.48,10-10S15.52,0,10,0z M14.38,10.83h-3.54v3.54
+                                 c0,0.46-0.38,0.83-0.83,0.83s-0.83-0.38-0.83-0.83v-3.54H5.62c-0.46,0-0.83-0.38-0.83-0.83s0.38-0.83,0.83-0.83h3.54V5.62
+                                 c0-0.46,0.38-0.83,0.83-0.83s0.83,0.38,0.83,0.83v3.54h3.54c0.46,0,0.83,0.38,0.83,0.83S14.83,10.83,14.38,10.83z"/>
+                           </svg>
+                           <span class="txt-btn">добавить окно</span>
+                        </button>
+                     </div>
+                     <div class="peregor_door__form_wrp">
+                        <div class="peregor_door_wrp scetchik_formy hidden" id="peregor_door_wrp">
+                           <form action="#" class="peregor_door__form" id="peregor_door__form-id">
+                              <span class="karkas_door__label nomer_formy">Дверь №</span>
+                              <svg class="remove-form-btn remove-form" id="close-formPeregorDoor" onclick="deleteFormPeregorDoor(this)"
+                                 focusable="false" width="20" height="20" viewBox="0 0 20 20">
+                                 <path class="st0"
+                                    d="M12.7,7.2c-0.3,0-0.5,0.2-0.5,0.5v8.9c0,0.3,0.2,0.5,0.5,0.5s0.5-0.2,0.5-0.5V7.7C13.2,7.5,13,7.2,12.7,7.2z"/>
+                                 <path class="st0"
+                                    d="M7.3,7.2C7,7.2,6.8,7.5,6.8,7.7v8.9C6.8,16.8,7,17,7.3,17c0.3,0,0.5-0.2,0.5-0.5V7.7C7.7,7.5,7.5,7.2,7.3,7.2z"/>
+                                 <path class="st0" d="M3.3,6v11.5c0,0.7,0.2,1.3,0.7,1.8C4.4,19.7,5,20,5.6,20h8.7c0.6,0,1.2-0.3,1.7-0.7c0.4-0.5,0.7-1.1,0.7-1.8V6
+                                    c0.9-0.2,1.4-1.1,1.3-2c-0.1-0.9-0.9-1.6-1.7-1.6h-2.4V1.9c0-0.5-0.2-1-0.5-1.3C13,0.2,12.5,0,12,0H7.9C7.5,0,7,0.2,6.6,0.5
+                                    C6.3,0.9,6.1,1.4,6.1,1.9v0.6H3.7C2.9,2.4,2.1,3.1,2,4C1.9,4.9,2.4,5.7,3.3,6z M14.4,19.1H5.6c-0.8,0-1.4-0.7-1.4-1.6V6h11.5v11.5
+                                    C15.8,18.4,15.1,19.1,14.4,19.1z M7,1.9c0-0.2,0.1-0.5,0.3-0.7C7.5,1,7.7,0.9,7.9,0.9H12c0.2,0,0.5,0.1,0.6,0.3
+                                    c0.2,0.2,0.3,0.4,0.3,0.7v0.6H7V1.9z M3.7,3.4h12.5c0.5,0,0.8,0.4,0.8,0.8s-0.4,0.8-0.8,0.8H3.7c-0.5,0-0.8-0.4-0.8-0.8
+                                    S3.3,3.4,3.7,3.4z"/>
+                                 <path class="st0"
+                                    d="M10,7.2c-0.3,0-0.5,0.2-0.5,0.5v8.9c0,0.3,0.2,0.5,0.5,0.5c0.3,0,0.5-0.2,0.5-0.5V7.7C10.5,7.5,10.2,7.2,10,7.2z"/>
+                              </svg>
+                              <svg class="copy-form-btn copy-form" onclick="copyFormPeregorDoor(this)" 
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0"
+                                 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="20">
+                                 <path d="M74.7,512h256c29.4,0,53.3-23.9,53.3-53.3v-320c0-29.4-23.9-53.3-53.3-53.3h-256c-29.4,0-53.3,23.9-53.3,53.3v320
+                                    C21.3,488.1,45.3,512,74.7,512z M330.7,106.7c17.6,0,32,14.4,32,32v320c0,17.6-14.4,32-32,32h-256c-17.6,0-32-14.4-32-32v-320
+                                    c0-17.6,14.4-32,32-32H330.7z"/>
+                                 <path d="M416,448h21.3c29.4,0,53.3-23.9,53.3-53.3V53.3c0-29.4-23.9-53.3-53.3-53.3h-256C151.9,0,128,23.9,128,53.3
+                                    c0,5.9,4.8,10.7,10.7,10.7s10.7-4.8,10.7-10.7c0-17.6,14.4-32,32-32h256c17.6,0,32,14.4,32,32v341.3c0,17.6-14.4,32-32,32H416
+                                    c-5.9,0-10.7,4.8-10.7,10.7S410.1,448,416,448z"/>
+                                 <path d="M117.3,362.7H288c5.9,0,10.7-4.8,10.7-10.7c0-5.9-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7
+                                    C106.7,357.9,111.4,362.7,117.3,362.7z"/>
+                                 <path d="M117.3,448H288c5.9,0,10.7-4.8,10.7-10.7s-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,448,117.3,448z"/>
+                                 <path d="M117.3,277.3H288c5.9,0,10.7-4.8,10.7-10.7S293.9,256,288,256H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,277.3,117.3,277.3z"
+                                    />
+                                 <path d="M117.3,192H288c5.9,0,10.7-4.8,10.7-10.7s-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,192,117.3,192z"/>
+                              </svg>
+                              <span class="podskazka">Копировать</span>
+                              <div class="input_label__groups_item-wrp">
+                                 <div class="input_label__groups-wrp">
+                                    <div class="input_label-wrp">
+                                       <label class="input_label">Ширина, м</label>
+                                       <input class="filter_data peregor_door__length input-style" type="number"
+                                          name="data[Двери][0][Ширина]" step="0.0001" min="0"
+                                          oninput="validity.valid||(value='');"
+                                          onkeyup="funcStenaPeregorDoor(); perimeterPeregorDoor(); sumPerimetersPeregorDoor(); sumAreasPeregorDoor();">
+                                    </div>
+                                    <div class="input_label-wrp">
+                                       <label class="input_label">
+                                       Высота, м </label>
+                                       <input class="filter_data peregor_door__height input-style" type="number"
+                                          name="data[Двери][0][Высота]" step="0.0001" min="0"
+                                          oninput="validity.valid||(value='');"
+                                          onkeyup="funcStenaPeregorDoor(); perimeterPeregorDoor(); sumAreasPeregorDoor();">
+                                    </div>
+                                 </div>
+                                 <div class="hidden">
+                                    <label class="input_label">Ширина окна, м </label>
+                                    <input class="peregor_door__perimeter input-style" disabled type="number"
+                                       name="peregor_door__perimeter"
+                                       step="0.0001" min="0">
+                                 </div>
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Площадь, м&sup2;</label>
+                                    <input class="peregor_door__result input-style" type="text"
+                                       name="peregor_door__result[]" disabled>
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                        <button class="add-form-btn add-form__peregor_door hidden" id="add__peregor_door" type="button">
+                           <svg class="add-icon" focusable="false" width="20" height="20" viewBox="0 0 20 20">
+                              <path class="st0" d="M10,0C4.48,0,0,4.48,0,10s4.48,10,10,10s10-4.48,10-10S15.52,0,10,0z M14.38,10.83h-3.54v3.54
+                                 c0,0.46-0.38,0.83-0.83,0.83s-0.83-0.38-0.83-0.83v-3.54H5.62c-0.46,0-0.83-0.38-0.83-0.83s0.38-0.83,0.83-0.83h3.54V5.62
+                                 c0-0.46,0.38-0.83,0.83-0.83s0.83,0.38,0.83,0.83v3.54h3.54c0.46,0,0.83,0.38,0.83,0.83S14.83,10.83,14.38,10.83z"/>
+                           </svg>
+                           <span class="txt-btn">добавить дверь</span>
+                        </button>
+                        <button class="show-form-btn show-form__peregor_door" id="show-form__peregor_door-id" type="button">
+                           <svg class="add-icon" focusable="false" width="20" height="20" viewBox="0 0 20 20">
+                              <path class="st0" d="M10,0C4.48,0,0,4.48,0,10s4.48,10,10,10s10-4.48,10-10S15.52,0,10,0z M14.38,10.83h-3.54v3.54
+                                 c0,0.46-0.38,0.83-0.83,0.83s-0.83-0.38-0.83-0.83v-3.54H5.62c-0.46,0-0.83-0.38-0.83-0.83s0.38-0.83,0.83-0.83h3.54V5.62
+                                 c0-0.46,0.38-0.83,0.83-0.83s0.83,0.38,0.83,0.83v3.54h3.54c0.46,0,0.83,0.38,0.83,0.83S14.83,10.83,14.38,10.83z"/>
+                           </svg>
+                           <span class="txt-btn">добавить дверь</span>
+                        </button>
+                     </div>
+                  </div>
+               </div>
                <!-- Вывод общих значений -->
                <div class="all-results-wrp hidden">				
                   <label class="input_label">Общий периметр каркасных стен, м </label>
@@ -859,8 +1122,8 @@
                   <input class="filter_data karkas_door__area-all2 input-style" id="karkas_door__area-all2-id" disabled type="number"
                      name="data[Площадь дверей]"
                      step="0.0001" min="0">
-
-
+                     
+                     <!-- Вывод общих значений слоистых стен -->
                   <label class="input_label">Общий периметр слоистых стен, м </label>
                   <input class="filter_data stone_wall__perimeter-all input-style" disabled id="stone_wall__perimeter-all-id" type="number"
                      name="data[Периметр стен]"
@@ -884,7 +1147,33 @@
                   <label class="input_label">Общая площадь дверей в слоистых стенах, м² </label>
                   <input class="filter_data stone_door__area-all2 input-style" id="stone_door__area-all2-id" disabled type="number"
                      name="data[Площадь дверей]"
-                     step="0.0001" min="0">   
+                     step="0.0001" min="0"> 
+                     
+                        <!-- Вывод общих значений перегородок -->
+                        <label class="input_label">Общий периметр перегородок, м </label>
+                        <input class="filter_data peregor_wall__perimeter-all input-style" disabled id="peregor_wall__perimeter-all-id" type="number"
+                           name="data[Периметр перегородок]"
+                           step="0.0001" min="0">
+                        <label class="input_label">Общая площадь перегородок, м² </label>
+                        <input class="filter_data peregor_wall__area-all2 input-style" id="peregor_wall__area-all2-id" disabled type="number"
+                           name="data[Площадь перегородок]"
+                           step="0.0001" min="0">
+                        <label class="input_label">Общая ширина окон в перегородках, м </label>
+                        <input class="filter_data peregor_window__perimeter-all input-style" disabled id="peregor_window__perimeter-all-id" type="number"
+                           name="data[Ширина окон]"
+                           step="0.0001" min="0">
+                        <label class="input_label">Общая площадь окон в перегородках, м² </label>
+                        <input class="filter_data peregor_window__area-all2 input-style" id="peregor_window__area-all2-id" disabled type="number"
+                           name="data[Площадь окон]"
+                           step="0.0001" min="0">
+                        <label class="input_label">Общая ширина дверей в перегородках, м </label>
+                        <input class="filter_data peregor_door__perimeter-all input-style" disabled id="peregor_door__perimeter-all-id" type="number"
+                           name="data[Ширина дверей]"
+                           step="0.0001" min="0">
+                        <label class="input_label">Общая площадь дверей в перегородках, м² </label>
+                        <input class="filter_data peregor_door__area-all2 input-style" id="peregor_door__area-all2-id" disabled type="number"
+                           name="data[Площадь дверей]"
+                           step="0.0001" min="0">   
                </div>
                <div class="select-wrp">
                   <label class="input_label">Выберите теплоизоляционный материал </label>
@@ -896,6 +1185,15 @@
                   </select>
                </div>
             </div>
+
+         </section>
+         <section class="peregorodkа">
+            <h2 class="peregor_title__h2">Расчёт теплоизоляционных материалов для перегородок</h2>
+            <!-- Начало формы для перегородок -->
+
+
+
+
          </section>
       </div>
    </body>
