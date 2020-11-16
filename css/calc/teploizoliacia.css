@@ -448,7 +448,8 @@ body {
 	}
 
 	.teploizol_form_main .roof,
-	.teploizol_form_main .walls {
+	.teploizol_form_main .walls,
+	.teploizol_form_main .perekritie {
 		display: flex;
 		flex-direction: column;
 		flex-wrap: nowrap;
@@ -457,7 +458,8 @@ body {
 		align-content: center;
 	}
 	.teploizol_form_main .roof_title__h2,
-	.teploizol_form_main .wall_title__h2{
+	.teploizol_form_main .wall_title__h2,
+	.teploizol_form_main .perekrit_title__h2 {
 		width: auto;
 		margin: 20px 0;
 		text-align: center;
@@ -471,7 +473,8 @@ body {
 	}
 
 	.teploizol_form_main .roof__type,
-	.teploizol_form_main .wall__type {
+	.teploizol_form_main .wall__type,
+	.teploizol_form_main .perekrit__type {
 		width: 300px;
 		margin: 0 auto;
 		display: grid;
