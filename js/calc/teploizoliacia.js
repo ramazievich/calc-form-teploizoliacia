@@ -359,6 +359,82 @@ function clearAllFormPeregorDoor() {
 }
 
 /**
+ * Для чекбокса
+ * показ формы расчета теплоизоляции для деревянных перекрытий
+ * @function [showPerekritWoodItems] добавляет класс hidden к чекбоксу
+ * @param {remove} - удаляет класс hidden у формы
+ * @param {check}  - переменная к классу для чекбокса
+ * @param {add}  - добавляет hidden к форме
+ * @function [clearAllFormPerekritWood] функция сброса всех данных в заполненых полях когда checkbox снят
+ */
+
+let checkboxPerekritWood = document.getElementById('check-perekrit_wood');
+checkboxPerekritWood.addEventListener('click', clearAllFormPerekritWood);
+
+function showPerekritWoodItems(check) {
+	check = document.getElementById("check-perekrit_wood");
+	if (check.checked) {
+		document.getElementById("perekrit_wood__all_wrp-id").classList.remove("hidden");
+		document.getElementById("img__perekrit_wood_color-id").classList.remove("hidden");
+		document.getElementById("img__perekrit_wood-id").classList.add("hidden");
+	} else {
+		document.getElementById("perekrit_wood__all_wrp-id").classList.add("hidden");
+		document.getElementById("img__perekrit_wood_color-id").classList.add("hidden");
+		document.getElementById("img__perekrit_wood-id").classList.remove("hidden");
+		clearAllFormPerekritWood();
+		clearAllFormPerekritWood();
+		clearAllFormPerekritWood();
+
+		funcPerekritWood();
+		sumAreasPerekritWood();
+	}
+}
+function clearAllFormPerekritWood() {
+	let form = document.getElementById('perekrit_wood_wrp');
+	let inputs = form.getElementsByTagName('input');
+	for (let input of inputs)
+		input.value = '';
+}
+
+/**
+ * Для чекбокса
+ * показ формы расчета теплоизоляции для бетонных перекрытий
+ * @function [showPerekritStone] добавляет класс hidden к чекбоксу
+ * @param {remove} - удаляет класс hidden у формы
+ * @param {check}  - переменная к классу для чекбокса
+ * @param {add}  - добавляет hidden к форме
+ * @function [clearAllFormPerekritStone] функция сброса всех данных в заполненых полях когда checkbox снят
+ */
+
+let checkboxPerekritStone = document.getElementById('check-perekrit_stone');
+checkboxPerekritStone.addEventListener('click', clearAllFormPerekritStone);
+
+function showPerekritStoneItems(check) {
+	check = document.getElementById("check-perekrit_stone");
+	if (check.checked) {
+		document.getElementById("perekrit_stone__all_wrp-id").classList.remove("hidden");
+		document.getElementById("img__perekrit_stone_color-id").classList.remove("hidden");
+		document.getElementById("img__perekrit_stone-id").classList.add("hidden");
+	} else {
+		document.getElementById("perekrit_stone__all_wrp-id").classList.add("hidden");
+		document.getElementById("img__perekrit_stone_color-id").classList.add("hidden");
+		document.getElementById("img__perekrit_stone-id").classList.remove("hidden");
+		clearAllFormPerekritStone();
+		clearAllFormPerekritStone();
+		clearAllFormPerekritStone();
+
+		funcPerekritStone();
+		sumAreasPerekritStone();
+	}
+}
+function clearAllFormPerekritStone() {
+	let form = document.getElementById('perekrit_stone_wrp');
+	let inputs = form.getElementsByTagName('input');
+	for (let input of inputs)
+		input.value = '';
+}
+
+/**
  * @function [sumAllSquareOdnoskatRoof] Функция подсчета площади односкатной крыши
  */
 function sumAllSquareOdnoskatRoof() {
@@ -941,6 +1017,53 @@ function funcStenaPeregorDoor() {
 }
 
 /**
+ * @function [funcPerekritWood] Функция подсчета площади дерев. перекрытия для одной формы
+ * @param {formPerekritWood} formPerekritWood переменная для формы подсчета площади дер. перекрытия
+ * @param {number} dlina - поле ввода длины стены
+ * @param {number} shirina - поле ввода высоты стены
+ * @param {number} result - результат подсчета
+ */
+let formPerekritWood = document.querySelectorAll(".perekrit_wood__form");
+console.log(formPerekritWood);
+
+function funcPerekritWood() {
+	formPerekritWood = document.querySelectorAll(".perekrit_wood__form");
+	for (let i = 0, max = formPerekritWood.length; i < max; i++) {
+		let form = formPerekritWood[i];
+		let dlina = Number(form.querySelector(".perekrit_wood__length").value);
+		dlina = parseFloat(dlina);
+		let shirina = Number(form.querySelector(".perekrit_wood__width").value);
+		shirina = parseFloat(shirina);
+		let result = (dlina * shirina);
+		form.querySelector(".perekrit_wood__result").value = result.toFixed(2);
+	}
+}
+
+
+/**
+ * @function [funcPerekritStone] Функция подсчета площади бетонных перекрытия для одной формы
+ * @param {formPerekritStone} formPerekritStone переменная для формы подсчета площади бетонных перекрытия
+ * @param {number} dlina - поле ввода длины стены
+ * @param {number} shirina - поле ввода высоты стены
+ * @param {number} result - результат подсчета
+ */
+let formPerekritStone = document.querySelectorAll(".perekrit_stone__form");
+console.log(formPerekritStone);
+
+function funcPerekritStone() {
+	formPerekritStone = document.querySelectorAll(".perekrit_stone__form");
+	for (let i = 0, max = formPerekritStone.length; i < max; i++) {
+		let form = formPerekritStone[i];
+		let dlina = Number(form.querySelector(".perekrit_stone__length").value);
+		dlina = parseFloat(dlina);
+		let shirina = Number(form.querySelector(".perekrit_stone__width").value);
+		shirina = parseFloat(shirina);
+		let result = (dlina * shirina);
+		form.querySelector(".perekrit_stone__result").value = result.toFixed(2);
+	}
+}
+
+/**
  * @function [sumAreasKarkasWall] функция для сумирования всех площадей каркасных стен со всех форм
  * @param {number} areas - переменная поля с площадью стены
  * @param [function (el)] - функция перебора и сумирования всех полученных площадей из всех форм
@@ -1085,6 +1208,39 @@ function sumAreasPeregorDoor() {
 		console.log(sum);
 	});
 	document.getElementById("peregor_door__area-all2-id").value = sum;
+}
+
+/**
+ * @function [sumAreasPerekritWood] функция для сумирования всех площадей дер. перекрытий со всех форм
+ * @param {number} areas - переменная поля с площадью стены
+ * @param [function (el)] - функция перебора и сумирования всех полученных площадей из всех форм
+ * @param {number} sum - сумма всех площадей после сложения
+ */
+function sumAreasPerekritWood() {
+	let areas = document.getElementsByClassName("perekrit_wood__result");
+	let sum = 0;
+	[].forEach.call(areas, function (el) {
+		sum += parseFloat(el.value);
+		console.log(sum);
+	});
+	document.getElementById("perekrit_wood__area-all2-id").value = sum;
+}
+
+
+/**
+ * @function [sumAreasPerekritStone] функция для сумирования всех площадей бетон. перекрытий со всех форм
+ * @param {number} areas - переменная поля с площадью стены
+ * @param [function (el)] - функция перебора и сумирования всех полученных площадей из всех форм
+ * @param {number} sum - сумма всех площадей после сложения
+ */
+function sumAreasPerekritStone() {
+	let areas = document.getElementsByClassName("perekrit_stone__result");
+	let sum = 0;
+	[].forEach.call(areas, function (el) {
+		sum += parseFloat(el.value);
+		console.log(sum);
+	});
+	document.getElementById("perekrit_stone__area-all2-id").value = sum;
 }
 
 
@@ -1454,6 +1610,79 @@ function copyFormPeregorDoor(el) {
 	sumAreasPeregorDoor();		
 }
 
+/**
+ * Кнопка добавления новой формы для деревянных перекрытий
+ * @param {nodePerekritWood} nodePerekritWood - переменная для всей формы
+ * @param {cloneNode} newClonedNode - получаем форму и клонируем ее
+ * @param {newFormPerekritWoodId} newFormPerekritWoodId - добавляем новую форму
+ * @function [copyFormPerekritWood] - Функция копирования формы деревянноое перекрытие
+ */
+let newFormPerekritWoodId = 1;
+let nodePerekritWood = document.getElementById("perekrit_wood__form-id").cloneNode(true);
+
+// document.querySelector(".add-form").addEventListener("click", function () {
+$(document).on('click', '.add-form__perekrit_wood', function () {
+	let newClonedNode = nodePerekritWood.cloneNode(true);
+	document.querySelector("#perekrit_wood_wrp").appendChild(newClonedNode);
+	newClonedNode.id = "perekrit_wood__form-id-" + newFormPerekritWoodId;
+	newClonedNode.querySelector(".perekrit_wood__length").name = 'data[Деревянные перекрытия][' + newFormPerekritWoodId + '][Длина]';
+	newClonedNode.querySelector(".perekrit_wood__length").value = '';
+	newClonedNode.querySelector(".perekrit_wood__width").name = 'data[Деревянные перекрытия][' + newFormPerekritWoodId + '][Ширина]';
+	newClonedNode.querySelector(".perekrit_wood__width").value = '';
+	newFormPerekritWoodId++;
+	funcPerekritWood();
+	sumAreasPerekritWood();	
+});
+
+function copyFormPerekritWood(el) {
+	let articleDiv = el.parentElement;
+	let newArticleDiv = articleDiv.cloneNode(true);
+	document.querySelector("#perekrit_wood_wrp").appendChild(newArticleDiv);
+	newArticleDiv.id = "perekrit_wood__form-id-" + newFormPerekritWoodId;
+	newArticleDiv.querySelector(".perekrit_wood__length").name = 'data[Деревянные перекрытия][' + newFormPerekritWoodId + '][Длина]';
+	newArticleDiv.querySelector(".perekrit_wood__width").name = 'data[Деревянные перекрытия][' + newFormPerekritWoodId + '][Ширина]';
+	newFormPerekritWoodId++;
+	funcPerekritWood();
+	sumAreasPerekritWood();		
+}
+
+
+/**
+ * Кнопка добавления новой формы для бетонных перекрытий
+ * @param {nodePerekritStone} nodePerekritStone - переменная для всей формы
+ * @param {cloneNode} newClonedNode - получаем форму и клонируем ее
+ * @param {newFormPerekritStoneId} newFormPerekritStoneId - добавляем новую форму
+ * @function [copyFormPerekritStone] - Функция копирования формы бетонное перекрытие
+ */
+let newFormPerekritStoneId = 1;
+let nodePerekritStone = document.getElementById("perekrit_stone__form-id").cloneNode(true);
+
+// document.querySelector(".add-form").addEventListener("click", function () {
+$(document).on('click', '.add-form__perekrit_stone', function () {
+	let newClonedNode = nodePerekritStone.cloneNode(true);
+	document.querySelector("#perekrit_stone_wrp").appendChild(newClonedNode);
+	newClonedNode.id = "perekrit_stone__form-id-" + newFormPerekritStoneId;
+	newClonedNode.querySelector(".perekrit_stone__length").name = 'data[Бетонные перекрытия][' + newFormPerekritWoodId + '][Длина]';
+	newClonedNode.querySelector(".perekrit_stone__length").value = '';
+	newClonedNode.querySelector(".perekrit_stone__width").name = 'data[Бетонные перекрытия][' + newFormPerekritWoodId + '][Ширина]';
+	newClonedNode.querySelector(".perekrit_stone__width").value = '';
+	newFormPerekritStoneId++;
+	funcPerekritStone();
+	sumAreasPerekritStone();	
+});
+
+function copyFormPerekritStone(el) {
+	let articleDiv = el.parentElement;
+	let newArticleDiv = articleDiv.cloneNode(true);
+	document.querySelector("#perekrit_stone_wrp").appendChild(newArticleDiv);
+	newArticleDiv.id = "perekrit_stone__form-id-" + newFormPerekritStoneId;
+	newArticleDiv.querySelector(".perekrit_stone__length").name = 'data[Бетонные перекрытия][' + newFormPerekritStoneId + '][Длина]';
+	newArticleDiv.querySelector(".perekrit_stone__width").name = 'data[Бетонные перекрытия][' + newFormPerekritStoneId + '][Ширина]';
+	newFormPerekritStoneId++;
+	funcPerekritStone();
+	sumAreasPerekritStone();		
+}
+
 
 /**
  * @function [deleteFormKarkasWall] Функция удаления формы стена для каркасных стен
@@ -1625,6 +1854,40 @@ function deleteFormPeregorDoor(btn) {
 
 
 /**
+ * @function [deleteFormPerekritWood] Функция удаления формы для деревянных перекрытий
+ * @param {forms} forms - переменная для всей формы
+ * @param {remove} remove - удаляем форму
+ * @function [sumPerimetersPerekritWood] вызываем функцию подсчета всех периметров со всех форм для дерев. перекрытий
+ * @function [sumAreas] вызываем функцию подсчета всех площадей со всех форм для дерев. перекрытий
+ */
+function deleteFormPerekritWood(btn) {
+	let forms = document.getElementsByClassName('perekrit_wood__form');
+	if (forms.length > 1) {
+		btn.parentElement.remove();
+		sumAreasPerekritWood();
+		document.querySelector(".perekrit_wood_wrp").classList.remove("hidden");
+	}
+}
+
+
+/**
+ * @function [deleteFormPerekritStone] Функция удаления формы для бетонных перекрытий
+ * @param {forms} forms - переменная для всей формы
+ * @param {remove} remove - удаляем форму
+ * @function [sumPerimetersPerekritStone] вызываем функцию подсчета всех периметров со всех форм для бетон. перекрытий
+ * @function [sumAreas] вызываем функцию подсчета всех площадей со всех форм для бетон. перекрытий
+ */
+function deleteFormPerekritStone(btn) {
+	let forms = document.getElementsByClassName('perekrit_stone__form');
+	if (forms.length > 1) {
+		btn.parentElement.remove();
+		sumAreasPerekritStone();
+		document.querySelector(".perekrit_stone_wrp").classList.remove("hidden");
+	}
+}
+
+
+/**
  * Кнопка показа формы для количества окон в разделе каркасные стены
  * @param {remove} - удаляет класс hidden у формы
  * @param {add} - добавляет класс hidden у формы
@@ -1700,10 +1963,6 @@ function deleteFormPeregorDoor(btn) {
 		document.querySelector(".add-form__peregor_door").classList.remove("hidden");
 		document.querySelector(".show-form__peregor_door").classList.add("hidden");
 	});		
-
-
-
-
 
 
 

@@ -440,11 +440,15 @@ body {
 		background-color: #b1ddb1;
 		background-image: -o-linear-gradient(315deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
 		background-image: linear-gradient(135deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+		display: grid;
+		grid-template-columns: 1fr 1fr;
 	}
 	.teploizol_form_main .bg_fon_roof2 {
 		background-color: #b1ddb1;
 		background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
 		background-image: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+		display: grid;
+		grid-template-columns: 1fr 1fr;
 	}
 
 	.teploizol_form_main .roof,
@@ -494,7 +498,9 @@ body {
 	.teploizol_form_main .stone_door,
 	.teploizol_form_main .peregor_wall,
 	.teploizol_form_main .peregor_window,
-	.teploizol_form_main .peregor_door {
+	.teploizol_form_main .peregor_door,
+	.teploizol_form_main .perekrit_wood,
+	.teploizol_form_main .perekrit_stone {
 		width: 300px;
 		margin: 1px;
 		margin: 0 auto;
@@ -513,7 +519,9 @@ body {
 	.teploizol_form_main .stone_door__form,
 	.teploizol_form_main .peregor_wall__form,
 	.teploizol_form_main .peregor_window__form,
-	.teploizol_form_main .peregor_door__form {
+	.teploizol_form_main .peregor_door__form,
+	.teploizol_form_main .perekrit_wood__form,
+	.teploizol_form_main .perekrit_stone__form {
 		position: relative;
 		width: 295px;
 		background-color: #f9fafa;
@@ -531,7 +539,9 @@ body {
 	.teploizol_form_main .mansard_roof__checkbox,
 	.teploizol_form_main .karkas_wall__checkbox,
 	.teploizol_form_main .stone_wall__checkbox,
-	.teploizol_form_main .peregor_wall__checkbox {
+	.teploizol_form_main .peregor_wall__checkbox,
+	.teploizol_form_main .perekrit_wood__checkbox,
+	.teploizol_form_main .perekrit_stone__checkbox {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 5px 5px;
