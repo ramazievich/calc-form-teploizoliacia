@@ -7,6 +7,7 @@
       <link rel="stylesheet" href="../css/calc/teploizoliacia.css" />
       <script defer src="../js/calc/teploizoliacia.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
    </head>
    <body>
       <div class="teploizol_form_main">
@@ -24,7 +25,7 @@
                      <div class="checkbox__wrp">
                         <label class="custom-lable" for="check-odnoskat_roof">
                         <input type="checkbox" id="check-odnoskat_roof" value="interest_odnoskat_roof" name="odnoskat_roof" onchange='showOdnoskatRoofItems(this)'>
-                        <i></i>
+                        <i class="custom-i"></i>
                         <span class="odnoskat_roof__span">Односкатная крыша</span>
                         </label>
                      </div>
@@ -62,7 +63,7 @@
                      <div class="checkbox__wrp">
                         <label class="custom-lable" for="check-dvuskat_roof">
                         <input type="checkbox" id="check-dvuskat_roof" value="interest_dvuskat_roof" name="dvuskat_roof" onchange='showDvuskatRoofItems(this)'>
-                        <i></i>
+                        <i class="custom-i"></i>
                         <span class="dvuskat_roof__span">Двускатная крыша</span>
                         </label>
                      </div>
@@ -100,7 +101,7 @@
                      <div class="checkbox__wrp">
                         <label class="custom-lable" for="check-shatr_roof">
                         <input type="checkbox" id="check-shatr_roof" value="interest_shatr_roof" name="shatr_roof" onchange='showShatrRoofItems(this)'>
-                        <i></i>
+                        <i class="custom-i"></i>
                         <span class="shatr_roof__span">Шатровая крыша</span>
                         </label>
                      </div>
@@ -139,7 +140,7 @@
                      <div class="checkbox__wrp">
                         <label class="custom-lable" for="check-valm_roof">
                         <input type="checkbox" id="check-valm_roof" value="interest_valm_roof" name="valm_roof" onchange='showValmRoofItems(this)'>
-                        <i></i>
+                        <i class="custom-i"></i>
                         <span class="valm_roof__span">Вальмовая крыша</span>
                         </label>
                      </div>
@@ -196,7 +197,7 @@
                      <div class="checkbox__wrp">
                         <label class="custom-lable" for="check-mansard_roof">
                         <input type="checkbox" id="check-mansard_roof" value="interest_mansard_roof" name="mansard_roof" onchange='showMansardRoofItems(this)'>
-                        <i></i>
+                        <i class="custom-i"></i>
                         <span class="mansard_roof__span">Мансардная крыша</span>
                         </label>
                      </div>
@@ -289,7 +290,7 @@
                      <div class="checkbox__wrp">
                         <label class="custom-lable" for="check-karkas_wall">
                         <input type="checkbox" id="check-karkas_wall" value="interest_karkas_wall" name="karkas_wall_item" onchange='showKarkasWallItems(this)'>
-                        <i></i>
+                        <i class="custom-i"></i>
                         <span class="karkas_wall__span">Каркасная стена</span>
                         </label>
                      </div>
@@ -587,7 +588,7 @@
                      <div class="checkbox__wrp">
                         <label class="custom-lable" for="check-stone_wall">
                         <input type="checkbox" id="check-stone_wall" value="interest_stone_wall" name="stone_wall_item" onchange='showStoneWallItems(this)'>
-                        <i></i>
+                        <i class="custom-i"></i>
                         <span class="stone_wall__span">Слоистая кладка</span>
                         </label>
                      </div>
@@ -859,7 +860,7 @@
                      <div class="checkbox__wrp">
                         <label class="custom-lable" for="check-peregor_wall">
                         <input type="checkbox" id="check-peregor_wall" value="interest_peregor_wall" name="peregor_wall_item" onchange='showPeregorWallItems(this)'>
-                        <i></i>
+                        <i class="custom-i"></i>
                         <span class="peregor_wall__span">Перегородка</span>
                         </label>
                      </div>
@@ -1216,7 +1217,7 @@
                      <div class="checkbox__wrp">
                         <label class="custom-lable" for="check-perekrit_wood">
                         <input type="checkbox" id="check-perekrit_wood" value="interest_perekrit_wood" name="perekrit_wood_item" onchange='showPerekritWoodItems(this)'>
-                        <i></i>
+                        <i class="custom-i"></i>
                         <span class="perekrit_wood__span">Перекрытие по деревянным лагам</span>
                         </label>
                      </div>
@@ -1304,7 +1305,7 @@
                      <div class="checkbox__wrp">
                         <label class="custom-lable" for="check-perekrit_stone">
                         <input type="checkbox" id="check-perekrit_stone" value="interest_perekrit_stone" name="perekrit_stone_item" onchange='showPerekritStoneItems(this)'>
-                        <i></i>
+                        <i class="custom-i"></i>
                         <span class="perekrit_stone__span">Перекрытие по бетонному основанию</span>
                         </label>
                      </div>
@@ -1409,7 +1410,7 @@
                      <div class="checkbox__wrp">
                         <label class="custom-lable" for="check-fundam_lenta">
                         <input type="checkbox" id="check-fundam_lenta" value="interest_fundam_lenta" name="fundam_lenta" onchange='showFundamLentaItems(this)'>
-                        <i></i>
+                        <i class="custom-i"></i>
                         <span class="fundam_lenta__span">Фундамент "Лента"</span>
                         </label>
                      </div>
@@ -1443,21 +1444,29 @@
                                  oninput="validity.valid||(value='');"
                                  onkeyup="sumAllSquareFundamLenta()">
                            </div>
-                           
                            <div class="input_label-wrp">
-                              <label class="input_label">Ширина отмостки </label>
-                              <input class="fundam_lenta__shir_otmostki input-style" placeholder="0.6 м"
-                                 type="number" name="fundam_lenta__shir_otmostki[]" disabled value="0.6">
-                           </div>
+                              <label class="input_label">Ширина отмостки</label>
+                              <div class="input-quest_wrp">
+                                 <input class="fundam_lenta__shir_otmostki input-style" placeholder="0.6 м"
+                                    type="number" name="fundam_lenta__shir_otmostki[]" disabled value="0.6">
+                                    <div class="quest_wrp"><i class="fas fa-question-circle"></i><span class="podskazka2">Для СПБ и ЛО ширина отмостки по умолчанию 0.6 м </span></div>
+                                   </div>
+                              </div>
                            <div class="input_label-wrp">
                               <label class="input_label">Толщина утеплителя отмостки</label>
+                              <div class="input-quest_wrp">   
                               <input class="fundam_lenta__tolsh_otmostki_plit input-style" placeholder="50 мм"
                                  type="number" name="fundam_lenta__tolsh_otmostki_plit[]" disabled value="50">
+                                 <div class="quest_wrp"><i class="fas fa-question-circle"></i><span class="podskazka2">Для СПБ и ЛО толщина утеплителя отмостки по умолчанию 50 мм </span></div>
+                              </div>
                            </div>
                            <div class="input_label-wrp">
                               <label class="input_label">Толщина утеплителя плиты</label>
-                              <input class="fundam_lenta__tolsh_yteplit_plit input-style" placeholder="100 мм"
-                                 type="number" name="undam_plita__tolsh_yteplit_plit[]" disabled value="100">
+                              <div class="input-quest_wrp">
+                                 <input class="fundam_lenta__tolsh_yteplit_plit input-style" placeholder="100 мм"
+                                    type="number" name="fundam_plita__tolsh_yteplit_plit[]" disabled value="100">
+                                    <div class="quest_wrp"><i class="fas fa-question-circle"></i><span class="podskazka2">Для СПБ и ЛО толщина утеплителя плиты по умолчанию 10 мм </span></div>
+                              </div>
                            </div>
                         </div>
                      </form>
@@ -1472,7 +1481,7 @@
                      <div class="checkbox__wrp">
                         <label class="custom-lable" for="check-fundam_plita">
                         <input type="checkbox" id="check-fundam_plita" value="interest_fundam_plita" name="fundam_plita" onchange='showFundamPlitaItems(this)'>
-                        <i></i>
+                        <i class="custom-i"></i>
                         <span class="fundam_plita__span">Фундамент "Плита"</span>
                         </label>
                      </div>
@@ -1506,21 +1515,29 @@
                                  oninput="validity.valid||(value='');"
                                  onkeyup="sumAllSquareFundamPlita()">
                            </div>
-                           
                            <div class="input_label-wrp">
                               <label class="input_label">Ширина отмостки</label>
-                              <input class="fundam_plita__shir_otmostki input-style" placeholder="0.6 м"
-                                 type="number" name="fundam_plita__shir_otmostki[]" disabled value="0.6">
-                           </div>
+                              <div class="input-quest_wrp">
+                                 <input class="fundam_plita__shir_otmostki input-style" placeholder="0.6 м"
+                                    type="number" name="fundam_plita__shir_otmostki[]" disabled value="0.6">
+                                    <div class="quest_wrp"><i class="fas fa-question-circle"></i><span class="podskazka2">Для СПБ и ЛО ширина отмостки по умолчанию 0.6 м </span></div>
+                                   </div>
+                              </div>
                            <div class="input_label-wrp">
                               <label class="input_label">Толщина утеплителя отмостки</label>
+                              <div class="input-quest_wrp">   
                               <input class="fundam_plita__tolsh_otmostki_plit input-style" placeholder="50 мм"
                                  type="number" name="fundam_plita__tolsh_otmostki_plit[]" disabled value="50">
+                                 <div class="quest_wrp"><i class="fas fa-question-circle"></i><span class="podskazka2">Для СПБ и ЛО толщина утеплителя отмостки по умолчанию 50 мм </span></div>
+                              </div>
                            </div>
                            <div class="input_label-wrp">
                               <label class="input_label">Толщина утеплителя плиты</label>
-                              <input class="fundam_plita__tolsh_yteplit_plit input-style" placeholder="100 мм"
-                                 type="number" name="undam_plita__tolsh_yteplit_plit[]" disabled value="100">
+                              <div class="input-quest_wrp">
+                                 <input class="fundam_plita__tolsh_yteplit_plit input-style" placeholder="100 мм"
+                                    type="number" name="fundam_plita__tolsh_yteplit_plit[]" disabled value="100">
+                                    <div class="quest_wrp"><i class="fas fa-question-circle"></i><span class="podskazka2">Для СПБ и ЛО толщина утеплителя плиты по умолчанию 10 мм </span></div>
+                              </div>
                            </div>
                         </div>
                      </form>
@@ -1535,7 +1552,7 @@
                      <div class="checkbox__wrp">
                         <label class="custom-lable" for="check-fundam_shved">
                         <input type="checkbox" id="check-fundam_shved" value="interest_fundam_shved" name="fundam_shved" onchange='showFundamShvedItems(this)'>
-                        <i></i>
+                        <i class="custom-i"></i>
                         <span class="fundam_shved__span">Фундамент "Шведская утепленная плита"</span>
                         </label>
                      </div>
@@ -1569,27 +1586,34 @@
                                  oninput="validity.valid||(value='');"
                                  onkeyup="sumAllSquareFundamShved()">
                            </div>
-                           
                            <div class="input_label-wrp">
                               <label class="input_label">Ширина отмостки</label>
-                              <input class="fundam_shved__shir_otmostki input-style" placeholder="0.6 м"
-                                 type="number" name="fundam_shved__shir_otmostki[]" disabled value="0.6">
-                           </div>
+                              <div class="input-quest_wrp">
+                                 <input class="fundam_shved__shir_otmostki input-style" placeholder="0.6 м"
+                                    type="number" name="fundam_shved__shir_otmostki[]" disabled value="0.6">
+                                    <div class="quest_wrp"><i class="fas fa-question-circle"></i><span class="podskazka2">Для СПБ и ЛО ширина отмостки по умолчанию 0.6 м </span></div>
+                                   </div>
+                              </div>
                            <div class="input_label-wrp">
                               <label class="input_label">Толщина утеплителя отмостки</label>
+                              <div class="input-quest_wrp">   
                               <input class="fundam_shved__tolsh_otmostki_plit input-style" placeholder="50 мм"
                                  type="number" name="fundam_shved__tolsh_otmostki_plit[]" disabled value="50">
+                                 <div class="quest_wrp"><i class="fas fa-question-circle"></i><span class="podskazka2">Для СПБ и ЛО толщина утеплителя отмостки по умолчанию 50 мм </span></div>
+                              </div>
                            </div>
                            <div class="input_label-wrp">
                               <label class="input_label">Толщина утеплителя плиты</label>
-                              <input class="fundam_shved__tolsh_yteplit_plit input-style" placeholder="100 мм"
-                                 type="number" name="undam_plita__tolsh_yteplit_plit[]" disabled value="100">
+                              <div class="input-quest_wrp">
+                                 <input class="fundam_shved__tolsh_yteplit_plit input-style" placeholder="100 мм"
+                                    type="number" name="fundam_plita__tolsh_yteplit_plit[]" disabled value="100">
+                                    <div class="quest_wrp"><i class="fas fa-question-circle"></i><span class="podskazka2">Для СПБ и ЛО толщина утеплителя плиты по умолчанию 10 мм </span></div>
+                              </div>
                            </div>
                         </div>
                      </form>
                   </div>
                </div>
-
                <div class="all-results-wrp hidden">
                   <label class="input_label">Общая площадь фундамент лента, м² </label>
                   <input class="filter_data fundam_lenta__area-all2 input-style" id="fundam_lenta__area-all2-id" disabled type="number"

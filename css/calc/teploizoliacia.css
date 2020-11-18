@@ -146,11 +146,11 @@ body {
 }
 
 
-.teploizol_form_main label>input {
+.teploizol_form_main label.custom-lable>input {
 	display: none;
 }
 
-.teploizol_form_main label i {
+.teploizol_form_main label.custom-lable i.custom-i {
 	padding: 2px;
 	width: 40px;
 	height: 20px;
@@ -166,7 +166,7 @@ body {
 	margin-bottom: 10px;
 }
 
-.teploizol_form_main label i:after {
+.teploizol_form_main label.custom-lable i.custom-i:after {
 	content: " ";
 	display: block;
 	width: 20px;
@@ -181,17 +181,17 @@ body {
 	transition: 0.15s;
 }
 
-.teploizol_form_main label>input:checked+i {
+.teploizol_form_main label.custom-lable>input:checked+i.custom-i {
 	background: #4bd865;
 }
 
-.teploizol_form_main label>input:checked+i:after {
+.teploizol_form_main label.custom-lable>input:checked+i.custom-i:after {
 	-webkit-transform: translateX(20px);
 	    -ms-transform: translateX(20px);
 	        transform: translateX(20px);
 }
 
-.teploizol_form_main label:hover {
+.teploizol_form_main label.custom-lable:hover {
 	cursor: pointer;
 }
 /*кастомный чекбокс (конец)*/
@@ -228,6 +228,101 @@ body {
 		-moz-transition: all 0.8s 0.6s ease;
 		-o-transition: all 0.8s 0.6s ease;
 	}
+
+	/*подсказка 2 (начало)*/
+	.teploizol_form_main .input-quest_wrp {
+		display: grid;
+		grid-template-columns: 5fr 1fr;
+		align-items: center;
+	}
+
+	.teploizol_form_main .fa-question-circle {
+		color: #4c99e8;
+		font-size: 28px;
+	}
+
+	.teploizol_form_main .fa-question-circle:hover {
+		color: #4bc970;
+		cursor: pointer;
+	}
+
+	.teploizol_form_main .podskazka2 {
+		display: none;
+		width: 240px;
+		position: absolute;
+		border-radius: 4px;
+		background-color: #4bc970;
+		color: rgb(255 255 255);
+		padding: 5px;
+		text-align: center;
+		-webkit-box-shadow: 0 1px 1px rgb(61 175 95);
+		        box-shadow: 0 1px 1px rgb(61 175 95);
+		font-size: 12px;
+		margin: -88px 0 0 0;
+    	left: 20px;
+	}
+
+	.teploizol_form_main .podskazka2::after {
+		content: '';
+		position: absolute;
+		left: 216px;
+		bottom: -18px;
+		border: 10px solid transparent;
+		border-top: 10px solid #4bc970;
+	}
+	.teploizol_form_main .fa-question-circle:hover+.podskazka2 {
+		display: block;
+		transition: all 0.8s 0.6s ease;
+		-webkit-transition: all 0.8s 0.6s ease;
+		-moz-transition: all 0.8s 0.6s ease;
+		-o-transition: all 0.8s 0.6s ease;
+	}
+
+	
+	/*
+	.fa-question-circle:hover {
+		content: attr(data-fa-question);
+		background: #ff3466;
+		width: 160px;
+		height: 40px;
+		font-size: 13px;
+		font-weight: 300;
+		top: -75px;
+		left: -10px;
+		padding: 10px;
+		border-radius: 5px;
+		letter-spacing: 1px;
+		animation: shake 500ms ease-in-out forwards;
+		transform: translateY(20px);
+	}
+	
+	.fa-question-circle:hover::before,
+	.fa-question-circle:hover::after {
+		opacity: 1;
+		transform: translateY(-2px);
+	}
+	
+	@keyframes shake {
+		0% {
+			transform: rotate(2deg);
+		}
+		50% {
+			transform: rotate(-3deg);
+		}
+		70% {
+			transform: rotate(3deg);
+		}
+		100% {
+			transform: rotate(0deg);
+		}
+	}
+	
+	.quest-wrp:hover {
+		
+	}
+	/*подсказка 2 (конец)*/
+
+	
 
 	.teploizol_form_main form {
 		width: 300px;
