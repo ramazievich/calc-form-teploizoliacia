@@ -24,6 +24,7 @@ function showOdnoskatRoofItems(check) {
 		document.getElementById("odnoskat_form_wrp").classList.add("hidden");
 		document.getElementById("img_odnoskat_roof_color-id").classList.add("hidden");
 		document.getElementById("img_odnoskat_roof_bw-id").classList.remove("hidden");
+		sumAllSquareOdnoskatRoof();
 		clearAllFormOdnoskatRoof();
 	}
 }
@@ -57,6 +58,7 @@ function showDvuskatRoofItems(check) {
 		document.getElementById("dvuskat_form_wrp").classList.add("hidden");
 		document.getElementById("img_dvuskat_roof_color-id").classList.add("hidden");
 		document.getElementById("img_dvuskat_roof_bw-id").classList.remove("hidden");
+		sumAllSquareDvuskatRoof();
 		clearAllFormDvuskatRoof();
 	}
 }
@@ -91,6 +93,7 @@ function showShatrRoofItems(check) {
 		document.getElementById("shatr_form_wrp").classList.add("hidden");
 		document.getElementById("img_shatr_roof_color-id").classList.add("hidden");
 		document.getElementById("img_shatr_roof_bw-id").classList.remove("hidden");
+		sumAllSquareShatrRoof();
 		clearAllFormShatrRoof();
 	}
 }
@@ -125,6 +128,7 @@ function showValmRoofItems(check) {
 		document.getElementById("valm_form_wrp").classList.add("hidden");
 		document.getElementById("img_valm_roof_color-id").classList.add("hidden");
 		document.getElementById("img_valm_roof_bw-id").classList.remove("hidden");
+		sumAllSquareValmRoof();
 		clearAllFormValmRoof();
 	}
 }
@@ -159,7 +163,8 @@ function showMansardRoofItems(check) {
 		document.getElementById("mansard_form_wrp").classList.add("hidden");
 		document.getElementById("img_mansard_roof_color-id").classList.add("hidden");
 		document.getElementById("img_mansard_roof_bw-id").classList.remove("hidden");
-		clearAllFormValmRoof();
+		sumAllSquareMansardRoof();
+		clearAllFormMansardRoof();
 	}
 }
 
@@ -435,6 +440,114 @@ function clearAllFormPerekritStone() {
 }
 
 /**
+ * Для чекбокса
+ * показ формы расчета теплоизоляции для фундамент плита
+ * @function [showFundamPlitaItems] добавляет класс hidden к чекбоксу
+ * @param {remove} - удаляет класс hidden у формы
+ * @param {check}  - переменная к классу для чекбокса
+ * @param {add}  - добавляет hidden к форме
+ * @function [clearAllFormFundamPlita] функция сброса всех данных в заполненых полях когда checkbox снят
+ */
+
+let checkboxFundamPlita = document.getElementById('check-fundam_plita');
+checkboxFundamPlita.addEventListener('click', clearAllFormFundamPlita);
+
+function showFundamPlitaItems(check) {
+	check = document.getElementById("check-fundam_plita");
+	if (check.checked) {
+		document.getElementById("fundam_plita_wrp").classList.remove("hidden");
+		document.getElementById("img_fundam_plita_color-id").classList.remove("hidden");
+		document.getElementById("img_fundam_plita_bw-id").classList.add("hidden");
+	} else {
+		document.getElementById("fundam_plita_wrp").classList.add("hidden");
+		document.getElementById("img_fundam_plita_color-id").classList.add("hidden");
+		document.getElementById("img_fundam_plita_bw-id").classList.remove("hidden");
+		sumAllSquareFundamPlita()
+		clearAllFormFundamPlita();
+	}
+}
+
+function clearAllFormFundamPlita() {
+	let form = document.getElementById('fundam_plita_wrp');
+	let inputs = form.getElementsByTagName('input');
+	for (let input of inputs)
+		input.value = '';
+}
+
+
+/**
+ * Для чекбокса
+ * показ формы расчета теплоизоляции для фундамент лента
+ * @function [showFundamLentaItems] добавляет класс hidden к чекбоксу
+ * @param {remove} - удаляет класс hidden у формы
+ * @param {check}  - переменная к классу для чекбокса
+ * @param {add}  - добавляет hidden к форме
+ * @function [clearAllFormFundamLenta] функция сброса всех данных в заполненых полях когда checkbox снят
+ */
+
+let checkboxFundamLenta = document.getElementById('check-fundam_lenta');
+checkboxFundamLenta.addEventListener('click', clearAllFormFundamLenta);
+
+function showFundamLentaItems(check) {
+	check = document.getElementById("check-fundam_lenta");
+	if (check.checked) {
+		document.getElementById("fundam_lenta_wrp").classList.remove("hidden");
+		document.getElementById("img_fundam_lenta_color-id").classList.remove("hidden");
+		document.getElementById("img_fundam_lenta_bw-id").classList.add("hidden");
+	} else {
+		document.getElementById("fundam_lenta_wrp").classList.add("hidden");
+		document.getElementById("img_fundam_lenta_color-id").classList.add("hidden");
+		document.getElementById("img_fundam_lenta_bw-id").classList.remove("hidden");
+		sumAllSquareFundamLenta()
+		clearAllFormFundamLenta();
+	}
+}
+
+function clearAllFormFundamLenta() {
+	let form = document.getElementById('fundam_lenta_wrp');
+	let inputs = form.getElementsByTagName('input');
+	for (let input of inputs)
+		input.value = '';
+}
+
+
+/**
+ * Для чекбокса
+ * показ формы расчета теплоизоляции для фундамент утепленная шведская плита
+ * @function [showFundamShvedItems] добавляет класс hidden к чекбоксу
+ * @param {remove} - удаляет класс hidden у формы
+ * @param {check}  - переменная к классу для чекбокса
+ * @param {add}  - добавляет hidden к форме
+ * @function [clearAllFormFundamShved] функция сброса всех данных в заполненых полях когда checkbox снят
+ */
+
+let checkboxFundamShved = document.getElementById('check-fundam_shved');
+checkboxFundamShved.addEventListener('click', clearAllFormFundamShved);
+
+function showFundamShvedItems(check) {
+	check = document.getElementById("check-fundam_shved");
+	if (check.checked) {
+		document.getElementById("fundam_shved_wrp").classList.remove("hidden");
+		document.getElementById("img_fundam_shved_color-id").classList.remove("hidden");
+		document.getElementById("img_fundam_shved_bw-id").classList.add("hidden");
+	} else {
+		document.getElementById("fundam_shved_wrp").classList.add("hidden");
+		document.getElementById("img_fundam_shved_color-id").classList.add("hidden");
+		document.getElementById("img_fundam_shved_bw-id").classList.remove("hidden");
+		sumAllSquareFundamShved()
+		clearAllFormFundamShved();
+	}
+}
+
+function clearAllFormFundamShved() {
+	let form = document.getElementById('fundam_shved_wrp');
+	let inputs = form.getElementsByTagName('input');
+	for (let input of inputs)
+		input.value = '';
+}
+
+
+/**
  * @function [sumAllSquareOdnoskatRoof] Функция подсчета площади односкатной крыши
  */
 function sumAllSquareOdnoskatRoof() {
@@ -459,7 +572,7 @@ function sumAllSquareDvuskatRoof() {
 }
 
 /**
- * @function [sumAllSquareDvuskatRoof] Функция подсчета площади шатровой крыши
+ * @function [sumAllSquareShatrRoof] Функция подсчета площади шатровой крыши
  */
 function sumAllSquareShatrRoof() {
 	let roof_block = document.querySelector('.roof');
@@ -471,7 +584,7 @@ function sumAllSquareShatrRoof() {
 }
 
 /**
- * @function [sumAllSquareDvuskatRoof] Функция подсчета площади вальмовой крыши
+ * @function [sumAllSquareValmRoof] Функция подсчета площади вальмовой крыши
  */
 function sumAllSquareValmRoof() {
 	let roof_block = document.querySelector('.roof');
@@ -501,7 +614,7 @@ function sumAllSquareValmRoof() {
 }
 
 /**
- * @function [sumAllSquareDvuskatRoof] Функция подсчета площади мансардной крыши
+ * @function [sumAllSquareMansardRoof] Функция подсчета площади мансардной крыши
  */
 function sumAllSquareMansardRoof() {
 	let roof_block = document.querySelector('.roof');
@@ -511,6 +624,44 @@ function sumAllSquareMansardRoof() {
 	let visota2 = Number(form.querySelector(".mansard_roof__height2").value);
 	let result = ((visota1 * dlina) + (visota2 * dlina)) * 2;
 	roof_block.querySelector("#mansard_roof__sum_square-all-id").value = result.toFixed(2);
+}
+
+
+/**
+ * @function [sumAllSquareFundamPlita] Функция подсчета площади фундамент плита
+ */
+function sumAllSquareFundamPlita() {
+	let fundament_block = document.querySelector('.fundament');
+	let form = document.getElementById('fundam_plita_wrp');
+	let dlina = Number(form.querySelector(".fundam_plita__length").value);
+	let dlina2 = Number(form.querySelector(".fundam_plita__length2").value);
+	let result = dlina * dlina2;
+	fundament_block.querySelector("#fundam_plita__area-all2-id").value = result.toFixed(2);
+}
+
+
+/**
+ * @function [sumAllSquareFundamLenta] Функция подсчета площади фундамент плита
+ */
+function sumAllSquareFundamLenta() {
+	let fundament_block = document.querySelector('.fundament');
+	let form = document.getElementById('fundam_lenta_wrp');
+	let dlina = Number(form.querySelector(".fundam_lenta__length").value);
+	let dlina2 = Number(form.querySelector(".fundam_lenta__length2").value);
+	let result = dlina * dlina2;
+	fundament_block.querySelector("#fundam_lenta__area-all2-id").value = result.toFixed(2);
+}
+
+/**
+ * @function [sumAllSquareFundamShved] Функция подсчета площади фундамент плита
+ */
+function sumAllSquareFundamShved() {
+	let fundament_block = document.querySelector('.fundament');
+	let form = document.getElementById('fundam_shved_wrp');
+	let dlina = Number(form.querySelector(".fundam_shved__length").value);
+	let dlina2 = Number(form.querySelector(".fundam_shved__length2").value);
+	let result = dlina * dlina2;
+	fundament_block.querySelector("#fundam_shved__area-all2-id").value = result.toFixed(2);
 }
 
 

@@ -453,7 +453,8 @@ body {
 
 	.teploizol_form_main .roof,
 	.teploizol_form_main .walls,
-	.teploizol_form_main .perekritie {
+	.teploizol_form_main .perekritie,
+	.teploizol_form_main .fundament {
 		display: flex;
 		flex-direction: column;
 		flex-wrap: nowrap;
@@ -463,7 +464,8 @@ body {
 	}
 	.teploizol_form_main .roof_title__h2,
 	.teploizol_form_main .wall_title__h2,
-	.teploizol_form_main .perekrit_title__h2 {
+	.teploizol_form_main .perekrit_title__h2,
+	.teploizol_form_main .fundam_title__h2 {
 		width: auto;
 		margin: 20px 0;
 		text-align: center;
@@ -478,7 +480,8 @@ body {
 
 	.teploizol_form_main .roof__type,
 	.teploizol_form_main .wall__type,
-	.teploizol_form_main .perekrit__type {
+	.teploizol_form_main .perekrit__type,
+	.teploizol_form_main .fundam__type {
 		width: 300px;
 		margin: 0 auto;
 		display: grid;
@@ -500,7 +503,10 @@ body {
 	.teploizol_form_main .peregor_window,
 	.teploizol_form_main .peregor_door,
 	.teploizol_form_main .perekrit_wood,
-	.teploizol_form_main .perekrit_stone {
+	.teploizol_form_main .perekrit_stone,
+	.teploizol_form_main .fundam_plita,
+	.teploizol_form_main .fundam_lenta,
+	.teploizol_form_main .fundam_shved {
 		width: 300px;
 		margin: 1px;
 		margin: 0 auto;
@@ -521,7 +527,10 @@ body {
 	.teploizol_form_main .peregor_window__form,
 	.teploizol_form_main .peregor_door__form,
 	.teploizol_form_main .perekrit_wood__form,
-	.teploizol_form_main .perekrit_stone__form {
+	.teploizol_form_main .perekrit_stone__form,
+	.teploizol_form_main .fundam_plita__form,
+	.teploizol_form_main .fundam_lenta__form,
+	.teploizol_form_main .fundam_shved__form {
 		position: relative;
 		width: 295px;
 		background-color: #f9fafa;
@@ -541,7 +550,10 @@ body {
 	.teploizol_form_main .stone_wall__checkbox,
 	.teploizol_form_main .peregor_wall__checkbox,
 	.teploizol_form_main .perekrit_wood__checkbox,
-	.teploizol_form_main .perekrit_stone__checkbox {
+	.teploizol_form_main .perekrit_stone__checkbox,
+	.teploizol_form_main .fundam_plita__checkbox,
+	.teploizol_form_main .fundam_lenta__checkbox,
+	.teploizol_form_main .fundam_shved__checkbox {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 5px 5px;
@@ -561,6 +573,10 @@ body {
     	font-size: 13px;
 		border-radius: 5px;
 		text-align: center;
+	}
+
+	.teploizol_form_main .fundam_shved__span {
+		font-size: 12px;
 	}
 
 

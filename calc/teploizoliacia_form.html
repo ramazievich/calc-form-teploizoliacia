@@ -1383,7 +1383,7 @@
                      </div>
                   </div>
                </div>
-               <div class="all-results-wrp hidden">
+               <div class="all-results-wrp hidden1">
                   <label class="input_label">Общая площадь перекрытий по дер. лагам, м² </label>
                   <input class="filter_data perekrit_wood__area-all2 input-style" id="perekrit_wood__area-all2-id" disabled type="number"
                      name="data[Площадь деревянных перекрытий]"
@@ -1392,6 +1392,217 @@
                   <input class="filter_data perekrit_stone__area-all2 input-style" id="perekrit_stone__area-all2-id" disabled type="number"
                      name="data[Площадь бетонных перекрытий]"
                      step="0.0001" min="0">  
+               </div>
+            </div>
+         </section>
+         <section class="fundament">
+            <h2 class="fundam_title__h2">Расчёт теплоизоляционных материалов для фундамента</h2>
+            <!-- Начало формы для фундамента -->
+            <h3 class="fundam__h2">Выберите тип фундамента:</h3>
+            <div class="fundam__type">
+               <div class="fundam_lenta">
+                  <div class="fundam_lenta__checkbox bg_fon_roof">
+                     <div class="fundam_lenta__wrp">
+                        <img class="img__fundam_lenta" src="../img/calc/teploizoliacia/fundament-lenta.svg" alt="Фундамент лента" height="140" id="img_fundam_lenta_bw-id">
+                        <img class="img__fundam_lenta__color hidden" src="../img/calc/teploizoliacia/fundament-lenta(color).svg" alt="Фундамент лента" height="140" id="img_fundam_lenta_color-id">
+                     </div>
+                     <div class="checkbox__wrp">
+                        <label class="custom-lable" for="check-fundam_lenta">
+                        <input type="checkbox" id="check-fundam_lenta" value="interest_fundam_lenta" name="fundam_lenta" onchange='showFundamLentaItems(this)'>
+                        <i></i>
+                        <span class="fundam_lenta__span">Фундамент "Лента"</span>
+                        </label>
+                     </div>
+                  </div>
+                  <!-- Начало полей для Фундамент "Плита" -->
+                  <div class="fundam_lenta_wrp hidden" id="fundam_lenta_wrp">
+                     <form action="#" class="fundam_lenta__form" id="fundam_lenta__form-id"
+                        name="fundam_lenta__form-id">
+                        <div class="input_label__groups_item-wrp">
+                           <div class="input_label-wrp">
+                              <label class="input_label">Длина(L1), м</label>
+                              <input class="fundam_lenta__length input-style"
+                                 type="number" name="fundam_lenta__dlina[]" step="0.0001"
+                                 min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareFundamLenta()">
+                           </div>
+                           <div class="input_label-wrp">
+                              <label class="input_label">Ширина(L2),м </label>
+                              <input class="fundam_lenta__length2 input-style"
+                                 type="number" name="fundam_lenta__dlina2[]" step="0.0001"
+                                 min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareFundamLenta()">
+                           </div>
+                           <div class="input_label-wrp">
+                              <label class="input_label">Высота(H), м </label>
+                              <input class="fundam_lenta__height input-style"
+                                 type="number" name="fundam_lenta__visota[]" step="0.0001"
+                                 min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareFundamLenta()">
+                           </div>
+                           
+                           <div class="input_label-wrp">
+                              <label class="input_label">Ширина отмостки </label>
+                              <input class="fundam_lenta__shir_otmostki input-style" placeholder="0.6 м"
+                                 type="number" name="fundam_lenta__shir_otmostki[]" disabled value="0.6">
+                           </div>
+                           <div class="input_label-wrp">
+                              <label class="input_label">Толщина утеплителя отмостки</label>
+                              <input class="fundam_lenta__tolsh_otmostki_plit input-style" placeholder="50 мм"
+                                 type="number" name="fundam_lenta__tolsh_otmostki_plit[]" disabled value="50">
+                           </div>
+                           <div class="input_label-wrp">
+                              <label class="input_label">Толщина утеплителя плиты</label>
+                              <input class="fundam_lenta__tolsh_yteplit_plit input-style" placeholder="100 мм"
+                                 type="number" name="undam_plita__tolsh_yteplit_plit[]" disabled value="100">
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+               <div class="fundam_plita">
+                  <div class="fundam_plita__checkbox bg_fon_roof2">
+                     <div class="fundam_plita__wrp">
+                        <img class="img__fundam_plita" src="../img/calc/teploizoliacia/fundament-plita.svg" alt="Фундамент плита" height="140" id="img_fundam_plita_bw-id">
+                        <img class="img__fundam_plita__color hidden" src="../img/calc/teploizoliacia/fundament-plita(color).svg" alt="Фундамент плита" height="140" id="img_fundam_plita_color-id">
+                     </div>
+                     <div class="checkbox__wrp">
+                        <label class="custom-lable" for="check-fundam_plita">
+                        <input type="checkbox" id="check-fundam_plita" value="interest_fundam_plita" name="fundam_plita" onchange='showFundamPlitaItems(this)'>
+                        <i></i>
+                        <span class="fundam_plita__span">Фундамент "Плита"</span>
+                        </label>
+                     </div>
+                  </div>
+                  <!-- Начало полей для Фундамент "Плита" -->
+                  <div class="fundam_plita_wrp hidden" id="fundam_plita_wrp">
+                     <form action="#" class="fundam_plita__form" id="fundam_plita__form-id"
+                        name="fundam_plita__form-id">
+                        <div class="input_label__groups_item-wrp">
+                           <div class="input_label-wrp">
+                              <label class="input_label">Длина(L1), м</label>
+                              <input class="fundam_plita__length input-style"
+                                 type="number" name="fundam_plita__dlina[]" step="0.0001"
+                                 min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareFundamPlita()">
+                           </div>
+                           <div class="input_label-wrp">
+                              <label class="input_label">Ширина(L2),м </label>
+                              <input class="fundam_plita__length2 input-style"
+                                 type="number" name="fundam_plita__dlina2[]" step="0.0001"
+                                 min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareFundamPlita()">
+                           </div>
+                           <div class="input_label-wrp">
+                              <label class="input_label">Высота(H), м </label>
+                              <input class="fundam_plita__height input-style"
+                                 type="number" name="fundam_plita__visota[]" step="0.0001"
+                                 min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareFundamPlita()">
+                           </div>
+                           
+                           <div class="input_label-wrp">
+                              <label class="input_label">Ширина отмостки</label>
+                              <input class="fundam_plita__shir_otmostki input-style" placeholder="0.6 м"
+                                 type="number" name="fundam_plita__shir_otmostki[]" disabled value="0.6">
+                           </div>
+                           <div class="input_label-wrp">
+                              <label class="input_label">Толщина утеплителя отмостки</label>
+                              <input class="fundam_plita__tolsh_otmostki_plit input-style" placeholder="50 мм"
+                                 type="number" name="fundam_plita__tolsh_otmostki_plit[]" disabled value="50">
+                           </div>
+                           <div class="input_label-wrp">
+                              <label class="input_label">Толщина утеплителя плиты</label>
+                              <input class="fundam_plita__tolsh_yteplit_plit input-style" placeholder="100 мм"
+                                 type="number" name="undam_plita__tolsh_yteplit_plit[]" disabled value="100">
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+               <div class="fundam_shved">
+                  <div class="fundam_shved__checkbox bg_fon_roof">
+                     <div class="fundam_shved__wrp">
+                        <img class="img__fundam_shved" src="../img/calc/teploizoliacia/fundament-shved_plita.svg" alt="Фундамент Шведская утепленная плита" height="140" id="img_fundam_shved_bw-id">
+                        <img class="img__fundam_shved__color hidden" src="../img/calc/teploizoliacia/fundament-shved_plita(color).svg" alt="Фундамент Шведская утепленная плита" height="140" id="img_fundam_shved_color-id">
+                     </div>
+                     <div class="checkbox__wrp">
+                        <label class="custom-lable" for="check-fundam_shved">
+                        <input type="checkbox" id="check-fundam_shved" value="interest_fundam_shved" name="fundam_shved" onchange='showFundamShvedItems(this)'>
+                        <i></i>
+                        <span class="fundam_shved__span">Фундамент "Шведская утепленная плита"</span>
+                        </label>
+                     </div>
+                  </div>
+                  <!-- Начало полей для Фундамент "Плита" -->
+                  <div class="fundam_shved_wrp hidden" id="fundam_shved_wrp">
+                     <form action="#" class="fundam_shved__form" id="fundam_shved__form-id"
+                        name="fundam_shved__form-id">
+                        <div class="input_label__groups_item-wrp">
+                           <div class="input_label-wrp">
+                              <label class="input_label">Длина(L1), м</label>
+                              <input class="fundam_shved__length input-style"
+                                 type="number" name="fundam_shved__dlina[]" step="0.0001"
+                                 min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareFundamShved()">
+                           </div>
+                           <div class="input_label-wrp">
+                              <label class="input_label">Ширина(L2),м </label>
+                              <input class="fundam_shved__length2 input-style"
+                                 type="number" name="fundam_shved__dlina2[]" step="0.0001"
+                                 min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareFundamShved()">
+                           </div>
+                           <div class="input_label-wrp">
+                              <label class="input_label">Высота(H), м </label>
+                              <input class="fundam_shved__height input-style"
+                                 type="number" name="fundam_shved__visota[]" step="0.0001"
+                                 min="0"
+                                 oninput="validity.valid||(value='');"
+                                 onkeyup="sumAllSquareFundamShved()">
+                           </div>
+                           
+                           <div class="input_label-wrp">
+                              <label class="input_label">Ширина отмостки</label>
+                              <input class="fundam_shved__shir_otmostki input-style" placeholder="0.6 м"
+                                 type="number" name="fundam_shved__shir_otmostki[]" disabled value="0.6">
+                           </div>
+                           <div class="input_label-wrp">
+                              <label class="input_label">Толщина утеплителя отмостки</label>
+                              <input class="fundam_shved__tolsh_otmostki_plit input-style" placeholder="50 мм"
+                                 type="number" name="fundam_shved__tolsh_otmostki_plit[]" disabled value="50">
+                           </div>
+                           <div class="input_label-wrp">
+                              <label class="input_label">Толщина утеплителя плиты</label>
+                              <input class="fundam_shved__tolsh_yteplit_plit input-style" placeholder="100 мм"
+                                 type="number" name="undam_plita__tolsh_yteplit_plit[]" disabled value="100">
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+
+               <div class="all-results-wrp hidden">
+                  <label class="input_label">Общая площадь фундамент лента, м² </label>
+                  <input class="filter_data fundam_lenta__area-all2 input-style" id="fundam_lenta__area-all2-id" disabled type="number"
+                     name="data[Площадь фундамент лента]"
+                     step="0.0001" min="0">
+                  <label class="input_label">Общая площадь фундамент плита, м² </label>
+                  <input class="filter_data fundam_plita__area-all2 input-style" id="fundam_plita__area-all2-id" disabled type="number"
+                     name="data[Площадь фундамент плита]"
+                     step="0.0001" min="0">
+                  <label class="input_label">Общая площадь фундамент утеплённая шведская плита, м² </label>
+                  <input class="filter_data fundam_shved__area-all2 input-style" id="fundam_shved__area-all2-id" disabled type="number"
+                     name="data[Площадь фундамент утеплённая шведская плита]"
+                     step="0.0001" min="0">       
                </div>
             </div>
          </section>
