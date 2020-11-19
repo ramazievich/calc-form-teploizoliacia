@@ -223,11 +223,25 @@ body {
 	}
 	.teploizol_form_main .copy-form:hover+.podskazka {
 		display: block;
-		transition: all 0.8s 0.6s ease;
-		-webkit-transition: all 0.8s 0.6s ease;
-		-moz-transition: all 0.8s 0.6s ease;
-		-o-transition: all 0.8s 0.6s ease;
-	}
+		-webkit-animation:bounce-in 0.3s ease 0s 1 normal;
+		-moz-animation:bounce-in 0.3s ease 0s 1 normal;
+		-ms-animation:bounce-in 0.3s ease 0s 1 normal;
+		animation:bounce-in 0.3s ease 0s 1 normal;
+		}
+		
+		@-webkit-keyframes bounce-in {
+		0%{ opacity: 0; -webkit-transform: scale(.3); transform: scale(.3); }
+		50%{ opacity: 1; -webkit-transform: scale(1.0); transform: scale(1.0); }
+		70%{ -webkit-transform: scale(0.9); transform: scale(0.9); }
+		100%{ -webkit-transform: scale(1); transform: scale(1); }
+		}
+		
+		@keyframes bounce-in {
+		0%{ opacity: 0; transform: scale(.3); }
+		50%{ opacity: 1; transform: scale(1.0); }
+		70%{ transform: scale(0.9); }
+		100%{ transform: scale(1); }
+		}
 
 	/*подсказка 2 (начало)*/
 	.teploizol_form_main .input-quest_wrp {
@@ -239,6 +253,7 @@ body {
 	.teploizol_form_main .fa-question-circle {
 		color: #4c99e8;
 		font-size: 28px;
+		
 	}
 
 	.teploizol_form_main .fa-question-circle:hover {
@@ -251,6 +266,8 @@ body {
 		width: 240px;
 		position: absolute;
 		border-radius: 4px;
+		-moz-border-radius:4px;
+		-webkit-border-radius:4px;
 		background-color: #4bc970;
 		color: rgb(255 255 255);
 		padding: 5px;
@@ -259,7 +276,7 @@ body {
 		        box-shadow: 0 1px 1px rgb(61 175 95);
 		font-size: 12px;
 		margin: -88px 0 0 0;
-    	left: 20px;
+		left: 20px;
 	}
 
 	.teploizol_form_main .podskazka2::after {
@@ -272,11 +289,25 @@ body {
 	}
 	.teploizol_form_main .fa-question-circle:hover+.podskazka2 {
 		display: block;
-		transition: all 0.8s 0.6s ease;
-		-webkit-transition: all 0.8s 0.6s ease;
-		-moz-transition: all 0.8s 0.6s ease;
-		-o-transition: all 0.8s 0.6s ease;
-	}
+		-webkit-animation:bounce-in 0.3s ease 0s 1 normal;
+		-moz-animation:bounce-in 0.3s ease 0s 1 normal;
+		-ms-animation:bounce-in 0.3s ease 0s 1 normal;
+		animation:bounce-in 0.3s ease 0s 1 normal;
+		}
+		
+		@-webkit-keyframes bounce-in {
+		0%{ opacity: 0; -webkit-transform: scale(.3); transform: scale(.3); }
+		50%{ opacity: 1; -webkit-transform: scale(1.0); transform: scale(1.0); }
+		70%{ -webkit-transform: scale(0.9); transform: scale(0.9); }
+		100%{ -webkit-transform: scale(1); transform: scale(1); }
+		}
+		
+		@keyframes bounce-in {
+		0%{ opacity: 0; transform: scale(.3); }
+		50%{ opacity: 1; transform: scale(1.0); }
+		70%{ transform: scale(0.9); }
+		100%{ transform: scale(1); }
+		}
 
 	
 	/*
@@ -673,6 +704,3 @@ body {
 	.teploizol_form_main .fundam_shved__span {
 		font-size: 12px;
 	}
-
-
-
