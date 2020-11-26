@@ -16,10 +16,41 @@ body {
 	overflow: hidden;
 }
 
+
+.angry-animate{
+	-webkit-animation:bounce-out 0.6s ease 0s 1 normal;
+	-moz-animation:bounce-out 0.6s ease 0s 1 normal;
+	-ms-animation:bounce-out 0.6s ease 0s 1 normal;
+	animation:bounce-out 0.6s ease 0s 1 normal;
+	}
+	
+	@-webkit-keyframes bounce-out {
+	0%{ -webkit-transform: scale(1); transform: scale(1); }
+	50%{ -webkit-transform: scale(0.90); transform: scale(0.90); }
+	70%{ opacity: 1; -webkit-transform: scale(1.1); transform: scale(1.1); }
+	100%{ opacity: 0; -webkit-transform: scale(0.3); transform: scale(0.3); }
+	}
+	
+	@keyframes bounce-out {
+	0%{ transform: scale(1); }
+	50%{ transform: scale(0.90); }
+	70%{ opacity: 1; transform: scale(1.1); }
+	100%{ opacity: 0; transform: scale(0.3); }
+	}
+
+
+
+
 * {
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 }
+
+.teploizol_form_main {
+	width: 300px;
+	margin: 0 auto;
+}
+
 .teploizol_form_main input[placeholder] {
 	font-family: OpenSans;
 	text-indent: 3px;
@@ -220,27 +251,31 @@ body {
 		bottom: 8px;
 		border: 6px solid transparent;
 		border-left: 10px solid #4bc970;
-	}
+
+		}
+
+/*анимация пдсказки на кнопке копировать*/
 	.teploizol_form_main .copy-form:hover+.podskazka {
 		display: block;
-		-webkit-animation:bounce-in 0.3s ease 0s 1 normal;
-		-moz-animation:bounce-in 0.3s ease 0s 1 normal;
-		-ms-animation:bounce-in 0.3s ease 0s 1 normal;
-		animation:bounce-in 0.3s ease 0s 1 normal;
+		
+		-webkit-animation:flipiny 1.2s ease 0s 1 normal;
+		-moz-animation:flipiny 1.2s ease 0s 1 normal;
+		-ms-animation:flipiny 1.2s ease 0s 1 normal;
+		animation:flipiny 1.2s ease 0s 1 normal;
 		}
 		
-		@-webkit-keyframes bounce-in {
-		0%{ opacity: 0; -webkit-transform: scale(.3); transform: scale(.3); }
-		50%{ opacity: 1; -webkit-transform: scale(1.0); transform: scale(1.0); }
-		70%{ -webkit-transform: scale(0.9); transform: scale(0.9); }
-		100%{ -webkit-transform: scale(1); transform: scale(1); }
+		@-webkit-keyframes flipiny {
+		0%{ opacity: 0; -webkit-transform: perspective(400px) rotateY(0deg); transform: perspective(400px) rotateY(90deg); }
+		40%{ -webkit-transform: perspective(400px) rotateY(0deg); transform: perspective(400px) rotateY(-10deg); }
+		70%{ -webkit-transform: perspective(400px) rotateY(0deg); transform: perspective(400px) rotateY(10deg); }
+		100%{ opacity: 1; -webkit-transform: perspective(400px) rotateY(0deg); transform: perspective(400px) rotateY(0deg); }
 		}
 		
-		@keyframes bounce-in {
-		0%{ opacity: 0; transform: scale(.3); }
-		50%{ opacity: 1; transform: scale(1.0); }
-		70%{ transform: scale(0.9); }
-		100%{ transform: scale(1); }
+		@keyframes flipiny {
+		0%{ opacity: 0; transform: perspective(400px) rotateY(90deg); }
+		40%{ transform: perspective(400px) rotateY(-10deg); }
+		70%{ transform: perspective(400px) rotateY(10deg); }
+		100%{ opacity: 1; transform: perspective(400px) rotateY(0deg); }
 		}
 
 	/*подсказка 2 (начало)*/
@@ -250,20 +285,9 @@ body {
 		align-items: center;
 	}
 
-	.teploizol_form_main .fa-question-circle {
-		color: #4c99e8;
-		font-size: 28px;
-		
-	}
-
-	.teploizol_form_main .fa-question-circle:hover {
-		color: #4bc970;
-		cursor: pointer;
-	}
-
-	.teploizol_form_main .podskazka2 {
+	.teploizol_form_main .quest_wrp {
 		display: none;
-		width: 240px;
+		width: 210px;
 		position: absolute;
 		border-radius: 4px;
 		-moz-border-radius:4px;
@@ -275,20 +299,40 @@ body {
 		-webkit-box-shadow: 0 1px 1px rgb(61 175 95);
 		        box-shadow: 0 1px 1px rgb(61 175 95);
 		font-size: 12px;
-		margin: -88px 0 0 0;
-		left: 20px;
+		margin: -80px 0 0 0;
+		left: 16px;
 	}
 
-	.teploizol_form_main .podskazka2::after {
+	.teploizol_form_main .fa-question-circle {
+		color: #4c99e8;
+		font-size: 28px;
+		
+	}
+
+	.teploizol_form_main .fa-question-circle2 {
+		color: #9fa5ab;
+		font-size: 14px;
+	}
+
+	.teploizol_form_main .fa-question-circle:hover {
+		color: #4bc970;
+		cursor: pointer;
+	}
+	.teploizol_form_main .quest_wrp::after {
 		content: '';
 		position: absolute;
-		left: 216px;
-		bottom: -18px;
-		border: 10px solid transparent;
-		border-top: 10px solid #4bc970;
+		left: 198px;
+		bottom: -4px;
+		border: 13px solid transparent;
+		transform: rotate(-147deg);
+		border-top: 11px solid #4bc970;
 	}
-	.teploizol_form_main .fa-question-circle:hover+.podskazka2 {
-		display: block;
+
+	.teploizol_form_main .fa-question-circle:hover+.quest_wrp {
+		margin: -152px 0 0px 0px;
+    	display: grid;
+    	grid-template-columns: 1fr;
+    	grid-template-rows: 2fr 0.5fr;
 		-webkit-animation:bounce-in 0.3s ease 0s 1 normal;
 		-moz-animation:bounce-in 0.3s ease 0s 1 normal;
 		-ms-animation:bounce-in 0.3s ease 0s 1 normal;
@@ -309,48 +353,9 @@ body {
 		100%{ transform: scale(1); }
 		}
 
-	
-	/*
-	.fa-question-circle:hover {
-		content: attr(data-fa-question);
-		background: #ff3466;
-		width: 160px;
-		height: 40px;
-		font-size: 13px;
-		font-weight: 300;
-		top: -75px;
-		left: -10px;
-		padding: 10px;
-		border-radius: 5px;
-		letter-spacing: 1px;
-		animation: shake 500ms ease-in-out forwards;
-		transform: translateY(20px);
-	}
-	
-	.fa-question-circle:hover::before,
-	.fa-question-circle:hover::after {
-		opacity: 1;
-		transform: translateY(-2px);
-	}
-	
-	@keyframes shake {
-		0% {
-			transform: rotate(2deg);
+		.img__quest2 {
+			margin: 0 auto;
 		}
-		50% {
-			transform: rotate(-3deg);
-		}
-		70% {
-			transform: rotate(3deg);
-		}
-		100% {
-			transform: rotate(0deg);
-		}
-	}
-	
-	.quest-wrp:hover {
-		
-	}
 	/*подсказка 2 (конец)*/
 
 	
@@ -434,7 +439,7 @@ body {
 		border-width: 1px 1px 3px;
 		-webkit-box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
 		box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
-		margin-bottom: 10px;
+		margin-bottom: 1px;
 	}
 	.teploizol_form_main .add-form-btn {
 		width: 250px;
@@ -581,13 +586,17 @@ body {
 	.teploizol_form_main .walls,
 	.teploizol_form_main .perekritie,
 	.teploizol_form_main .fundament {
-		display: flex;
+		display: grid;
+    	grid-template-columns: 1fr;
+    	align-items: center;
+		/*display: flex;
 		flex-direction: column;
 		flex-wrap: nowrap;
 		justify-content: center;
 		align-items: center;
-		align-content: center;
+		align-content: center;*/
 	}
+	/*
 	.teploizol_form_main .roof_title__h2,
 	.teploizol_form_main .wall_title__h2,
 	.teploizol_form_main .perekrit_title__h2,
@@ -603,13 +612,11 @@ body {
 		border-top-right-radius: 5px;
 		font-size: 19px;
 	}
-
+*/
 	.teploizol_form_main .roof__type,
 	.teploizol_form_main .wall__type,
 	.teploizol_form_main .perekrit__type,
 	.teploizol_form_main .fundam__type {
-		width: 300px;
-		margin: 0 auto;
 		display: grid;
 		grid-gap: 1px 1px;
 	}
@@ -633,9 +640,7 @@ body {
 	.teploizol_form_main .fundam_plita,
 	.teploizol_form_main .fundam_lenta,
 	.teploizol_form_main .fundam_shved {
-		width: 300px;
 		margin: 1px;
-		margin: 0 auto;
 	}
 
 	.teploizol_form_main .dvuskat_roof__form,
@@ -665,7 +670,27 @@ body {
 		-webkit-box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0);
 		box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0);
 		margin: 2px;
-	}
+
+		/*анимация при добавлении формы*/
+		-webkit-animation:bounce-in 0.4s cubic-bezier(0.60,1,1,1) 0s 1 normal;
+		-moz-animation:bounce-in 0.4s cubic-bezier(0.60,1,1,1) 0s 1 normal;
+		-ms-animation:bounce-in 0.4s cubic-bezier(0.60,1,1,1) 0s 1 normal;
+		animation:bounce-in 0.4s cubic-bezier(0.60,1,1,1) 0s 1 normal;
+		}
+		
+		@-webkit-keyframes bounce-in {
+		0%{ opacity: 0; -webkit-transform: scale(.3); transform: scale(.3); }
+		50%{ opacity: 1; -webkit-transform: scale(1.0); transform: scale(1.0); }
+		70%{ -webkit-transform: scale(0.9); transform: scale(0.9); }
+		100%{ -webkit-transform: scale(1); transform: scale(1); }
+		}
+		
+		@keyframes bounce-in {
+		0%{ opacity: 0; transform: scale(.3); }
+		50%{ opacity: 1; transform: scale(1.0); }
+		70%{ transform: scale(0.9); }
+		100%{ transform: scale(1); }
+		}
 
 	.teploizol_form_main .dvuskat_roof__checkbox,
 	.teploizol_form_main .odnoskat_roof__checkbox,
@@ -703,4 +728,59 @@ body {
 
 	.teploizol_form_main .fundam_shved__span {
 		font-size: 12px;
+	}
+
+	.teploizol_form_main .fundam__h2,
+	.teploizol_form_main .perekrit__h2,
+	.teploizol_form_main .wall__h2,
+	.teploizol_form_main .roof__h2 {
+		margin: 10px 0;
+	}
+
+	.img__roof {
+		fill: white;
+	}
+
+	/*Начало аккордеон*/
+/*Начало аккордеон*/
+.teploizol_form_main button.accordion {
+	display: grid;
+	grid-template-columns: 30px 1fr 20px;
+	align-items: center;
+	cursor: pointer;
+	text-align: left;
+	border: none;
+	outline: none;
+	transition: 0.3s;		
+	margin: 0 0;
+	text-align: left;
+	color: white;
+	border-bottom: 3px solid #39a759bd;
+	padding: 10px;
+	background-color: #4bc970;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 5px;
+	font-size: 16px;
+}
+
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+	background-color: #3ac162;
+	transition: max-height 0.2s ease-out;
+	height: 100%;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+	max-height: 0;
+	overflow: hidden;
+}
+
+.accordion:after {
+	content: '\2630'; /* Unicode character for "plus" sign (+) */
+	}
+
+.active:after {
+	content: "\2718"; /* Unicode character for "minus" sign (-) */
 	}

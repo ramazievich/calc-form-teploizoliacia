@@ -1,5 +1,31 @@
 'use strict';
 
+/**
+ * Начало аккордеона
+ * @param {active} - Переключение между добавлением и удалением «active» класса, чтобы выделить кнопку, которая управляет панелью
+ * @param {panel} -  ереключение между скрытием и отображением активной панели
+ * 
+*/
+function accordion() {
+	let acc = document.getElementsByClassName("accordion");
+	let i = 0;
+
+	for (i = 0; i < acc.length; i++) {
+		acc[i].addEventListener("click", function() {
+			this.classList.toggle("active");		
+			let panel = this.nextElementSibling;
+			if (panel.style.maxHeight) {
+			panel.style.maxHeight = null;
+			} else {
+			panel.style.maxHeight = panel.scrollHeight + "%";
+			} 
+		});
+	}
+}
+accordion();
+
+
+
 
 /**
  * Для чекбокса
@@ -20,13 +46,17 @@ function showOdnoskatRoofItems(check) {
 		document.getElementById("odnoskat_form_wrp").classList.remove("hidden");
 		document.getElementById("img_odnoskat_roof_color-id").classList.remove("hidden");
 		document.getElementById("img_odnoskat_roof_bw-id").classList.add("hidden");
+
+
 	} else {
 		document.getElementById("odnoskat_form_wrp").classList.add("hidden");
 		document.getElementById("img_odnoskat_roof_color-id").classList.add("hidden");
 		document.getElementById("img_odnoskat_roof_bw-id").classList.remove("hidden");
 		sumAllSquareOdnoskatRoof();
 		clearAllFormOdnoskatRoof();
+		
 	}
+	
 }
 function clearAllFormOdnoskatRoof() {
 	let form = document.getElementById('odnoskat_form_wrp');
@@ -462,8 +492,9 @@ function showFundamPlitaItems(check) {
 		document.getElementById("fundam_plita_wrp").classList.add("hidden");
 		document.getElementById("img_fundam_plita_color-id").classList.add("hidden");
 		document.getElementById("img_fundam_plita_bw-id").classList.remove("hidden");
-		sumAllSquareFundamPlita()
+		sumAllSquareFundamPlita();
 		clearAllFormFundamPlita();
+		sumSquareFundamPlitaFloor();
 	}
 }
 
@@ -498,7 +529,7 @@ function showFundamLentaItems(check) {
 		document.getElementById("fundam_lenta_wrp").classList.add("hidden");
 		document.getElementById("img_fundam_lenta_color-id").classList.add("hidden");
 		document.getElementById("img_fundam_lenta_bw-id").classList.remove("hidden");
-		sumAllSquareFundamLenta()
+		sumAllSquareFundamLenta();
 		clearAllFormFundamLenta();
 	}
 }
@@ -534,7 +565,7 @@ function showFundamShvedItems(check) {
 		document.getElementById("fundam_shved_wrp").classList.add("hidden");
 		document.getElementById("img_fundam_shved_color-id").classList.add("hidden");
 		document.getElementById("img_fundam_shved_bw-id").classList.remove("hidden");
-		sumAllSquareFundamShved()
+		sumAllSquareFundamShved();
 		clearAllFormFundamShved();
 	}
 }
@@ -595,21 +626,13 @@ function sumAllSquareValmRoof() {
 	let dlina_B = Number(form.querySelector(".valm_roof__length4").value);
 	let L3_plus_L1_razd_na2 = (dlina_L3 + dlina_L1) / 2;/*L3+L1/2 */
 	let b_Kvadrat = Math.pow(dlina_B, 2); /*B квадрат*/
-	let koren_b_Kvadrat = Math.sqrt(b_Kvadrat);/*кореньиз B квадрат*/	
-	let L1_minus_L3 = (dlina_L1 - dlina_L3);/* L1 минус L3*/
-	let L1_minus_L3_kvadrat = Math.pow(L1_minus_L3, 2);/*квадрат из L1 минус L2*/
-	let L1_minus_L3_umn_2 = 2 * (L1_minus_L3);
-	let L1_minus_L3_obsh = L1_minus_L3_kvadrat / L1_minus_L3_umn_2;
-	let L1_minus_L3_obsh_Kvadrat = Math.pow(L1_minus_L3_obsh, 2); /*B квадрат*/
-	let s_Trapecia = (L3_plus_L1_razd_na2 * koren_b_Kvadrat - L1_minus_L3_obsh_Kvadrat) * 2;
-
-	let odnaVtoraia_L2 = (dlina_L2 / 2);
-	let kvadrat_odnaVtoraia_L2 = Math.pow(odnaVtoraia_L2, 2);
-	let b_kv_min_kvadrat_odnaVtoraia_L2 = b_Kvadrat - kvadrat_odnaVtoraia_L2;
-	let koren_B_kv_min_kvadrat_odnaVtoraia_L2 = Math.sqrt(b_kv_min_kvadrat_odnaVtoraia_L2);
-	let s_Treugol = (koren_B_kv_min_kvadrat_odnaVtoraia_L2 * dlina_L2);
-
-	let result = (s_Trapecia) + (s_Treugol);
+	let L1_minus_L3_na_2 = (dlina_L1 - dlina_L3) / 2;/* L1 минус L3 поделить на 2*/
+	let L1_minus_L3_na_2_kvadrat = Math.pow(L1_minus_L3_na_2, 2);/*квадрат из L1 минус L3 поделить на 2*/
+	let b_Kvadrat_minus_L1_minus_L3_na_2_kvadrat = b_Kvadrat - L1_minus_L3_na_2_kvadrat;
+	let koren_b_Kvadrat_minus_L1_minus_L3_na_2_kvadrat = Math.sqrt(b_Kvadrat_minus_L1_minus_L3_na_2_kvadrat);/*корень из B квадрат минус квадрат L1 минус L3 поделить на 2  */		
+	let s_Trapecia = L3_plus_L1_razd_na2 * koren_b_Kvadrat_minus_L1_minus_L3_na_2_kvadrat;
+	let s_Treugol = (dlina_L2 * koren_b_Kvadrat_minus_L1_minus_L3_na_2_kvadrat) / 2;
+	let result = (s_Trapecia + s_Treugol) * 2;
 	roof_block.querySelector("#valm_roof__sum_square-all-id").value = result.toFixed(2);
 }
 
@@ -663,6 +686,31 @@ function sumAllSquareFundamShved() {
 	let result = dlina * dlina2;
 	fundament_block.querySelector("#fundam_shved__area-all2-id").value = result.toFixed(2);
 }
+
+/**
+ * @function [sumSquareFundamPlitaFloor] Функция подсчета площади пола в фундамент плита
+ */
+function sumSquareFundamPlitaFloor() {
+	let fundament_block = document.querySelector('.fundament');
+	let form = document.getElementById('fundam_plita_wrp');
+	let dlina = Number(form.querySelector(".fundam_plita__length-flor1").value);
+	let dlina2 = Number(form.querySelector(".fundam_plita__length-flor2").value);
+	let result = dlina * dlina2;
+	fundament_block.querySelector("#fundam_plita__area-flor-all2-id").value = result.toFixed(2);
+}
+
+/**
+ * @function [sumSquareFundamPlitaFloor] Функция подсчета площади пола в фундамент плита
+ */
+function sumSquareShvedPlitaFloor() {
+	let fundament_block = document.querySelector('.fundament');
+	let form = document.getElementById('fundam_shved_wrp');
+	let dlina = Number(form.querySelector(".fundam_shved__length-flor1").value);
+	let dlina2 = Number(form.querySelector(".fundam_shved__length-flor2").value);
+	let result = dlina * dlina2;
+	fundament_block.querySelector("#fundam_shved__area-flor-all2-id").value = result.toFixed(2);
+}
+
 
 
 /**
@@ -1851,6 +1899,7 @@ function deleteFormKarkasWall(btn) {
 	}
 }
 
+
 /**
  * @function [deleteFormStoneWall] Функция удаления формы стена для слойных стен
  * @param {forms} forms - переменная для всей формы
@@ -2114,8 +2163,6 @@ function deleteFormPerekritStone(btn) {
 		document.querySelector(".add-form__peregor_door").classList.remove("hidden");
 		document.querySelector(".show-form__peregor_door").classList.add("hidden");
 	});		
-
-
 
 
 
