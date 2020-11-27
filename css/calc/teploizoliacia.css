@@ -287,18 +287,19 @@ body {
 
 	.teploizol_form_main .quest_wrp {
 		display: none;
-		width: 210px;
+		width: 200px;
 		position: absolute;
 		border-radius: 4px;
-		-moz-border-radius:4px;
-		-webkit-border-radius:4px;
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
 		background-color: #4bc970;
 		color: rgb(255 255 255);
 		padding: 5px;
 		text-align: center;
 		-webkit-box-shadow: 0 1px 1px rgb(61 175 95);
-		        box-shadow: 0 1px 1px rgb(61 175 95);
-		font-size: 12px;
+		box-shadow: 0 1px 1px rgb(61 175 95);
+		font-size: 10.5px;
+		line-height: 12px;
 		margin: -80px 0 0 0;
 		left: 16px;
 	}
@@ -308,11 +309,9 @@ body {
 		font-size: 28px;
 		
 	}
-
-	.teploizol_form_main .fa-question-circle2 {
-		color: #9fa5ab;
-		font-size: 14px;
-	}
+	.teploizol_form_main .fa-question-circle1 {
+	margin: 0 0 5px 0;
+}
 
 	.teploizol_form_main .fa-question-circle:hover {
 		color: #4bc970;
@@ -321,15 +320,16 @@ body {
 	.teploizol_form_main .quest_wrp::after {
 		content: '';
 		position: absolute;
-		left: 198px;
-		bottom: -4px;
-		border: 13px solid transparent;
-		transform: rotate(-147deg);
-		border-top: 11px solid #4bc970;
+		right: 6px;
+		top: 111px;
+		transform: rotate(119deg);
+		border-top: 10px solid transparent;
+		border-right: 8px solid #4bc970;
+		border-bottom: 28px solid transparent;
 	}
 
 	.teploizol_form_main .fa-question-circle:hover+.quest_wrp {
-		margin: -152px 0 0px 0px;
+		margin: -137px 0 0 4px;
     	display: grid;
     	grid-template-columns: 1fr;
     	grid-template-rows: 2fr 0.5fr;
@@ -357,8 +357,60 @@ body {
 			margin: 0 auto;
 		}
 	/*подсказка 2 (конец)*/
+/* вывод дата атрибутов на страницу
+	.input_label-wrp:hover::after {
+		content: attr(data-name);
+	}
+*/
+	/*подсказка 3 (начало)*/
 
-	
+	.teploizol_form_main .fa-question-circle2 {
+		color: #9fa5ab;
+		font-size: 14px;
+	}
+
+
+
+	.img__quest3 {
+		margin: 0 0 0 -5px;
+	}
+
+	.teploizol_form_main .quest_wrp3 {
+	display: none;
+    width: 120px;
+    position: absolute;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    background-color: #4bc970;
+    -webkit-box-shadow: 0 1px 1px rgb(61 175 95);
+    box-shadow: 0 1px 1px rgb(61 175 95);
+    left: 32px;
+
+}
+
+.teploizol_form_main .fa-question-circle:hover+.quest_wrp3 {
+	margin: -125px 0 0px 108px;
+    display: grid;
+    grid-template-columns: 1fr;
+    -webkit-animation: bounce-in 0.3s ease 0s 1 normal;
+    -moz-animation: bounce-in 0.3s ease 0s 1 normal;
+    -ms-animation: bounce-in 0.3s ease 0s 1 normal;
+    animation: bounce-in 0.3s ease 0s 1 normal;
+	}
+
+	.teploizol_form_main .quest_wrp3::after {
+		content: '';
+		position: absolute;
+		left: -4px;
+		top: 80px;
+		transform: rotate(53deg);
+		border-top: 4px solid transparent;
+		border-right: 14px solid #4bc970;
+		border-bottom: 23px solid transparent;
+	}
+
+	/*подсказка 3 (конец)*/
 
 	.teploizol_form_main form {
 		width: 300px;
@@ -742,7 +794,7 @@ body {
 	}
 
 	/*Начало аккордеон*/
-/*Начало аккордеон*/
+
 .teploizol_form_main button.accordion {
 	display: grid;
 	grid-template-columns: 30px 1fr 20px;
@@ -784,3 +836,5 @@ body {
 .active:after {
 	content: "\2718"; /* Unicode character for "minus" sign (-) */
 	}
+
+	/*конец аккордеон*/

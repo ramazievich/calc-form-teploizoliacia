@@ -23,8 +23,14 @@ function accordion() {
 	}
 }
 accordion();
+/*
 
+$(":input").bind('keyup mouseup', function () {
+	alert(чтото выводится);
+       
+});
 
+*/
 
 
 /**
