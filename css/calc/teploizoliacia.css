@@ -242,6 +242,7 @@ body {
 		-webkit-box-shadow: 0 1px 1px rgb(61 175 95);
 		        box-shadow: 0 1px 1px rgb(61 175 95);
 		font-size: 12px;
+		z-index: 3;
 	}
 
 	.teploizol_form_main .podskazka::after {
@@ -255,9 +256,8 @@ body {
 		}
 
 /*анимация пдсказки на кнопке копировать*/
-	.teploizol_form_main .copy-form:hover+.podskazka {
-		display: block;
-		
+	.teploizol_form_main .su_icon-copy:hover+.podskazka {
+		display: block;		
 		-webkit-animation:flipiny 1.2s ease 0s 1 normal;
 		-moz-animation:flipiny 1.2s ease 0s 1 normal;
 		-ms-animation:flipiny 1.2s ease 0s 1 normal;
@@ -467,6 +467,44 @@ body {
 	select.select-selected.input-style {
 		width: 198x;
 	}
+
+/*иконка в input - начало*/
+	.inputWithIcon input[type="number"] {
+		padding-left: 40px;
+	  }
+
+ 
+	  
+	  .inputWithIcon {
+		position: relative;
+	  }
+	  
+	  .inputWithIcon i {
+		position: absolute;
+		left: 0px;
+	  }
+
+	  .inputWithIcon.inputIconBg i {
+		background-color: #aaaaaa3d;
+		color: #fff;
+		padding: 8px 8px;
+		border-radius: 4px 0 0 4px;
+		box-shadow: 0 1px 0 rgb(222 222 222 / 40%) inset;
+	  }
+
+	  .inputWithIcon.inputIconBg .input-style:hover + i {
+		color: #fff;
+		background-color: rgb(208 220 220);
+		transition: 0.3s;
+	  }
+	  
+	  .inputWithIcon.inputIconBg .input-style:focus + i {
+		color: #fff;
+		background-color: #4bc970;
+		transition: 0.7s;
+	  }
+	  /*иконка в input - конец*/
+
 	
 	.teploizol_form_main input[type="radio"],
 	.teploizol_form_main input[type="checkbox"] {
@@ -478,6 +516,8 @@ body {
 		height: 32px;
 		border-radius: 2px;
 	}
+
+
 	.teploizol_form_main button {
 		padding: 19px 39px 18px 39px;
 		color: #FFF;
@@ -493,6 +533,7 @@ body {
 		box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
 		margin-bottom: 1px;
 	}
+
 	.teploizol_form_main .add-form-btn {
 		width: 250px;
 		text-align: center;
@@ -553,6 +594,21 @@ body {
 		-webkit-box-shadow: 0 -1px 0 #1dd2d9 inset;
 		box-shadow: 0 -1px 0 #1dd2d9 inset;
 	}
+
+	.teploizol_form_main  i.su_icon-delete {
+		position: absolute;
+		right: 7px;
+		font-size: 25px;
+	}
+
+	.teploizol_form_main i.su_icon-copy {
+		position: absolute;
+		right: 5px;
+		top: 47px;
+		font-size: 25px;
+	}
+
+/*
 	.teploizol_form_main .copy-form {
 		position: absolute;
 		right: 0;
@@ -568,7 +624,7 @@ body {
 		background: none;
 		margin: 41px 10px 0 0px;
 	}
-	.teploizol_form_main .remove-form-btn {
+	.teploizol_form_main .su_icon-delete1 {
 		position: absolute;
 		right: 0;
 		top: 0;
@@ -582,42 +638,48 @@ body {
 		cursor: pointer;
 		background: none;
 		margin: 7px 10px 0 0px;
-	}
-	.teploizol_form_main .copy-form:hover {
-		fill: rgb(21, 158, 21);
-		outline: none;
+	}*/
+
+	.teploizol_form_main i.su_icon-copy:hover {
+		color: rgb(21, 158, 21);
 		border: none;
 		cursor: pointer;
 		background: none;
 	}
-	.teploizol_form_main .remove-form-btn:hover {
-		fill: red;
-		outline: none;
-		border: none;
-		cursor: pointer;
-		background: none;
-	}
-	.teploizol_form_main .remove-form-btn:active {
-		fill: rgb(252, 56, 56);
-		outline: none;
-		border: none;
-		cursor: pointer;
-		background: none;
-	}
-	.teploizol_form_main .copy-form:focus {
-		fill: rgb(21, 158, 21);
+
+	.teploizol_form_main i.su_icon-copy:focus {
+		color: rgb(21, 158, 21);
 		outline: #3ac162;
 		border: none;
 		cursor: pointer;
 		background: #3ac162;
 	}
-	.teploizol_form_main .remove-form-btn:focus {
-		fill: rgb(252, 56, 56);
+
+	.teploizol_form_main  i.su_icon-delete:hover {
+		color: red;
+		outline: none;
+		border: none;
+		cursor: pointer;
+		background: none;
+	}
+	.teploizol_form_main  i.su_icon-delete:active {
+		color: rgb(252, 56, 56);
+		outline: none;
+		border: none;
+		cursor: pointer;
+		background: none;
+	}
+
+	.teploizol_form_main  i.su_icon-delete:focus {
+		color: rgb(252, 56, 56);
 		outline: #3ac162;
 		border: none;
 		cursor: pointer;
 		background: #3ac162;
 	}
+
+
+
 	
 	.teploizol_form_main .bg_fon_roof {
 		background-color: #b1ddb1;

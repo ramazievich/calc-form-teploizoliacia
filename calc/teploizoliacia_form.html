@@ -8,10 +8,11 @@
       <script defer src="../js/calc/teploizoliacia.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+      <link rel="stylesheet" href="../su_font/style.css">
    </head>
    <body>
       <div class="teploizol_form_main">
-         <button class="accordion" id="accordion1"><i class="fas fa-home" onclick="chpok1('this')"></i>Расчёт теплоизоляционных материалов для кровли</button>
+         <button class="accordion" id="accordion1"><i class="su_icon-home-roof" onclick="chpok1('this')"></i>Расчёт теплоизоляционных материалов для кровли</button>
          <div class="panel" id="panel1">
             <section class="roof">
                <!--<h2 class="roof_title__h2">Расчёт теплоизоляционных материалов для кровли</h2>-->
@@ -38,19 +39,26 @@
                            name="odnoskat_roof__form-id">
                            <div class="odnoskat_roof__groups_item-wrp">
                               <div class="input_label-wrp">
-                                 <label class="input_label">Длина по карнизному свесу(L), м</label>
-                                 <input class="odnoskat_roof__length input-style"
-                                    type="number" name="odnoskat_roof__dlina[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareOdnoskatRoof()">
+                                 <label class="input_label">Длина по карнизному свесу, м</label>
+                                    <div class="inputWithIcon inputIconBg">
+                                    <input class="odnoskat_roof__length input-style"
+                                       type="number" name="odnoskat_roof__dlina[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareOdnoskatRoof()">
+                                       <i class="su_icon-L" aria-hidden="true"></i>
+                                    </div>
+
                               </div>
                               <div class="input_label-wrp">
-                                 <label class="input_label">Высота ската(H), м </label>
-                                 <input class="odnoskat_roof__height input-style"
-                                    type="number" name="odnoskat_roof__visota[]" step="0.0001" min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareOdnoskatRoof()">
+                                 <label class="input_label">Высота ската, м </label>
+                                    <div class="inputWithIcon inputIconBg">
+                                    <input class="odnoskat_roof__height input-style"
+                                       type="number" name="odnoskat_roof__visota[]" step="0.0001" min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareOdnoskatRoof()">
+                                       <i class="su_icon-H" aria-hidden="true"></i>
+                                    </div>
                               </div>
                            </div>
                         </form>
@@ -76,19 +84,25 @@
                            name="dvuskat_roof__form-id">
                            <div class="dvuskat_roof__groups_item-wrp">
                               <div class="input_label-wrp">
-                                 <label class="input_label">Длина по карнизному свесу(L), м</label>
-                                 <input class="dvuskat_roof__length input-style"
-                                    type="number" name="dvuskat_roof__dlina[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareDvuskatRoof()">
+                                 <label class="input_label">Длина по карнизному свесу, м</label>
+                                    <div class="inputWithIcon inputIconBg">
+                                    <input class="dvuskat_roof__length input-style"
+                                       type="number" name="dvuskat_roof__dlina[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareDvuskatRoof()">
+                                       <i class="su_icon-L" aria-hidden="true"></i>
+                                    </div>
                               </div>
                               <div class="input_label-wrp">
-                                 <label class="input_label">Высота ската(H), м </label>
-                                 <input class="dvuskat_roof__height input-style"
-                                    type="number" name="dvuskat_roof__visota[]" step="0.0001" min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareDvuskatRoof()">
+                                 <label class="input_label">Высота ската, м </label>
+                                    <div class="inputWithIcon inputIconBg">
+                                    <input class="dvuskat_roof__height input-style"
+                                       type="number" name="dvuskat_roof__visota[]" step="0.0001" min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareDvuskatRoof()">
+                                       <i class="su_icon-H" aria-hidden="true"></i>
+                                    </div>
                               </div>
                            </div>
                         </form>
@@ -115,19 +129,25 @@
                            <div class="shatr_roof__groups_item-wrp">
                               <div class="input_label-wrp">
                                  <label class="input_label">Длина по карнизному свесу(L1), м</label>
-                                 <input class="shatr_roof__length input-style"
-                                    type="number" name="shatr_roof__dlina1[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareShatrRoof()">
+                                    <div class="inputWithIcon inputIconBg">
+                                    <input class="shatr_roof__length input-style"
+                                       type="number" name="shatr_roof__dlina1[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareShatrRoof()">
+                                       <i class="su_icon-L1" aria-hidden="true"></i>
+                                    </div>
                               </div>
                               <div class="input_label-wrp">
                                  <label class="input_label">Длина по карнизному свесу(L2), м </label>
-                                 <input class="shatr_roof__length2 input-style"
-                                    type="number" name="shatr_roof__dlina2[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareShatrRoof()">
+                                    <div class="inputWithIcon inputIconBg">
+                                    <input class="shatr_roof__length2 input-style"
+                                       type="number" name="shatr_roof__dlina2[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareShatrRoof()">
+                                       <i class="su_icon-L2" aria-hidden="true"></i>
+                                    </div>
                               </div>
                            </div>
                         </form>
@@ -153,38 +173,48 @@
                            name="valm_roof__form-id">
                            <div class="valm_roof__groups_item-wrp">
                               <div class="input_label-wrp">
-                                 <label class="input_label">Длина по карнизному свесу(L1), м</label>
-                                 <input class="valm_roof__length input-style"
-                                    type="number" name="valm_roof__dlina[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareValmRoof()">
+                                 <label class="input_label">Длина по карнизному свесу, м</label>
+                                    <div class="inputWithIcon inputIconBg">
+                                    <input class="valm_roof__length input-style"
+                                       type="number" name="valm_roof__dlina[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareValmRoof()">
+                                       <i class="su_icon-L1" aria-hidden="true"></i>
+                                    </div>
                               </div>
                               <div class="input_label-wrp">
-                                 <label class="input_label">Длина по карнизному свесу(L2),
-                                 м </label>
-                                 <input class="valm_roof__length2 input-style"
-                                    type="number" name="valm_roof__dlina2[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareValmRoof()">
+                                 <label class="input_label">Длина по карнизному свесу, м </label>
+                                    <div class="inputWithIcon inputIconBg">
+                                    <input class="valm_roof__length2 input-style"
+                                       type="number" name="valm_roof__dlina2[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareValmRoof()">
+                                       <i class="su_icon-L2" aria-hidden="true"></i>
+                                    </div>
                               </div>
                               <div class="input_label-wrp">
-                                 <label class="input_label">Длина конька(L3),
-                                 м </label>
-                                 <input class="valm_roof__length3 input-style"
-                                    type="number" name="valm_roof__dlina3[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareValmRoof()">
+                                 <label class="input_label">Длина конька, м </label>
+                                    <div class="inputWithIcon inputIconBg">
+                                    <input class="valm_roof__length3 input-style"
+                                       type="number" name="valm_roof__dlina3[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareValmRoof()">
+                                       <i class="su_icon-L3" aria-hidden="true"></i>
+                                    </div>
                               </div>
                               <div class="input_label-wrp">
-                                 <label class="input_label">Длина ската(B), м </label>
-                                 <input class="valm_roof__length4 input-style"
-                                    type="number" name="valm_roof__dlina4[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareValmRoof()">
+                                 <label class="input_label">Длина ската, м </label>
+                                    <div class="inputWithIcon inputIconBg">
+                                    <input class="valm_roof__length4 input-style"
+                                       type="number" name="valm_roof__dlina4[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareValmRoof()">
+                                       <i class="su_icon-B" aria-hidden="true"></i>
+                                    </div>
                               </div>
                            </div>
                         </form>
@@ -210,30 +240,39 @@
                            name="mansard_roof__form-id">
                            <div class="input_label__groups_item-wrp">
                               <div class="input_label-wrp">
-                                 <label class="input_label">Длина по карнизному свесу(L), м</label>
-                                 <input class="mansard_roof__length input-style"
-                                    type="number" name="mansard_roof__dlina[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareMansardRoof()">
+                                 <label class="input_label">Длина по карнизному свесу, м</label>
+                                    <div class="inputWithIcon inputIconBg">
+                                    <input class="mansard_roof__length input-style"
+                                       type="number" name="mansard_roof__dlina[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareMansardRoof()">
+                                       <i class="su_icon-L" aria-hidden="true"></i>
+                                    </div>
                               </div>
                               <div class="input_label-wrp">
-                                 <label class="input_label">Высота ската(H1),
+                                 <label class="input_label">Высота ската,
                                  м </label>
-                                 <input class="mansard_roof__height1 input-style"
-                                    type="number" name="mansard_roof__visota1[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareMansardRoof()">
+                                    <div class="inputWithIcon inputIconBg">
+                                    <input class="mansard_roof__height1 input-style"
+                                       type="number" name="mansard_roof__visota1[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareMansardRoof()">
+                                       <i class="su_icon-H1" aria-hidden="true"></i>
+                                    </div>
                               </div>
                               <div class="input_label-wrp">
-                                 <label class="input_label">Высота ската(H2),
+                                 <label class="input_label">Высота ската,
                                  м </label>
-                                 <input class="mansard_roof__height2 input-style"
-                                    type="number" name="mansard_roof__visota2[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareMansardRoof()">
+                                    <div class="inputWithIcon inputIconBg">
+                                    <input class="mansard_roof__height2 input-style"
+                                       type="number" name="mansard_roof__visota2[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareMansardRoof()">
+                                       <i class="su_icon-H2" aria-hidden="true"></i>
+                                    </div>
                               </div>
                            </div>
                         </form>
@@ -280,7 +319,7 @@
                </div>
             </section>
          </div>
-         <button class="accordion" id="accordion2"><i class="fas fa-building"></i>Расчёт теплоизоляционных материалов для стен</button>
+         <button class="accordion" id="accordion2"><i class="su_icon-wall"></i>Расчёт теплоизоляционных материалов для стен</button>
          <div class="panel" id="panel2">
             <section class="walls">
                <!--<h2 class="wall_title__h2">Расчёт теплоизоляционных материалов для стен</h2>-->
@@ -330,55 +369,32 @@
                         <div class="karkas_wall__form_wrp">
                            <div class="karkas_wall_item scetchik_formy" id="karkas_wall_wrp">
                               <form action="#" class="karkas_wall__form" id="karkas_wall__form-id">
-                                 <span class="karkas_wall__label nomer_formy">Стена №</span>
-                                 <svg class="remove-form-btn remove-form" id="close-formKarkasWall" onclick="deleteFormKarkasWall(this)"
-                                    focusable="false" width="20" height="20" viewBox="0 0 20 20">
-                                    <path class="st0"
-                                       d="M12.7,7.2c-0.3,0-0.5,0.2-0.5,0.5v8.9c0,0.3,0.2,0.5,0.5,0.5s0.5-0.2,0.5-0.5V7.7C13.2,7.5,13,7.2,12.7,7.2z"/>
-                                    <path class="st0"
-                                       d="M7.3,7.2C7,7.2,6.8,7.5,6.8,7.7v8.9C6.8,16.8,7,17,7.3,17c0.3,0,0.5-0.2,0.5-0.5V7.7C7.7,7.5,7.5,7.2,7.3,7.2z"/>
-                                    <path class="st0" d="M3.3,6v11.5c0,0.7,0.2,1.3,0.7,1.8C4.4,19.7,5,20,5.6,20h8.7c0.6,0,1.2-0.3,1.7-0.7c0.4-0.5,0.7-1.1,0.7-1.8V6
-                                       c0.9-0.2,1.4-1.1,1.3-2c-0.1-0.9-0.9-1.6-1.7-1.6h-2.4V1.9c0-0.5-0.2-1-0.5-1.3C13,0.2,12.5,0,12,0H7.9C7.5,0,7,0.2,6.6,0.5
-                                       C6.3,0.9,6.1,1.4,6.1,1.9v0.6H3.7C2.9,2.4,2.1,3.1,2,4C1.9,4.9,2.4,5.7,3.3,6z M14.4,19.1H5.6c-0.8,0-1.4-0.7-1.4-1.6V6h11.5v11.5
-                                       C15.8,18.4,15.1,19.1,14.4,19.1z M7,1.9c0-0.2,0.1-0.5,0.3-0.7C7.5,1,7.7,0.9,7.9,0.9H12c0.2,0,0.5,0.1,0.6,0.3
-                                       c0.2,0.2,0.3,0.4,0.3,0.7v0.6H7V1.9z M3.7,3.4h12.5c0.5,0,0.8,0.4,0.8,0.8s-0.4,0.8-0.8,0.8H3.7c-0.5,0-0.8-0.4-0.8-0.8
-                                       S3.3,3.4,3.7,3.4z"/>
-                                    <path class="st0"
-                                       d="M10,7.2c-0.3,0-0.5,0.2-0.5,0.5v8.9c0,0.3,0.2,0.5,0.5,0.5c0.3,0,0.5-0.2,0.5-0.5V7.7C10.5,7.5,10.2,7.2,10,7.2z"/>
-                                 </svg>
-                                 <svg class="copy-form-btn copy-form" onclick="copyFormKarkasWall(this)"
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0"
-                                    viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="20">
-                                    <path d="M74.7,512h256c29.4,0,53.3-23.9,53.3-53.3v-320c0-29.4-23.9-53.3-53.3-53.3h-256c-29.4,0-53.3,23.9-53.3,53.3v320
-                                       C21.3,488.1,45.3,512,74.7,512z M330.7,106.7c17.6,0,32,14.4,32,32v320c0,17.6-14.4,32-32,32h-256c-17.6,0-32-14.4-32-32v-320
-                                       c0-17.6,14.4-32,32-32H330.7z"/>
-                                    <path d="M416,448h21.3c29.4,0,53.3-23.9,53.3-53.3V53.3c0-29.4-23.9-53.3-53.3-53.3h-256C151.9,0,128,23.9,128,53.3
-                                       c0,5.9,4.8,10.7,10.7,10.7s10.7-4.8,10.7-10.7c0-17.6,14.4-32,32-32h256c17.6,0,32,14.4,32,32v341.3c0,17.6-14.4,32-32,32H416
-                                       c-5.9,0-10.7,4.8-10.7,10.7S410.1,448,416,448z"/>
-                                    <path d="M117.3,362.7H288c5.9,0,10.7-4.8,10.7-10.7c0-5.9-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7
-                                       C106.7,357.9,111.4,362.7,117.3,362.7z"/>
-                                    <path d="M117.3,448H288c5.9,0,10.7-4.8,10.7-10.7s-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,448,117.3,448z"/>
-                                    <path d="M117.3,277.3H288c5.9,0,10.7-4.8,10.7-10.7S293.9,256,288,256H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,277.3,117.3,277.3z"
-                                       />
-                                    <path d="M117.3,192H288c5.9,0,10.7-4.8,10.7-10.7s-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,192,117.3,192z"/>
-                                 </svg>
+                                    <span class="karkas_wall__label nomer_formy">Стена №</span>
+                                       <i class="su_icon-delete" onclick="deleteFormKarkasWall(this)" aria-hidden="true"></i>
+                                       <i class="su_icon-copy" onclick="copyFormKarkasWall(this)" aria-hidden="true"></i>
                                  <span class="podskazka">Копировать</span>
                                  <div class="input_label__groups_item-wrp">
                                     <div class="input_label__groups-wrp">
                                        <div class="input_label-wrp">
                                           <label class="input_label">Длина, м</label>
-                                          <input class="filter_data karkas_wall__length input-style" type="number"
-                                             name="data[Стены][0][Длина]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcStenaKarkasWall(); perimeterKarkasWall(); sumPerimetersKarkasWall(); sumAreasKarkasWall();">
+                                             <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data karkas_wall__length input-style" type="number"
+                                                name="data[Стены][0][Длина]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcStenaKarkasWall(); perimeterKarkasWall(); sumPerimetersKarkasWall(); sumAreasKarkasWall();">
+                                                <i class="su_icon-L" aria-hidden="true"></i>
+                                             </div>
                                        </div>
                                        <div class="input_label-wrp">
                                           <label class="input_label">
                                           Высота, м </label>
-                                          <input class="filter_data karkas_wall__height input-style" type="number"
-                                             name="data[Стены][0][Высота]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcStenaKarkasWall(); perimeterKarkasWall(); sumAreasKarkasWall();">
+                                             <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data karkas_wall__height input-style" type="number"
+                                                name="data[Стены][0][Высота]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcStenaKarkasWall(); perimeterKarkasWall(); sumAreasKarkasWall();">
+                                                <i class="su_icon-H" aria-hidden="true"></i>
+                                             </div>
                                        </div>
                                     </div>
                                     <div class="hidden">
@@ -389,8 +405,8 @@
                                     </div>
                                     <div class="input_label-wrp">
                                        <label class="input_label">Площадь, м&sup2;</label>
-                                       <input class="karkas_wall__result input-style" type="text"
-                                          name="karkas_wall__result[]" disabled>
+                                          <input class="karkas_wall__result input-style" type="text"
+                                             name="karkas_wall__result[]" disabled>
                                     </div>
                                  </div>
                               </form>
@@ -408,54 +424,31 @@
                            <div class="karkas_window_wrp scetchik_formy hidden" id="karkas_window_wrp">
                               <form action="#" class="karkas_window__form" id="karkas_window__form-id">
                                  <span class="karkas_window__label nomer_formy">Окно №</span>
-                                 <svg class="remove-form-btn remove-form" id="close-formKarkasWindow" onclick="deleteFormKarkasWindow(this)"
-                                    focusable="false" width="20" height="20" viewBox="0 0 20 20">
-                                    <path class="st0"
-                                       d="M12.7,7.2c-0.3,0-0.5,0.2-0.5,0.5v8.9c0,0.3,0.2,0.5,0.5,0.5s0.5-0.2,0.5-0.5V7.7C13.2,7.5,13,7.2,12.7,7.2z"/>
-                                    <path class="st0"
-                                       d="M7.3,7.2C7,7.2,6.8,7.5,6.8,7.7v8.9C6.8,16.8,7,17,7.3,17c0.3,0,0.5-0.2,0.5-0.5V7.7C7.7,7.5,7.5,7.2,7.3,7.2z"/>
-                                    <path class="st0" d="M3.3,6v11.5c0,0.7,0.2,1.3,0.7,1.8C4.4,19.7,5,20,5.6,20h8.7c0.6,0,1.2-0.3,1.7-0.7c0.4-0.5,0.7-1.1,0.7-1.8V6
-                                       c0.9-0.2,1.4-1.1,1.3-2c-0.1-0.9-0.9-1.6-1.7-1.6h-2.4V1.9c0-0.5-0.2-1-0.5-1.3C13,0.2,12.5,0,12,0H7.9C7.5,0,7,0.2,6.6,0.5
-                                       C6.3,0.9,6.1,1.4,6.1,1.9v0.6H3.7C2.9,2.4,2.1,3.1,2,4C1.9,4.9,2.4,5.7,3.3,6z M14.4,19.1H5.6c-0.8,0-1.4-0.7-1.4-1.6V6h11.5v11.5
-                                       C15.8,18.4,15.1,19.1,14.4,19.1z M7,1.9c0-0.2,0.1-0.5,0.3-0.7C7.5,1,7.7,0.9,7.9,0.9H12c0.2,0,0.5,0.1,0.6,0.3
-                                       c0.2,0.2,0.3,0.4,0.3,0.7v0.6H7V1.9z M3.7,3.4h12.5c0.5,0,0.8,0.4,0.8,0.8s-0.4,0.8-0.8,0.8H3.7c-0.5,0-0.8-0.4-0.8-0.8
-                                       S3.3,3.4,3.7,3.4z"/>
-                                    <path class="st0"
-                                       d="M10,7.2c-0.3,0-0.5,0.2-0.5,0.5v8.9c0,0.3,0.2,0.5,0.5,0.5c0.3,0,0.5-0.2,0.5-0.5V7.7C10.5,7.5,10.2,7.2,10,7.2z"/>
-                                 </svg>
-                                 <svg class="copy-form-btn copy-form" onclick="copyFormKarkasWindow(this)"
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0"
-                                    viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="20">
-                                    <path d="M74.7,512h256c29.4,0,53.3-23.9,53.3-53.3v-320c0-29.4-23.9-53.3-53.3-53.3h-256c-29.4,0-53.3,23.9-53.3,53.3v320
-                                       C21.3,488.1,45.3,512,74.7,512z M330.7,106.7c17.6,0,32,14.4,32,32v320c0,17.6-14.4,32-32,32h-256c-17.6,0-32-14.4-32-32v-320
-                                       c0-17.6,14.4-32,32-32H330.7z"/>
-                                    <path d="M416,448h21.3c29.4,0,53.3-23.9,53.3-53.3V53.3c0-29.4-23.9-53.3-53.3-53.3h-256C151.9,0,128,23.9,128,53.3
-                                       c0,5.9,4.8,10.7,10.7,10.7s10.7-4.8,10.7-10.7c0-17.6,14.4-32,32-32h256c17.6,0,32,14.4,32,32v341.3c0,17.6-14.4,32-32,32H416
-                                       c-5.9,0-10.7,4.8-10.7,10.7S410.1,448,416,448z"/>
-                                    <path d="M117.3,362.7H288c5.9,0,10.7-4.8,10.7-10.7c0-5.9-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7
-                                       C106.7,357.9,111.4,362.7,117.3,362.7z"/>
-                                    <path d="M117.3,448H288c5.9,0,10.7-4.8,10.7-10.7s-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,448,117.3,448z"/>
-                                    <path d="M117.3,277.3H288c5.9,0,10.7-4.8,10.7-10.7S293.9,256,288,256H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,277.3,117.3,277.3z"
-                                       />
-                                    <path d="M117.3,192H288c5.9,0,10.7-4.8,10.7-10.7s-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,192,117.3,192z"/>
-                                 </svg>
+                                 <i class="su_icon-delete" onclick="deleteFormKarkasWindow(this)" aria-hidden="true"></i>
+                                 <i class="su_icon-copy" onclick="copyFormKarkasWindow(this)" aria-hidden="true"></i>
                                  <span class="podskazka">Копировать</span>
                                  <div class="input_label__groups_item-wrp">
                                     <div class="input_label__groups-wrp">
                                        <div class="input_label-wrp">
                                           <label class="input_label">Ширина, м</label>
-                                          <input class="filter_data karkas_window__length input-style" type="number"
-                                             name="data[Окна][0][Ширина]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcStenaKarkasWindow(); perimeterKarkasWindow(); sumPerimetersKarkasWindow(); sumAreasKarkasWindow();">
+                                             <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data karkas_window__length input-style" type="number"
+                                                name="data[Окна][0][Ширина]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcStenaKarkasWindow(); perimeterKarkasWindow(); sumPerimetersKarkasWindow(); sumAreasKarkasWindow();">
+                                                <i class="su_icon-B" aria-hidden="true"></i>
+                                             </div>
                                        </div>
                                        <div class="input_label-wrp">
                                           <label class="input_label">
                                           Высота, м </label>
-                                          <input class="filter_data karkas_window__height input-style" type="number"
-                                             name="data[Окна][0][Высота]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcStenaKarkasWindow(); perimeterKarkasWindow(); sumAreasKarkasWindow();">
+                                             <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data karkas_window__height input-style" type="number"
+                                                name="data[Окна][0][Высота]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcStenaKarkasWindow(); perimeterKarkasWindow(); sumAreasKarkasWindow();">
+                                                <i class="su_icon-H" aria-hidden="true"></i>
+                                             </div>
                                        </div>
                                     </div>
                                     <div class="hidden">
@@ -493,54 +486,31 @@
                            <div class="karkas_door_wrp scetchik_formy hidden" id="karkas_door_wrp">
                               <form action="#" class="karkas_door__form" id="karkas_door__form-id">
                                  <span class="karkas_door__label nomer_formy">Дверь №</span>
-                                 <svg class="remove-form-btn remove-form" id="close-formKarkasDoor" onclick="deleteFormKarkasDoor(this)"
-                                    focusable="false" width="20" height="20" viewBox="0 0 20 20">
-                                    <path class="st0"
-                                       d="M12.7,7.2c-0.3,0-0.5,0.2-0.5,0.5v8.9c0,0.3,0.2,0.5,0.5,0.5s0.5-0.2,0.5-0.5V7.7C13.2,7.5,13,7.2,12.7,7.2z"/>
-                                    <path class="st0"
-                                       d="M7.3,7.2C7,7.2,6.8,7.5,6.8,7.7v8.9C6.8,16.8,7,17,7.3,17c0.3,0,0.5-0.2,0.5-0.5V7.7C7.7,7.5,7.5,7.2,7.3,7.2z"/>
-                                    <path class="st0" d="M3.3,6v11.5c0,0.7,0.2,1.3,0.7,1.8C4.4,19.7,5,20,5.6,20h8.7c0.6,0,1.2-0.3,1.7-0.7c0.4-0.5,0.7-1.1,0.7-1.8V6
-                                       c0.9-0.2,1.4-1.1,1.3-2c-0.1-0.9-0.9-1.6-1.7-1.6h-2.4V1.9c0-0.5-0.2-1-0.5-1.3C13,0.2,12.5,0,12,0H7.9C7.5,0,7,0.2,6.6,0.5
-                                       C6.3,0.9,6.1,1.4,6.1,1.9v0.6H3.7C2.9,2.4,2.1,3.1,2,4C1.9,4.9,2.4,5.7,3.3,6z M14.4,19.1H5.6c-0.8,0-1.4-0.7-1.4-1.6V6h11.5v11.5
-                                       C15.8,18.4,15.1,19.1,14.4,19.1z M7,1.9c0-0.2,0.1-0.5,0.3-0.7C7.5,1,7.7,0.9,7.9,0.9H12c0.2,0,0.5,0.1,0.6,0.3
-                                       c0.2,0.2,0.3,0.4,0.3,0.7v0.6H7V1.9z M3.7,3.4h12.5c0.5,0,0.8,0.4,0.8,0.8s-0.4,0.8-0.8,0.8H3.7c-0.5,0-0.8-0.4-0.8-0.8
-                                       S3.3,3.4,3.7,3.4z"/>
-                                    <path class="st0"
-                                       d="M10,7.2c-0.3,0-0.5,0.2-0.5,0.5v8.9c0,0.3,0.2,0.5,0.5,0.5c0.3,0,0.5-0.2,0.5-0.5V7.7C10.5,7.5,10.2,7.2,10,7.2z"/>
-                                 </svg>
-                                 <svg class="copy-form-btn copy-form" onclick="copyFormKarkasDoor(this)" 
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0"
-                                    viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="20">
-                                    <path d="M74.7,512h256c29.4,0,53.3-23.9,53.3-53.3v-320c0-29.4-23.9-53.3-53.3-53.3h-256c-29.4,0-53.3,23.9-53.3,53.3v320
-                                       C21.3,488.1,45.3,512,74.7,512z M330.7,106.7c17.6,0,32,14.4,32,32v320c0,17.6-14.4,32-32,32h-256c-17.6,0-32-14.4-32-32v-320
-                                       c0-17.6,14.4-32,32-32H330.7z"/>
-                                    <path d="M416,448h21.3c29.4,0,53.3-23.9,53.3-53.3V53.3c0-29.4-23.9-53.3-53.3-53.3h-256C151.9,0,128,23.9,128,53.3
-                                       c0,5.9,4.8,10.7,10.7,10.7s10.7-4.8,10.7-10.7c0-17.6,14.4-32,32-32h256c17.6,0,32,14.4,32,32v341.3c0,17.6-14.4,32-32,32H416
-                                       c-5.9,0-10.7,4.8-10.7,10.7S410.1,448,416,448z"/>
-                                    <path d="M117.3,362.7H288c5.9,0,10.7-4.8,10.7-10.7c0-5.9-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7
-                                       C106.7,357.9,111.4,362.7,117.3,362.7z"/>
-                                    <path d="M117.3,448H288c5.9,0,10.7-4.8,10.7-10.7s-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,448,117.3,448z"/>
-                                    <path d="M117.3,277.3H288c5.9,0,10.7-4.8,10.7-10.7S293.9,256,288,256H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,277.3,117.3,277.3z"
-                                       />
-                                    <path d="M117.3,192H288c5.9,0,10.7-4.8,10.7-10.7s-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,192,117.3,192z"/>
-                                 </svg>
+                                 <i class="su_icon-delete" onclick="deleteFormKarkasDoor(this)" aria-hidden="true"></i>
+                                 <i class="su_icon-copy" onclick="copyFormKarkasDoor(this)" aria-hidden="true"></i>
                                  <span class="podskazka">Копировать</span>
                                  <div class="input_label__groups_item-wrp">
                                     <div class="input_label__groups-wrp">
                                        <div class="input_label-wrp">
                                           <label class="input_label">Ширина, м</label>
-                                          <input class="filter_data karkas_door__length input-style" type="number"
-                                             name="data[Двери][0][Ширина]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcStenaKarkasDoor(); perimeterKarkasDoor(); sumPerimetersKarkasDoor(); sumAreasKarkasDoor();">
+                                             <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data karkas_door__length input-style" type="number"
+                                                name="data[Двери][0][Ширина]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcStenaKarkasDoor(); perimeterKarkasDoor(); sumPerimetersKarkasDoor(); sumAreasKarkasDoor();">
+                                                <i class="su_icon-B" aria-hidden="true"></i>
+                                             </div>
                                        </div>
                                        <div class="input_label-wrp">
                                           <label class="input_label">
                                           Высота, м </label>
-                                          <input class="filter_data karkas_door__height input-style" type="number"
-                                             name="data[Двери][0][Высота]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcStenaKarkasDoor(); perimeterKarkasDoor(); sumAreasKarkasDoor();">
+                                             <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data karkas_door__height input-style" type="number"
+                                                name="data[Двери][0][Высота]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcStenaKarkasDoor(); perimeterKarkasDoor(); sumAreasKarkasDoor();">
+                                                <i class="su_icon-H" aria-hidden="true"></i>
+                                             </div>
                                        </div>
                                     </div>
                                     <div class="hidden">
@@ -603,54 +573,33 @@
                            <div class="stone_wall_item scetchik_formy" id="stone_wall_wrp">
                               <form action="#" class="stone_wall__form" id="stone_wall__form-id">
                                  <span class="stone_wall__label nomer_formy">Стена №</span>
-                                 <svg class="remove-form-btn remove-form" id="close-formStoneWall" onclick="deleteFormStoneWall(this)"
-                                    focusable="false" width="20" height="20" viewBox="0 0 20 20">
-                                    <path class="st0"
-                                       d="M12.7,7.2c-0.3,0-0.5,0.2-0.5,0.5v8.9c0,0.3,0.2,0.5,0.5,0.5s0.5-0.2,0.5-0.5V7.7C13.2,7.5,13,7.2,12.7,7.2z"/>
-                                    <path class="st0"
-                                       d="M7.3,7.2C7,7.2,6.8,7.5,6.8,7.7v8.9C6.8,16.8,7,17,7.3,17c0.3,0,0.5-0.2,0.5-0.5V7.7C7.7,7.5,7.5,7.2,7.3,7.2z"/>
-                                    <path class="st0" d="M3.3,6v11.5c0,0.7,0.2,1.3,0.7,1.8C4.4,19.7,5,20,5.6,20h8.7c0.6,0,1.2-0.3,1.7-0.7c0.4-0.5,0.7-1.1,0.7-1.8V6
-                                       c0.9-0.2,1.4-1.1,1.3-2c-0.1-0.9-0.9-1.6-1.7-1.6h-2.4V1.9c0-0.5-0.2-1-0.5-1.3C13,0.2,12.5,0,12,0H7.9C7.5,0,7,0.2,6.6,0.5
-                                       C6.3,0.9,6.1,1.4,6.1,1.9v0.6H3.7C2.9,2.4,2.1,3.1,2,4C1.9,4.9,2.4,5.7,3.3,6z M14.4,19.1H5.6c-0.8,0-1.4-0.7-1.4-1.6V6h11.5v11.5
-                                       C15.8,18.4,15.1,19.1,14.4,19.1z M7,1.9c0-0.2,0.1-0.5,0.3-0.7C7.5,1,7.7,0.9,7.9,0.9H12c0.2,0,0.5,0.1,0.6,0.3
-                                       c0.2,0.2,0.3,0.4,0.3,0.7v0.6H7V1.9z M3.7,3.4h12.5c0.5,0,0.8,0.4,0.8,0.8s-0.4,0.8-0.8,0.8H3.7c-0.5,0-0.8-0.4-0.8-0.8
-                                       S3.3,3.4,3.7,3.4z"/>
-                                    <path class="st0"
-                                       d="M10,7.2c-0.3,0-0.5,0.2-0.5,0.5v8.9c0,0.3,0.2,0.5,0.5,0.5c0.3,0,0.5-0.2,0.5-0.5V7.7C10.5,7.5,10.2,7.2,10,7.2z"/>
-                                 </svg>
-                                 <svg class="copy-form-btn copy-form" onclick="copyFormStoneWall(this)"
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0"
-                                    viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="20">
-                                    <path d="M74.7,512h256c29.4,0,53.3-23.9,53.3-53.3v-320c0-29.4-23.9-53.3-53.3-53.3h-256c-29.4,0-53.3,23.9-53.3,53.3v320
-                                       C21.3,488.1,45.3,512,74.7,512z M330.7,106.7c17.6,0,32,14.4,32,32v320c0,17.6-14.4,32-32,32h-256c-17.6,0-32-14.4-32-32v-320
-                                       c0-17.6,14.4-32,32-32H330.7z"/>
-                                    <path d="M416,448h21.3c29.4,0,53.3-23.9,53.3-53.3V53.3c0-29.4-23.9-53.3-53.3-53.3h-256C151.9,0,128,23.9,128,53.3
-                                       c0,5.9,4.8,10.7,10.7,10.7s10.7-4.8,10.7-10.7c0-17.6,14.4-32,32-32h256c17.6,0,32,14.4,32,32v341.3c0,17.6-14.4,32-32,32H416
-                                       c-5.9,0-10.7,4.8-10.7,10.7S410.1,448,416,448z"/>
-                                    <path d="M117.3,362.7H288c5.9,0,10.7-4.8,10.7-10.7c0-5.9-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7
-                                       C106.7,357.9,111.4,362.7,117.3,362.7z"/>
-                                    <path d="M117.3,448H288c5.9,0,10.7-4.8,10.7-10.7s-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,448,117.3,448z"/>
-                                    <path d="M117.3,277.3H288c5.9,0,10.7-4.8,10.7-10.7S293.9,256,288,256H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,277.3,117.3,277.3z"
-                                       />
-                                    <path d="M117.3,192H288c5.9,0,10.7-4.8,10.7-10.7s-4.8-10.7-10.7-10.7H117.3c-5.9,0-10.7,4.8-10.7,10.7S111.4,192,117.3,192z"/>
-                                 </svg>
+                                 <i class="su_icon-delete" onclick="deleteFormStoneWall(this)" aria-hidden="true"></i>
+                                 <i class="su_icon-copy" onclick="copyFormStoneWall(this)(this)" aria-hidden="true"></i>
+
+
                                  <span class="podskazka">Копировать</span>
                                  <div class="input_label__groups_item-wrp">
                                     <div class="input_label__groups-wrp">
                                        <div class="input_label-wrp">
                                           <label class="input_label">Длина, м</label>
-                                          <input class="filter_data stone_wall__length input-style" type="number"
-                                             name="data[Стены][0][Длина]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcStenaStoneWall(); perimeterStoneWall(); sumPerimetersStoneWall(); sumAreasStoneWall();">
+                                             <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data stone_wall__length input-style" type="number"
+                                                name="data[Стены][0][Длина]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcStenaStoneWall(); perimeterStoneWall(); sumPerimetersStoneWall(); sumAreasStoneWall();">
+                                                <i class="su_icon-L" aria-hidden="true"></i>
+                                             </div>
                                        </div>
                                        <div class="input_label-wrp">
                                           <label class="input_label">
                                           Высота, м </label>
-                                          <input class="filter_data stone_wall__height input-style" type="number"
-                                             name="data[Стены][0][Высота]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcStenaStoneWall(); perimeterStoneWall(); sumAreasStoneWall();">
+                                             <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data stone_wall__height input-style" type="number"
+                                                name="data[Стены][0][Высота]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcStenaStoneWall(); perimeterStoneWall(); sumAreasStoneWall();">
+                                                <i class="su_icon-H" aria-hidden="true"></i>
+                                             </div>
                                        </div>
                                     </div>
                                     <div class="hidden">
@@ -716,18 +665,24 @@
                                     <div class="input_label__groups-wrp">
                                        <div class="input_label-wrp">
                                           <label class="input_label">Ширина, м</label>
-                                          <input class="filter_data stone_window__length input-style" type="number"
-                                             name="data[Окна][0][Ширина]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcStenaStoneWindow(); perimeterStoneWindow(); sumPerimetersStoneWindow(); sumAreasStoneWindow();">
+                                             <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data stone_window__length input-style" type="number"
+                                                name="data[Окна][0][Ширина]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcStenaStoneWindow(); perimeterStoneWindow(); sumPerimetersStoneWindow(); sumAreasStoneWindow();">
+                                                <i class="su_icon-B" aria-hidden="true"></i>
+                                             </div>
                                        </div>
                                        <div class="input_label-wrp">
                                           <label class="input_label">
                                           Высота, м </label>
-                                          <input class="filter_data stone_window__height input-style" type="number"
-                                             name="data[Окна][0][Высота]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcStenaStoneWindow(); perimeterStoneWindow(); sumAreasStoneWindow();">
+                                             <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data stone_window__height input-style" type="number"
+                                                name="data[Окна][0][Высота]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcStenaStoneWindow(); perimeterStoneWindow(); sumAreasStoneWindow();">
+                                                <i class="su_icon-H" aria-hidden="true"></i>
+                                             </div>
                                        </div>
                                     </div>
                                     <div class="hidden">
@@ -801,22 +756,27 @@
                                     <div class="input_label__groups-wrp">
                                        <div class="input_label-wrp">
                                           <label class="input_label">Ширина, м</label>
-                                          <input class="filter_data stone_door__length input-style" type="number"
-                                             name="data[Двери][0][Ширина]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcStenaStoneDoor(); perimeterStoneDoor(); sumPerimetersStoneDoor(); sumAreasStoneDoor();">
+                                             <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data stone_door__length input-style" type="number"
+                                                name="data[Двери][0][Ширина]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcStenaStoneDoor(); perimeterStoneDoor(); sumPerimetersStoneDoor(); sumAreasStoneDoor();">
+                                                <i class="su_icon-B" aria-hidden="true"></i>
+                                             </div>
                                        </div>
                                        <div class="input_label-wrp">
-                                          <label class="input_label">
-                                          Высота, м </label>
-                                          <input class="filter_data stone_door__height input-style" type="number"
-                                             name="data[Двери][0][Высота]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcStenaStoneDoor(); perimeterStoneDoor(); sumAreasStoneDoor();">
+                                          <label class="input_label"> Высота, м </label>
+                                             <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data stone_door__height input-style" type="number"
+                                                name="data[Двери][0][Высота]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcStenaStoneDoor(); perimeterStoneDoor(); sumAreasStoneDoor();">
+                                                <i class="su_icon-H" aria-hidden="true"></i>
+                                             </div>
                                        </div>
                                     </div>
                                     <div class="hidden">
-                                       <label class="input_label">Ширина окна, м </label>
+                                       <label class="input_label">Ширина двери, м </label>
                                        <input class="stone_door__perimeter input-style" disabled type="number"
                                           name="stone_door__perimeter"
                                           step="0.0001" min="0">
@@ -911,18 +871,24 @@
                                     <div class="input_label__groups-wrp">
                                        <div class="input_label-wrp">
                                           <label class="input_label">Длина, м</label>
-                                          <input class="filter_data peregor_wall__length input-style" type="number"
-                                             name="data[Перегородки][0][Длина]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcStenaPeregorWall(); perimeterPeregorWall(); sumPerimetersPeregorWall(); sumAreasPeregorWall();">
+                                             <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data peregor_wall__length input-style" type="number"
+                                                name="data[Перегородки][0][Длина]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcStenaPeregorWall(); perimeterPeregorWall(); sumPerimetersPeregorWall(); sumAreasPeregorWall();">
+                                                <i class="su_icon-L" aria-hidden="true"></i>
+                                             </div>
                                        </div>
                                        <div class="input_label-wrp">
                                           <label class="input_label">
                                           Высота, м </label>
-                                          <input class="filter_data peregor_wall__height input-style" type="number"
-                                             name="data[Перегородки][0][Высота]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcStenaPeregorWall(); perimeterPeregorWall(); sumAreasPeregorWall();">
+                                             <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data peregor_wall__height input-style" type="number"
+                                                name="data[Перегородки][0][Высота]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcStenaPeregorWall(); perimeterPeregorWall(); sumAreasPeregorWall();">
+                                                <i class="su_icon-H" aria-hidden="true"></i>
+                                             </div>
                                        </div>
                                     </div>
                                     <div class="hidden">
@@ -988,18 +954,24 @@
                                     <div class="input_label__groups-wrp">
                                        <div class="input_label-wrp">
                                           <label class="input_label">Ширина, м</label>
-                                          <input class="filter_data peregor_window__length input-style" type="number"
-                                             name="data[Окна][0][Ширина]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcStenaPeregorWindow(); perimeterPeregorWindow(); sumPerimetersPeregorWindow(); sumAreasPeregorWindow();">
+                                             <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data peregor_window__length input-style" type="number"
+                                                name="data[Окна][0][Ширина]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcStenaPeregorWindow(); perimeterPeregorWindow(); sumPerimetersPeregorWindow(); sumAreasPeregorWindow();">
+                                                <i class="su_icon-B" aria-hidden="true"></i>
+                                             </div>
                                        </div>
                                        <div class="input_label-wrp">
                                           <label class="input_label">
                                           Высота, м </label>
-                                          <input class="filter_data peregor_window__height input-style" type="number"
-                                             name="data[Окна][0][Высота]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcStenaPeregorWindow(); perimeterPeregorWindow(); sumAreasPeregorWindow();">
+                                             <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data peregor_window__height input-style" type="number"
+                                                name="data[Окна][0][Высота]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcStenaPeregorWindow(); perimeterPeregorWindow(); sumAreasPeregorWindow();">
+                                                <i class="su_icon-H" aria-hidden="true"></i>
+                                             </div>
                                        </div>
                                     </div>
                                     <div class="hidden">
@@ -1073,18 +1045,24 @@
                                     <div class="input_label__groups-wrp">
                                        <div class="input_label-wrp">
                                           <label class="input_label">Ширина, м</label>
-                                          <input class="filter_data peregor_door__length input-style" type="number"
-                                             name="data[Двери][0][Ширина]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcStenaPeregorDoor(); perimeterPeregorDoor(); sumPerimetersPeregorDoor(); sumAreasPeregorDoor();">
+                                             <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data peregor_door__length input-style" type="number"
+                                                name="data[Двери][0][Ширина]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcStenaPeregorDoor(); perimeterPeregorDoor(); sumPerimetersPeregorDoor(); sumAreasPeregorDoor();">
+                                                <i class="su_icon-B" aria-hidden="true"></i>
+                                             </div>
                                        </div>
                                        <div class="input_label-wrp">
                                           <label class="input_label">
                                           Высота, м </label>
-                                          <input class="filter_data peregor_door__height input-style" type="number"
-                                             name="data[Двери][0][Высота]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcStenaPeregorDoor(); perimeterPeregorDoor(); sumAreasPeregorDoor();">
+                                             <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data peregor_door__height input-style" type="number"
+                                                name="data[Двери][0][Высота]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcStenaPeregorDoor(); perimeterPeregorDoor(); sumAreasPeregorDoor();">
+                                                <i class="su_icon-H" aria-hidden="true"></i>
+                                             </div>
                                        </div>
                                     </div>
                                     <div class="hidden">
@@ -1209,7 +1187,7 @@
                </div>
             </section>
          </div>
-         <button class="accordion" id="accordion3"><i class="fas fa-layer-group"></i>Расчёт теплоизоляционных материалов для перекрытий</button>
+         <button class="accordion" id="accordion3"><i class="su_icon-plity-derevo"></i>Расчёт теплоизоляционных материалов для перекрытий</button>
          <div class="panel" id="panel3">
             <section class="perekritie">
                <!--<h2 class="perekrit_title__h2">Расчёт теплоизоляционных материалов для перекрытий</h2>-->
@@ -1270,19 +1248,25 @@
                                  <div class="input_label__groups_item-wrp">
                                     <div class="input_label__groups-wrp">
                                        <div class="input_label-wrp">
-                                          <label class="input_label">Длина(L1), м</label>
-                                          <input class="filter_data perekrit_wood__length input-style" type="number"
-                                             name="data[Деревянные перекрития][0][Длина]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcPerekritWood(); sumAreasPerekritWood();">
+                                          <label class="input_label">Длина, м</label>
+                                          <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data perekrit_wood__length input-style" type="number"
+                                                name="data[Деревянные перекрития][0][Длина]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcPerekritWood(); sumAreasPerekritWood();">
+                                                <i class="su_icon-L1" aria-hidden="true"></i>
+                                          </div>
                                        </div>
                                        <div class="input_label-wrp">
                                           <label class="input_label">
-                                          Ширина(L2), м </label>
-                                          <input class="filter_data perekrit_wood__width input-style" type="number"
-                                             name="data[Деревянные перекрития][0][Ширина]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcPerekritWood(); sumAreasPerekritWood();">
+                                          Ширина, м </label>                                             
+                                             <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data perekrit_wood__width input-style" type="number"
+                                                name="data[Деревянные перекрития][0][Ширина]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcPerekritWood(); sumAreasPerekritWood();">
+                                                <i class="su_icon-L2" aria-hidden="true"></i>
+                                             </div>
                                        </div>
                                     </div>
                                     <div class="input_label-wrp">
@@ -1359,18 +1343,24 @@
                                     <div class="input_label__groups-wrp">
                                        <div class="input_label-wrp">
                                           <label class="input_label">Длина(L1), м</label>
-                                          <input class="filter_data perekrit_stone__length input-style" type="number"
-                                             name="data[Бетонные перекрития][0][Длина]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcPerekritStone(); sumAreasPerekritStone();">
+                                             <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data perekrit_stone__length input-style" type="number"
+                                                name="data[Бетонные перекрития][0][Длина]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcPerekritStone(); sumAreasPerekritStone();">
+                                                <i class="su_icon-L1" aria-hidden="true"></i>
+                                             </div>
                                        </div>
                                        <div class="input_label-wrp">
                                           <label class="input_label">
                                           Ширина(L2), м </label>
-                                          <input class="filter_data perekrit_stone__width input-style" type="number"
-                                             name="data[Бетонные перекрития][0][Ширина]" step="0.0001" min="0"
-                                             oninput="validity.valid||(value='');"
-                                             onkeyup="funcPerekritStone(); sumAreasPerekritStone();">
+                                             <div class="inputWithIcon inputIconBg">
+                                             <input class="filter_data perekrit_stone__width input-style" type="number"
+                                                name="data[Бетонные перекрития][0][Ширина]" step="0.0001" min="0"
+                                                oninput="validity.valid||(value='');"
+                                                onkeyup="funcPerekritStone(); sumAreasPerekritStone();">
+                                                <i class="su_icon-L2" aria-hidden="true"></i>
+                                             </div>
                                        </div>
                                     </div>
                                     <div class="input_label-wrp">
@@ -1405,7 +1395,7 @@
                </div>
             </section>
          </div>
-         <button class="accordion" id="accordion4"><i class="fas fa-ring"></i>Расчёт теплоизоляционных материалов для фундамента</button>
+         <button class="accordion" id="accordion4"><i class="su_icon-home-fundament path1"></i>Расчёт теплоизоляционных материалов для фундамента</button>
          <div class="panel"  id="panel4">
             <section class="fundament">
                <!--<h2 class="fundam_title__h2">Расчёт теплоизоляционных материалов для фундамента</h2>-->
@@ -1432,28 +1422,38 @@
                            name="fundam_lenta__form-id">
                            <div class="input_label__groups_item-wrp">
                               <div class="input_label-wrp">
-                                 <label class="input_label">Длина(L1), м</label>
-                                 <input class="fundam_lenta__length input-style"
-                                    type="number" name="fundam_lenta__dlina[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareFundamLenta()">
+                                 <label class="input_label">Длина, м</label>
+                                    <div class="inputWithIcon inputIconBg">
+                                    <input class="fundam_lenta__length input-style"
+                                       type="number" name="fundam_lenta__dlina[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareFundamLenta()">
+                                       <i class="su_icon-L1" aria-hidden="true"></i>
+                                    </div>
                               </div>
                               <div class="input_label-wrp">
-                                 <label class="input_label">Ширина(L2),м </label>
-                                 <input class="fundam_lenta__length2 input-style"
-                                    type="number" name="fundam_lenta__dlina2[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareFundamLenta()">
+                                 <label class="input_label">Ширина,м </label>
+                                    <div class="inputWithIcon inputIconBg">
+                                    <input class="fundam_lenta__length2 input-style"
+                                       type="number" name="fundam_lenta__dlina2[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareFundamLenta()">
+                                       <i class="su_icon-L2" aria-hidden="true"></i>
+                                    </div>
+
                               </div>
                               <div class="input_label-wrp">
                                  <label class="input_label">Высота(H), м </label>
-                                 <input class="fundam_lenta__height input-style"
-                                    type="number" name="fundam_lenta__visota[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareFundamLenta()">
+                                    <div class="inputWithIcon inputIconBg">
+                                    <input class="fundam_lenta__height input-style"
+                                       type="number" name="fundam_lenta__visota[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareFundamLenta()">
+                                       <i class="su_icon-H" aria-hidden="true"></i>
+                                    </div>
                               </div>
                               <div class="input_label-wrp">
                                  <label class="input_label">Ширина отмостки</label>
@@ -1515,33 +1515,42 @@
                            name="fundam_plita__form-id">
                            <div class="input_label__groups_item-wrp">
                               <div class="input_label-wrp">
-                                 <label class="input_label">Длина(L1), м</label>
-                                 <input class="fundam_plita__length input-style"
-                                    type="number" name="fundam_plita__dlina[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareFundamPlita()">
+                                 <label class="input_label">Длина, м</label>
+                                    <div class="inputWithIcon inputIconBg">
+                                    <input class="fundam_plita__length input-style"
+                                       type="number" name="fundam_plita__dlina[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareFundamPlita()">
+                                       <i class="su_icon-L1" aria-hidden="true"></i>
+                                    </div>
                               </div>
                               <div class="input_label-wrp">
-                                 <label class="input_label">Ширина(L2),м </label>
-                                 <input class="fundam_plita__length2 input-style"
-                                    type="number" name="fundam_plita__dlina2[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareFundamPlita()">
+                                 <label class="input_label">Ширина,м </label>
+                                    <div class="inputWithIcon inputIconBg">
+                                    <input class="fundam_plita__length2 input-style"
+                                       type="number" name="fundam_plita__dlina2[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareFundamPlita()">
+                                       <i class="su_icon-L2" aria-hidden="true"></i>
+                                    </div>
                               </div>
                               <div class="input_label-wrp">
-                                 <label class="input_label">Высота(H), м </label>
-                                 <input class="fundam_plita__height input-style"
-                                    type="number" name="fundam_plita__visota[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareFundamPlita()">
+                                 <label class="input_label">Высота, м </label>
+                                 <div class="inputWithIcon inputIconBg">
+                                    <input class="fundam_plita__height input-style"
+                                       type="number" name="fundam_plita__visota[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareFundamPlita()">
+                                       <i class="su_icon-H" aria-hidden="true"></i>
+                                 </div>
                               </div>
                               <div class="input_label-wrp">
                                  <label class="input_label">Длина пола, м </label><i class="far fa-question-circle fa-question-circle2"></i>
                                  <div class="quest_wrp3">
-                                    <img class="img__quest3" src="../img/calc/teploizoliacia/ploshad-pola.svg" alt="площадь пола" height="100">
+                                    <img class="img__quest3" src="../img/calc/teploizoliacia/ploshad-pola1.svg" alt="площадь пола" height="100">
                                  </div>
                                  <input class="fundam_plita__length-flor1 input-style"
                                     type="number" name="fundam_plita__dlina-pola[]" step="0.0001"
@@ -1552,7 +1561,7 @@
                               <div class="input_label-wrp">
                                  <label class="input_label">Ширина пола,м </label><i class="far fa-question-circle fa-question-circle2"></i>
                                  <div class="quest_wrp3">
-                                    <img class="img__quest3" src="../img/calc/teploizoliacia/ploshad-pola.svg" alt="площадь пола" height="100">
+                                    <img class="img__quest3" src="../img/calc/teploizoliacia/ploshad-pola2.svg" alt="площадь пола" height="100">
                                  </div>
                                  <input class="fundam_plita__length-flor2 input-style"
                                     type="number" name="fundam_plita__shirina-pola[]" step="0.0001"
@@ -1616,40 +1625,49 @@
                            </label>
                         </div>
                      </div>
-                     <!-- Начало полей для Фундамент "Плита" -->
+                     <!-- Начало полей для Фундамент "шведская утепленная плита" -->
                      <div class="fundam_shved_wrp hidden" id="fundam_shved_wrp">
                         <form action="#" class="fundam_shved__form" id="fundam_shved__form-id"
                            name="fundam_shved__form-id">
                            <div class="input_label__groups_item-wrp">
                               <div class="input_label-wrp">
-                                 <label class="input_label" >Длина(L1), м</label>
-                                 
-                                 <input class="fundam_shved__length input-style"
-                                    type="number" name="fundam_shved__dlina[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareFundamShved()">
+                                 <label class="input_label" >Длина, м</label>
+                                 <div class="inputWithIcon inputIconBg">
+                                    <input class="fundam_shved__length input-style"
+                                       type="number" name="fundam_shved__dlina[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareFundamShved()">
+                                       <i class="su_icon-L1" aria-hidden="true"></i>
+                                 </div>
                               </div>
                               <div class="input_label-wrp">
-                                 <label class="input_label">Ширина(L2),м </label>
-                                 <input class="fundam_shved__length2 input-style"
-                                    type="number" name="fundam_shved__dlina2[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareFundamShved()">
+                                 <label class="input_label">Ширина,м </label>
+                              <div class="inputWithIcon inputIconBg">
+                                    <input class="fundam_shved__length2 input-style"
+                                       type="number" name="fundam_shved__dlina2[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareFundamShved()">
+                                       <i class="su_icon-L2" aria-hidden="true"></i>
+                              </div>
                               </div>
                               <div class="input_label-wrp">
-                                 <label class="input_label">Высота(H), м </label>
-                                 <input class="fundam_shved__height input-style"
-                                    type="number" name="fundam_shved__visota[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumAllSquareFundamShved()">
+                                 <label class="input_label">Высота, м </label>
+                                 <div class="inputWithIcon inputIconBg">
+                                    <input class="fundam_shved__height input-style"
+                                       type="number" name="fundam_shved__visota[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumAllSquareFundamShved()">
+                                       <i class="su_icon-H" aria-hidden="true"></i>
+                                 </div>
+
                               </div>
                               <div class="input_label-wrp">
                                  <label class="input_label">Длина пола, м </label><i class="far fa-question-circle fa-question-circle2"></i>
                                  <div class="quest_wrp3">
-                                    <img class="img__quest3" src="../img/calc/teploizoliacia/ploshad-pola.svg" alt="площадь пола" height="100">
+                                    <img class="img__quest3" src="../img/calc/teploizoliacia/ploshad-pola1.svg" alt="площадь пола" height="100">
                                  </div>
                                  <input class="fundam_shved__length-flor1 input-style"
                                     type="number" name="fundam_shved__dlina-pola[]" step="0.0001"
@@ -1660,7 +1678,7 @@
                               <div class="input_label-wrp">
                                  <label class="input_label">Ширина пола,м </label><i class="far fa-question-circle fa-question-circle2"></i>
                                  <div class="quest_wrp3">
-                                    <img class="img__quest3" src="../img/calc/teploizoliacia/ploshad-pola.svg" alt="площадь пола" height="100">
+                                    <img class="img__quest3" src="../img/calc/teploizoliacia/ploshad-pola2.svg" alt="площадь пола" height="100">
                                  </div>
                                  <input class="fundam_shved__length-flor2 input-style"
                                     type="number" name="fundam_shved__ыршкштф-pola[]" step="0.0001"
@@ -1734,64 +1752,5 @@
             </section>
          </div>
       </div>
-
-<!--
-
-
-      <div class="inputWithIcon inputIconBg fundam_shved__length2 input-style">
-         <input type="number" placeholder="Your name">
-         <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
-       </div>
-       <br>
-       <br>
-       <div class="inputWithIcon inputIconBg fundam_shved__length2 input-style">
-         <input type="number" placeholder="Your name">
-         <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
-       </div>
-       <br>
-       <br>
-       <div class="inputWithIcon inputIconBg fundam_shved__length2 input-style">
-         <input type="number" placeholder="Your name">
-         <i class="fa fa-phone fa-lg fa-fw" aria-hidden="true"></i>
-       </div>
-
-
-       <style>
-
-.inputWithIcon input[type="number"] {
-  padding-left: 40px;
-}
-
-.inputWithIcon {
-  position: relative;
-}
-
-.inputWithIcon i {
-  position: absolute;
-  left: 0;
-  top: 8px;
-  padding: 9px 8px;
-  color: #aaa;
-  transition: 0.3s;
-}
-
-.inputWithIcon input[type="number"]:focus + i {
-  color: dodgerBlue;
-}
-
-.inputWithIcon.inputIconBg i {
-  background-color: #aaa;
-  color: #fff;
-  padding: 9px 4px;
-  border-radius: 4px 0 0 4px;
-  margin: -14px 0 0 0;
-}
-
-.inputWithIcon.inputIconBg input[type="number"]:focus + i {
-  color: #fff;
-  background-color: dodgerBlue;
-}
-       </style>
--->
    </body>
 </html>
