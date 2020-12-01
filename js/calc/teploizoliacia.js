@@ -277,7 +277,7 @@ function clearAllFormKarkasDoor() {
 
 /**
  * Для чекбокса
- * показ формы расчета теплоизоляции для каркасной стены
+ * показ формы расчета теплоизоляции для каменной стены
  * @function [showStoneWallItems] добавляет класс hidden к чекбоксу
  * @param {remove} - удаляет класс hidden у формы
  * @param {check}  - переменная к классу для чекбокса
@@ -423,8 +423,6 @@ function showPerekritWoodItems(check) {
 		document.getElementById("img__perekrit_wood_color-id").classList.add("hidden");
 		document.getElementById("img__perekrit_wood-id").classList.remove("hidden");
 		clearAllFormPerekritWood();
-		clearAllFormPerekritWood();
-		clearAllFormPerekritWood();
 
 		funcPerekritWood();
 		sumAreasPerekritWood();
@@ -460,8 +458,6 @@ function showPerekritStoneItems(check) {
 		document.getElementById("perekrit_stone__all_wrp-id").classList.add("hidden");
 		document.getElementById("img__perekrit_stone_color-id").classList.add("hidden");
 		document.getElementById("img__perekrit_stone-id").classList.remove("hidden");
-		clearAllFormPerekritStone();
-		clearAllFormPerekritStone();
 		clearAllFormPerekritStone();
 
 		funcPerekritStone();
@@ -1902,6 +1898,8 @@ function deleteFormKarkasWall(btn) {
 		btn.parentElement.remove();
 		sumPerimetersKarkasWall();
 		sumAreasKarkasWall();
+	} else if (forms.length === 1) {
+		clearAllFormKarkasWall();	
 	}
 }
 
@@ -1919,6 +1917,8 @@ function deleteFormStoneWall(btn) {
 		btn.parentElement.remove();
 		sumPerimetersStoneWall();
 		sumAreasStoneWall();
+	} else if (forms.length === 1) {
+		clearAllFormStoneWall();	
 	}
 }
 
@@ -1936,6 +1936,8 @@ function deleteFormPeregorWall(btn) {
 		btn.parentElement.remove();
 		sumPerimetersPeregorWall();
 		sumAreasPeregorWall();
+	} else if (forms.length === 1) {
+		clearAllFormPeregorWall();		
 	}
 }
 
@@ -2071,7 +2073,9 @@ function deleteFormPerekritWood(btn) {
 	if (forms.length > 1) {
 		btn.parentElement.remove();
 		sumAreasPerekritWood();
-		document.querySelector(".perekrit_wood_wrp").classList.remove("hidden");
+		document.querySelector(".perekrit_wood_wrp").classList.remove("hidden");		
+	} else if (forms.length === 1) {
+		clearAllFormPerekritWood();		
 	}
 }
 
@@ -2089,6 +2093,8 @@ function deleteFormPerekritStone(btn) {
 		btn.parentElement.remove();
 		sumAreasPerekritStone();
 		document.querySelector(".perekrit_stone_wrp").classList.remove("hidden");
+	} else if (forms.length === 1) {
+		clearAllFormPerekritStone();	
 	}
 }
 

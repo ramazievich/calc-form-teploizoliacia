@@ -62,6 +62,11 @@ body {
 	font-size: 14px;
 }
 
+.teploizol_form_main  .nomer_formy {
+    font-weight: 600;
+    color: #525252;
+}
+
 /* Нумерация форм начало*/
 .teploizol_form_main .scetchik_formy {
 	counter-reset: items;
@@ -234,7 +239,7 @@ body {
 		position: absolute;
 		border-radius: 4px;
 		right: 42px;
-		top: 38px;
+		top: 44px;
 		background-color: #4bc970;
 		color: rgb(255 255 255);
 		padding: 5px;
@@ -494,7 +499,7 @@ body {
 
 	  .inputWithIcon.inputIconBg .input-style:hover + i {
 		color: #fff;
-		background-color: rgb(208 220 220);
+		background-color: rgb(200 222 222);
 		transition: 0.3s;
 	  }
 	  
@@ -517,33 +522,30 @@ body {
 		border-radius: 2px;
 	}
 
+.teploizol_form_main .karkas_material {
+    margin: 10px 10px 15px 10px
+}
 
-	.teploizol_form_main button {
-		padding: 19px 39px 18px 39px;
-		color: #FFF;
-		background-color: #4bc970;
-		font-size: 15px;
-		text-align: center;
-		font-style: normal;
-		border-radius: 5px;
-		width: 100%;
-		border: 1px solid #3ac162;
-		border-width: 1px 1px 3px;
-		-webkit-box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
-		box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
-		margin-bottom: 1px;
-	}
+.teploizol_form_main .checkbox2_items {
+    margin-left: 10px;
+}
+
+
+.teploizol_form_main .add-icon {
+	font-size: 18px;
+}
 
 	.teploizol_form_main .add-form-btn {
 		width: 250px;
-		text-align: center;
+		text-align: left;
 		background-color: #4bc970;
-		fill: white;
 		color: white;
-		padding: 8px 8px;
+		font-size: 16px;
+		padding: 8px 8px 8px 12px;
 		margin: 14px 0 8px 0;
-		display: flex;
-		justify-content: space-evenly;
+		display: grid;
+		grid-template-columns: 30px 220px;
+		align-items: end;
 		border: 0.5px solid #31c15c;
 		outline: none;
 		border-radius: 4px;
@@ -556,12 +558,13 @@ body {
 		width: 250px;
 		text-align: left;
 		background-color: #d8d9db;
-		fill: white;
 		color: white;
-		padding: 8px 8px;
+		font-size: 16px;
+		padding: 8px 8px 8px 12px;
 		margin: 14px 0 8px 0;
-		display: flex;
-		justify-content: space-evenly;
+		display: grid;
+		grid-template-columns: 30px 220px;
+		align-items: end;
 		border: 0.5px solid #c0c0c0;
 		outline: none;
 		border-radius: 4px;
@@ -572,21 +575,20 @@ body {
 	}
 	.teploizol_form_main .add-form-btn:hover {
 		background-color: #31c15c;
-		fill: rgb(250, 253, 54);
 		cursor: pointer;
 	}
+
 	.teploizol_form_main .add-form-btn:active {
 		background-color: #4bc970;
-		fill: rgb(250, 253, 54);
 		cursor: pointer;
 	}
 	.teploizol_form_main .show-form-btn:hover {
 		background-color: #cccccc;
-		fill: rgb(255, 255, 255);
+		color: rgb(255, 255, 255);
 	}
 	.teploizol_form_main .show-form-btn:active {
 		background-color: #09d5db;
-		fill: rgb(254, 254, 254);
+		color: rgb(254, 254, 254);
 		border: 0.5px solid #1ec6cc;
 		outline: none;
 		border-radius: 4px;
@@ -851,7 +853,7 @@ body {
 		margin: 10px 0;
 	}
 
-	.img__roof {
+	.teploizol_form_main .img__roof {
 		fill: white;
 	}
 
@@ -879,23 +881,29 @@ body {
 
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .accordion:hover {
+.teploizol_form_main button.accordion.accordion:hover {
 	background-color: #3ac162;
-	transition: max-height 0.2s ease-out;
+	transition: max-height 0.8s ease-out;
+	height: 100%;
+}
+
+.teploizol_form_main button.accordion.accordion:focus {
+	background-color: #2ab453;
+	transition: max-height 0.8s ease-out;
 	height: 100%;
 }
 
 /* Style the accordion panel. Note: hidden by default */
-.panel {
+.teploizol_form_main .panel {
 	max-height: 0;
 	overflow: hidden;
 }
 
-.accordion:after {
+.teploizol_form_main .accordion:after {
 	content: '\2630'; /* Unicode character for "plus" sign (+) */
 	}
 
-.active:after {
+.teploizol_form_main .active:after {
 	content: "\2718"; /* Unicode character for "minus" sign (-) */
 	}
 
