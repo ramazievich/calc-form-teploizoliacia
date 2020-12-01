@@ -237,7 +237,7 @@
                      <div class="mansard_form_wrp hidden" id="mansard_form_wrp">
                         <form action="#" class="mansard_roof__form" id="mansard_roof__form-id"
                            name="mansard_roof__form-id">
-                           <div class="input_label__groups_item-wrp">
+                           <div class="mansard_roof__groups_item-wrp">
                               <div class="input_label-wrp">
                                  <label class="input_label">Длина по карнизному свесу, м</label>
                                  <div class="inputWithIcon inputIconBg">
@@ -1147,60 +1147,64 @@
                         <form action="#" class="fundam_lenta__form" id="fundam_lenta__form-id"
                            name="fundam_lenta__form-id">
                            <div class="input_label__groups_item-wrp">
-                              <div class="input_label-wrp">
-                                 <label class="input_label">Длина, м</label>
-                                 <div class="inputWithIcon inputIconBg">
-                                    <input class="fundam_lenta__length input-style"
-                                       type="number" name="fundam_lenta__dlina[]" step="0.0001"
-                                       min="0"
-                                       oninput="validity.valid||(value='');"
-                                       onkeyup="sumAllSquareFundamLenta()">
-                                    <i class="su_icon-L1" aria-hidden="true"></i>
+                              <div class="group_item-first">
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Длина, м</label>
+                                    <div class="inputWithIcon inputIconBg">
+                                       <input class="fundam_lenta__length input-style"
+                                          type="number" name="fundam_lenta__dlina[]" step="0.0001"
+                                          min="0"
+                                          oninput="validity.valid||(value='');"
+                                          onkeyup="sumAllSquareFundamLenta()">
+                                       <i class="su_icon-L1" aria-hidden="true"></i>
+                                    </div>
                                  </div>
-                              </div>
-                              <div class="input_label-wrp">
-                                 <label class="input_label">Ширина,м </label>
-                                 <div class="inputWithIcon inputIconBg">
-                                    <input class="fundam_lenta__length2 input-style"
-                                       type="number" name="fundam_lenta__dlina2[]" step="0.0001"
-                                       min="0"
-                                       oninput="validity.valid||(value='');"
-                                       onkeyup="sumAllSquareFundamLenta()">
-                                    <i class="su_icon-L2" aria-hidden="true"></i>
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Ширина,м </label>
+                                    <div class="inputWithIcon inputIconBg">
+                                       <input class="fundam_lenta__length2 input-style"
+                                          type="number" name="fundam_lenta__dlina2[]" step="0.0001"
+                                          min="0"
+                                          oninput="validity.valid||(value='');"
+                                          onkeyup="sumAllSquareFundamLenta()">
+                                       <i class="su_icon-L2" aria-hidden="true"></i>
+                                    </div>
                                  </div>
-                              </div>
-                              <div class="input_label-wrp">
-                                 <label class="input_label">Высота(H), м </label>
-                                 <div class="inputWithIcon inputIconBg">
-                                    <input class="fundam_lenta__height input-style"
-                                       type="number" name="fundam_lenta__visota[]" step="0.0001"
-                                       min="0"
-                                       oninput="validity.valid||(value='');"
-                                       onkeyup="sumAllSquareFundamLenta()">
-                                    <i class="su_icon-H" aria-hidden="true"></i>
-                                 </div>
-                              </div>
-                              <div class="input_label-wrp">
-                                 <label class="input_label">Ширина отмостки</label>
-                                 <div class="input-quest_wrp">
-                                    <input class="fundam_shved__shir_otmostki input-style" placeholder="0.6 м"
-                                       type="number" name="fundam_shved__shir_otmostki[]" disabled value="0.6">
-                                    <i class="fas fa-question-circle fa-question-circle1"></i>
-                                    <div class="quest_wrp">
-                                       <img class="img__quest2" src="../img/calc/teploizoliacia/shirina-otmostki.svg" alt="Ширина отмостки" height="100">
-                                       <span class="podskazka2">Для СПБ и ЛО ширина отмостки по умолчанию 0.6 м </span>
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Высота(H), м </label>
+                                    <div class="inputWithIcon inputIconBg">
+                                       <input class="fundam_lenta__height input-style"
+                                          type="number" name="fundam_lenta__visota[]" step="0.0001"
+                                          min="0"
+                                          oninput="validity.valid||(value='');"
+                                          onkeyup="sumAllSquareFundamLenta()">
+                                       <i class="su_icon-H" aria-hidden="true"></i>
                                     </div>
                                  </div>
                               </div>
-                              <div class="input_label-wrp">
-                                 <label class="input_label">Толщина утеплителя отмостки</label>
-                                 <div class="input-quest_wrp">
-                                    <input class="fundam_shved__tolsh_otmostki_plit input-style" placeholder="50 мм"
-                                       type="number" name="fundam_shved__tolsh_otmostki_plit[]" disabled value="50">
-                                    <i class="fas fa-question-circle fa-question-circle1"></i>
-                                    <div class="quest_wrp">
-                                       <img class="img__quest2" src="../img/calc/teploizoliacia/tolshina-uteplitelia-otmostki.svg" alt="Толщина утеплителя отмостки" height="100">
-                                       <span class="podskazka2">Для СПБ и ЛО толщина утеплителя отмостки по умолчанию 50 мм </span>
+                              <div class="group_item-tree">
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Ширина отмостки</label>
+                                    <div class="input-quest_wrp">
+                                       <input class="fundam_shved__shir_otmostki input-style" placeholder="0.6 м"
+                                          type="number" name="fundam_shved__shir_otmostki[]" disabled value="0.6">
+                                       <i class="fas fa-question-circle fa-question-circle1"></i>
+                                       <div class="quest_wrp">
+                                          <img class="img__quest2" src="../img/calc/teploizoliacia/shirina-otmostki.svg" alt="Ширина отмостки" height="100">
+                                          <span class="podskazka2">Для СПБ и ЛО ширина отмостки по умолчанию 0.6 м </span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Толщина утеплителя отмостки</label>
+                                    <div class="input-quest_wrp">
+                                       <input class="fundam_shved__tolsh_otmostki_plit input-style" placeholder="50 мм"
+                                          type="number" name="fundam_shved__tolsh_otmostki_plit[]" disabled value="50">
+                                       <i class="fas fa-question-circle fa-question-circle1"></i>
+                                       <div class="quest_wrp">
+                                          <img class="img__quest2" src="../img/calc/teploizoliacia/tolshina-uteplitelia-otmostki.svg" alt="Толщина утеплителя отмостки" height="100">
+                                          <span class="podskazka2">Для СПБ и ЛО толщина утеплителя отмостки по умолчанию 50 мм </span>
+                                       </div>
                                     </div>
                                  </div>
                               </div>
@@ -1227,94 +1231,100 @@
                         <form action="#" class="fundam_plita__form" id="fundam_plita__form-id"
                            name="fundam_plita__form-id">
                            <div class="input_label__groups_item-wrp">
-                              <div class="input_label-wrp">
-                                 <label class="input_label">Длина, м</label>
-                                 <div class="inputWithIcon inputIconBg">
-                                    <input class="fundam_plita__length input-style"
-                                       type="number" name="fundam_plita__dlina[]" step="0.0001"
-                                       min="0"
-                                       oninput="validity.valid||(value='');"
-                                       onkeyup="sumAllSquareFundamPlita()">
-                                    <i class="su_icon-L1" aria-hidden="true"></i>
+                              <div class="group_item-first">
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Длина, м</label>
+                                    <div class="inputWithIcon inputIconBg">
+                                       <input class="fundam_plita__length input-style"
+                                          type="number" name="fundam_plita__dlina[]" step="0.0001"
+                                          min="0"
+                                          oninput="validity.valid||(value='');"
+                                          onkeyup="sumAllSquareFundamPlita()">
+                                       <i class="su_icon-L1" aria-hidden="true"></i>
+                                    </div>
                                  </div>
-                              </div>
-                              <div class="input_label-wrp">
-                                 <label class="input_label">Ширина,м </label>
-                                 <div class="inputWithIcon inputIconBg">
-                                    <input class="fundam_plita__length2 input-style"
-                                       type="number" name="fundam_plita__dlina2[]" step="0.0001"
-                                       min="0"
-                                       oninput="validity.valid||(value='');"
-                                       onkeyup="sumAllSquareFundamPlita()">
-                                    <i class="su_icon-L2" aria-hidden="true"></i>
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Ширина,м </label>
+                                    <div class="inputWithIcon inputIconBg">
+                                       <input class="fundam_plita__length2 input-style"
+                                          type="number" name="fundam_plita__dlina2[]" step="0.0001"
+                                          min="0"
+                                          oninput="validity.valid||(value='');"
+                                          onkeyup="sumAllSquareFundamPlita()">
+                                       <i class="su_icon-L2" aria-hidden="true"></i>
+                                    </div>
                                  </div>
-                              </div>
-                              <div class="input_label-wrp">
-                                 <label class="input_label">Высота, м </label>
-                                 <div class="inputWithIcon inputIconBg">
-                                    <input class="fundam_plita__height input-style"
-                                       type="number" name="fundam_plita__visota[]" step="0.0001"
-                                       min="0"
-                                       oninput="validity.valid||(value='');"
-                                       onkeyup="sumAllSquareFundamPlita()">
-                                    <i class="su_icon-H" aria-hidden="true"></i>
-                                 </div>
-                              </div>
-                              <div class="input_label-wrp">
-                                 <label class="input_label">Длина пола, м </label><i class="far fa-question-circle fa-question-circle2"></i>
-                                 <div class="quest_wrp3">
-                                    <img class="img__quest3" src="../img/calc/teploizoliacia/ploshad-pola1.svg" alt="площадь пола" height="100">
-                                 </div>
-                                 <input class="fundam_plita__length-flor1 input-style"
-                                    type="number" name="fundam_plita__dlina-pola[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumSquareFundamPlitaFloor()">
-                              </div>
-                              <div class="input_label-wrp">
-                                 <label class="input_label">Ширина пола,м </label><i class="far fa-question-circle fa-question-circle2"></i>
-                                 <div class="quest_wrp3">
-                                    <img class="img__quest3" src="../img/calc/teploizoliacia/ploshad-pola2.svg" alt="площадь пола" height="100">
-                                 </div>
-                                 <input class="fundam_plita__length-flor2 input-style"
-                                    type="number" name="fundam_plita__shirina-pola[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumSquareFundamPlitaFloor()">
-                              </div>
-                              <div class="input_label-wrp">
-                                 <label class="input_label">Ширина отмостки</label>
-                                 <div class="input-quest_wrp">
-                                    <input class="fundam_shved__shir_otmostki input-style" placeholder="0.6 м"
-                                       type="number" name="fundam_shved__shir_otmostki[]" disabled value="0.6">
-                                    <i class="fas fa-question-circle fa-question-circle1"></i>
-                                    <div class="quest_wrp">
-                                       <img class="img__quest2" src="../img/calc/teploizoliacia/shirina-otmostki.svg" alt="Ширина отмостки" height="100">
-                                       <span class="podskazka2">Для СПБ и ЛО ширина отмостки по умолчанию 0.6 м </span>
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Высота, м </label>
+                                    <div class="inputWithIcon inputIconBg">
+                                       <input class="fundam_plita__height input-style"
+                                          type="number" name="fundam_plita__visota[]" step="0.0001"
+                                          min="0"
+                                          oninput="validity.valid||(value='');"
+                                          onkeyup="sumAllSquareFundamPlita()">
+                                       <i class="su_icon-H" aria-hidden="true"></i>
                                     </div>
                                  </div>
                               </div>
-                              <div class="input_label-wrp">
-                                 <label class="input_label">Толщина утеплителя отмостки</label>
-                                 <div class="input-quest_wrp">
-                                    <input class="fundam_shved__tolsh_otmostki_plit input-style" placeholder="50 мм"
-                                       type="number" name="fundam_shved__tolsh_otmostki_plit[]" disabled value="50">
-                                    <i class="fas fa-question-circle fa-question-circle1"></i>
-                                    <div class="quest_wrp">
-                                       <img class="img__quest2" src="../img/calc/teploizoliacia/tolshina-uteplitelia-otmostki.svg" alt="Толщина утеплителя отмостки" height="100">
-                                       <span class="podskazka2">Для СПБ и ЛО толщина утеплителя отмостки по умолчанию 50 мм </span>
+                              <div class="group_item-second">
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Длина пола, м </label><i class="far fa-question-circle fa-question-circle2"></i>
+                                    <div class="quest_wrp3 dlina_pola">
+                                       <img class="img__quest3" src="../img/calc/teploizoliacia/ploshad-pola1.svg" alt="площадь пола" height="100">
                                     </div>
+                                    <input class="fundam_plita__length-flor1 input-style"
+                                       type="number" name="fundam_plita__dlina-pola[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumSquareFundamPlitaFloor()">
+                                 </div>
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Ширина пола,м </label><i class="far fa-question-circle fa-question-circle2"></i>
+                                    <div class="quest_wrp3 shirina_pola">
+                                       <img class="img__quest3" src="../img/calc/teploizoliacia/ploshad-pola2.svg" alt="площадь пола" height="100">
+                                    </div>
+                                    <input class="fundam_plita__length-flor2 input-style"
+                                       type="number" name="fundam_plita__shirina-pola[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumSquareFundamPlitaFloor()">
                                  </div>
                               </div>
-                              <div class="input_label-wrp">
-                                 <label class="input_label">Толщина утеплителя плиты</label>
-                                 <div class="input-quest_wrp">
-                                    <input class="fundam_shved__tolsh_yteplit_plit input-style" placeholder="100 мм"
-                                       type="number" name="fundam_plita__tolsh_yteplit_plit[]" disabled value="100">
-                                    <i class="fas fa-question-circle fa-question-circle1"></i>
-                                    <div class="quest_wrp">
-                                       <img class="img__quest2" src="../img/calc/teploizoliacia/tolshina-uteplitelia-pliti.svg" alt="Толщина утеплителя плиты" height="100">
-                                       <span class="podskazka2">Для СПБ и ЛО толщина утеплителя плиты по умолчанию 10 мм </span>                                    
+                              <div class="group_item-tree">
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Ширина отмостки</label>
+                                    <div class="input-quest_wrp">
+                                       <input class="fundam_shved__shir_otmostki input-style" placeholder="0.6 м"
+                                          type="number" name="fundam_shved__shir_otmostki[]" disabled value="0.6">
+                                       <i class="fas fa-question-circle fa-question-circle1"></i>
+                                       <div class="quest_wrp shirina_otmostki">
+                                          <img class="img__quest2" src="../img/calc/teploizoliacia/shirina-otmostki.svg" alt="Ширина отмостки" height="100">
+                                          <span class="podskazka2">Для СПБ и ЛО ширина отмостки по умолчанию 0.6 м </span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Толщина утеплителя отмостки</label>
+                                    <div class="input-quest_wrp">
+                                       <input class="fundam_shved__tolsh_otmostki_plit input-style" placeholder="50 мм"
+                                          type="number" name="fundam_shved__tolsh_otmostki_plit[]" disabled value="50">
+                                       <i class="fas fa-question-circle fa-question-circle1"></i>
+                                       <div class="quest_wrp tolshina_uteplit_otmostki">
+                                          <img class="img__quest2" src="../img/calc/teploizoliacia/tolshina-uteplitelia-otmostki.svg" alt="Толщина утеплителя отмостки" height="100">
+                                          <span class="podskazka2">Для СПБ и ЛО толщина утеплителя отмостки по умолчанию 50 мм </span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Толщина утеплителя плиты</label>
+                                    <div class="input-quest_wrp">
+                                       <input class="fundam_shved__tolsh_yteplit_plit input-style" placeholder="100 мм"
+                                          type="number" name="fundam_plita__tolsh_yteplit_plit[]" disabled value="100">
+                                       <i class="fas fa-question-circle fa-question-circle1"></i>
+                                       <div class="quest_wrp tolshina-uteplit-plity">
+                                          <img class="img__quest2" src="../img/calc/teploizoliacia/tolshina-uteplitelia-pliti.svg" alt="Толщина утеплителя плиты" height="100">
+                                          <span class="podskazka2">Для СПБ и ЛО толщина утеплителя плиты по умолчанию 10 мм </span>                                    
+                                       </div>
                                     </div>
                                  </div>
                               </div>
@@ -1325,8 +1335,6 @@
                   <div class="fundam_shved">
                      <div class="fundam_shved__checkbox bg_fon_roof">
                         <div class="fundam_shved__wrp">
-                           <div class="l1 hidden" id="l1">11111111111111</div>
-                           <div class="l2 hidden">22222222222222</div>
                            <img class="img__fundam_shved" src="../img/calc/teploizoliacia/fundament-shved_plita.svg" alt="Фундамент Шведская утепленная плита" height="140" id="img_fundam_shved_bw-id">
                            <img class="img__fundam_shved__color hidden" src="../img/calc/teploizoliacia/fundament-shved_plita(color).svg" alt="Фундамент Шведская утепленная плита" height="140" id="img_fundam_shved_color-id">
                         </div>
@@ -1343,94 +1351,100 @@
                         <form action="#" class="fundam_shved__form" id="fundam_shved__form-id"
                            name="fundam_shved__form-id">
                            <div class="input_label__groups_item-wrp">
-                              <div class="input_label-wrp">
-                                 <label class="input_label" >Длина, м</label>
-                                 <div class="inputWithIcon inputIconBg">
-                                    <input class="fundam_shved__length input-style"
-                                       type="number" name="fundam_shved__dlina[]" step="0.0001"
-                                       min="0"
-                                       oninput="validity.valid||(value='');"
-                                       onkeyup="sumAllSquareFundamShved()">
-                                    <i class="su_icon-L1" aria-hidden="true"></i>
+                              <div class="group_item-first">
+                                 <div class="input_label-wrp">
+                                    <label class="input_label" >Длина, м</label>
+                                    <div class="inputWithIcon inputIconBg">
+                                       <input class="fundam_shved__length input-style"
+                                          type="number" name="fundam_shved__dlina[]" step="0.0001"
+                                          min="0"
+                                          oninput="validity.valid||(value='');"
+                                          onkeyup="sumAllSquareFundamShved()">
+                                       <i class="su_icon-L1" aria-hidden="true"></i>
+                                    </div>
                                  </div>
-                              </div>
-                              <div class="input_label-wrp">
-                                 <label class="input_label">Ширина,м </label>
-                                 <div class="inputWithIcon inputIconBg">
-                                    <input class="fundam_shved__length2 input-style"
-                                       type="number" name="fundam_shved__dlina2[]" step="0.0001"
-                                       min="0"
-                                       oninput="validity.valid||(value='');"
-                                       onkeyup="sumAllSquareFundamShved()">
-                                    <i class="su_icon-L2" aria-hidden="true"></i>
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Ширина,м </label>
+                                    <div class="inputWithIcon inputIconBg">
+                                       <input class="fundam_shved__length2 input-style"
+                                          type="number" name="fundam_shved__dlina2[]" step="0.0001"
+                                          min="0"
+                                          oninput="validity.valid||(value='');"
+                                          onkeyup="sumAllSquareFundamShved()">
+                                       <i class="su_icon-L2" aria-hidden="true"></i>
+                                    </div>
                                  </div>
-                              </div>
-                              <div class="input_label-wrp">
-                                 <label class="input_label">Высота, м </label>
-                                 <div class="inputWithIcon inputIconBg">
-                                    <input class="fundam_shved__height input-style"
-                                       type="number" name="fundam_shved__visota[]" step="0.0001"
-                                       min="0"
-                                       oninput="validity.valid||(value='');"
-                                       onkeyup="sumAllSquareFundamShved()">
-                                    <i class="su_icon-H" aria-hidden="true"></i>
-                                 </div>
-                              </div>
-                              <div class="input_label-wrp">
-                                 <label class="input_label">Длина пола, м </label><i class="far fa-question-circle fa-question-circle2"></i>
-                                 <div class="quest_wrp3">
-                                    <img class="img__quest3" src="../img/calc/teploizoliacia/ploshad-pola1.svg" alt="площадь пола" height="100">
-                                 </div>
-                                 <input class="fundam_shved__length-flor1 input-style"
-                                    type="number" name="fundam_shved__dlina-pola[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumSquareShvedPlitaFloor()">
-                              </div>
-                              <div class="input_label-wrp">
-                                 <label class="input_label">Ширина пола,м </label><i class="far fa-question-circle fa-question-circle2"></i>
-                                 <div class="quest_wrp3">
-                                    <img class="img__quest3" src="../img/calc/teploizoliacia/ploshad-pola2.svg" alt="площадь пола" height="100">
-                                 </div>
-                                 <input class="fundam_shved__length-flor2 input-style"
-                                    type="number" name="fundam_shved__ыршкштф-pola[]" step="0.0001"
-                                    min="0"
-                                    oninput="validity.valid||(value='');"
-                                    onkeyup="sumSquareShvedPlitaFloor()">
-                              </div>
-                              <div class="input_label-wrp">
-                                 <label class="input_label">Ширина отмостки</label>
-                                 <div class="input-quest_wrp">
-                                    <input class="fundam_shved__shir_otmostki input-style" placeholder="0.6 м"
-                                       type="number" name="fundam_shved__shir_otmostki[]" disabled value="0.6">
-                                    <i class="fas fa-question-circle fa-question-circle1"></i>
-                                    <div class="quest_wrp">
-                                       <img class="img__quest2" src="../img/calc/teploizoliacia/shirina-otmostki.svg" alt="Ширина отмостки" height="100">
-                                       <span class="podskazka2">Для СПБ и ЛО ширина отмостки по умолчанию 0.6 м </span>
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Высота, м </label>
+                                    <div class="inputWithIcon inputIconBg">
+                                       <input class="fundam_shved__height input-style"
+                                          type="number" name="fundam_shved__visota[]" step="0.0001"
+                                          min="0"
+                                          oninput="validity.valid||(value='');"
+                                          onkeyup="sumAllSquareFundamShved()">
+                                       <i class="su_icon-H" aria-hidden="true"></i>
                                     </div>
                                  </div>
                               </div>
-                              <div class="input_label-wrp">
-                                 <label class="input_label">Толщина утеплителя отмостки</label>
-                                 <div class="input-quest_wrp">
-                                    <input class="fundam_shved__tolsh_otmostki_plit input-style" placeholder="50 мм"
-                                       type="number" name="fundam_shved__tolsh_otmostki_plit[]" disabled value="50">
-                                    <i class="fas fa-question-circle fa-question-circle1"></i>
-                                    <div class="quest_wrp">
-                                       <img class="img__quest2" src="../img/calc/teploizoliacia/tolshina-uteplitelia-otmostki.svg" alt="Толщина утеплителя отмостки" height="100">
-                                       <span class="podskazka2">Для СПБ и ЛО толщина утеплителя отмостки по умолчанию 50 мм </span>
+                              <div class="group_item-second">
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Длина пола, м </label><i class="far fa-question-circle fa-question-circle2"></i>
+                                    <div class="quest_wrp3 dlina_pola">
+                                       <img class="img__quest3" src="../img/calc/teploizoliacia/ploshad-pola1.svg" alt="площадь пола" height="100">
                                     </div>
+                                    <input class="fundam_shved__length-flor1 input-style"
+                                       type="number" name="fundam_shved__dlina-pola[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumSquareShvedPlitaFloor()">
+                                 </div>
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Ширина пола,м </label><i class="far fa-question-circle fa-question-circle2"></i>
+                                    <div class="quest_wrp3 shirina_pola">
+                                       <img class="img__quest3" src="../img/calc/teploizoliacia/ploshad-pola2.svg" alt="площадь пола" height="100">
+                                    </div>
+                                    <input class="fundam_shved__length-flor2 input-style"
+                                       type="number" name="fundam_shved__ыршкштф-pola[]" step="0.0001"
+                                       min="0"
+                                       oninput="validity.valid||(value='');"
+                                       onkeyup="sumSquareShvedPlitaFloor()">
                                  </div>
                               </div>
-                              <div class="input_label-wrp">
-                                 <label class="input_label">Толщина утеплителя плиты</label>
-                                 <div class="input-quest_wrp">
-                                    <input class="fundam_shved__tolsh_yteplit_plit input-style" placeholder="100 мм"
-                                       type="number" name="fundam_plita__tolsh_yteplit_plit[]" disabled value="100">
-                                    <i class="fas fa-question-circle fa-question-circle1"></i>
-                                    <div class="quest_wrp">
-                                       <img class="img__quest2" src="../img/calc/teploizoliacia/tolshina-uteplitelia-pliti.svg" alt="Толщина утеплителя плиты" height="100">
-                                       <span class="podskazka2">Для СПБ и ЛО толщина утеплителя плиты по умолчанию 10 мм</span>                                    
+                              <div class="group_item-tree">
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Ширина отмостки</label>
+                                    <div class="input-quest_wrp">
+                                       <input class="fundam_shved__shir_otmostki input-style" placeholder="0.6 м"
+                                          type="number" name="fundam_shved__shir_otmostki[]" disabled value="0.6">
+                                       <i class="fas fa-question-circle fa-question-circle1"></i>
+                                       <div class="quest_wrp shirina_otmostki">
+                                          <img class="img__quest2" src="../img/calc/teploizoliacia/shirina-otmostki.svg" alt="Ширина отмостки" height="100">
+                                          <span class="podskazka2">Для СПБ и ЛО ширина отмостки по умолчанию 0.6 м </span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Толщина утеплителя отмостки</label>
+                                    <div class="input-quest_wrp">
+                                       <input class="fundam_shved__tolsh_otmostki_plit input-style" placeholder="50 мм"
+                                          type="number" name="fundam_shved__tolsh_otmostki_plit[]" disabled value="50">
+                                       <i class="fas fa-question-circle fa-question-circle1"></i>
+                                       <div class="quest_wrp tolshina_uteplit_otmostki">
+                                          <img class="img__quest2" src="../img/calc/teploizoliacia/tolshina-uteplitelia-otmostki.svg" alt="Толщина утеплителя отмостки" height="100">
+                                          <span class="podskazka2">Для СПБ и ЛО толщина утеплителя отмостки по умолчанию 50 мм </span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="input_label-wrp">
+                                    <label class="input_label">Толщина утеплителя плиты</label>
+                                    <div class="input-quest_wrp">
+                                       <input class="fundam_shved__tolsh_yteplit_plit input-style" placeholder="100 мм"
+                                          type="number" name="fundam_plita__tolsh_yteplit_plit[]" disabled value="100">
+                                       <i class="fas fa-question-circle fa-question-circle1"></i>
+                                       <div class="quest_wrp tolshina-uteplit-plity">
+                                          <img class="img__quest2" src="../img/calc/teploizoliacia/tolshina-uteplitelia-pliti.svg" alt="Толщина утеплителя плиты" height="100">
+                                          <span class="podskazka2">Для СПБ и ЛО толщина утеплителя плиты по умолчанию 10 мм</span>                                    
+                                       </div>
                                     </div>
                                  </div>
                               </div>
