@@ -610,38 +610,6 @@ body {
 		font-size: 26px;
 	}
 
-/*
-	.teploizol_form_main .copy-form {
-		position: absolute;
-		right: 0;
-		top: 0;
-		width: 20px;
-		height: 20px;
-		border: none;
-		cursor: pointer;
-		background: none;
-		display: block;
-		border: none;
-		cursor: pointer;
-		background: none;
-		margin: 41px 10px 0 0px;
-	}
-	.teploizol_form_main .su_icon-delete1 {
-		position: absolute;
-		right: 0;
-		top: 0;
-		width: 20px;
-		height: 20px;
-		border: none;
-		cursor: pointer;
-		background: none;
-		display: block;
-		border: none;
-		cursor: pointer;
-		background: none;
-		margin: 7px 10px 0 0px;
-	}*/
-
 	.teploizol_form_main i.su_icon-copy:hover {
 		color: rgb(21, 158, 21);
 		border: none;
@@ -678,11 +646,7 @@ body {
 		border: none;
 		cursor: pointer;
 		background: #3ac162;
-	}
-
-
-
-	
+	}	
 	.teploizol_form_main .bg_fon_roof {
 		background-color: #b1ddb1;
 		background-image: -o-linear-gradient(315deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
@@ -705,30 +669,8 @@ body {
 		display: grid;
     	grid-template-columns: 1fr;
     	align-items: center;
-		/*display: flex;
-		flex-direction: column;
-		flex-wrap: nowrap;
-		justify-content: center;
-		align-items: center;
-		align-content: center;*/
 	}
-	/*
-	.teploizol_form_main .roof_title__h2,
-	.teploizol_form_main .wall_title__h2,
-	.teploizol_form_main .perekrit_title__h2,
-	.teploizol_form_main .fundam_title__h2 {
-		width: auto;
-		margin: 20px 0;
-		text-align: center;
-		color: white;
-		border-bottom: 3px solid #39a759bd;
-		padding: 10px;
-		background-color: #4bc970;
-		border-top-left-radius: 4px;
-		border-top-right-radius: 5px;
-		font-size: 19px;
-	}
-*/
+	
 	.teploizol_form_main .roof__type,
 	.teploizol_form_main .wall__type,
 	.teploizol_form_main .perekrit__type,
@@ -1182,6 +1124,19 @@ body {
     top: 47px;
     font-size: 29px;
 }
+
+.teploizol_form_main .fa-question-circle:hover+.shirina_pola {
+    margin: -125px 0 0px 155px;
+}
+
+.teploizol_form_main .fa-question-circle:hover+.dlina_pola {
+    margin: -125px 0 0px 107px;
+}
+
+.teploizol_form_main .fa-question-circle:hover+.tolshina_uteplit_otmostki {
+    margin: -135px 0 0 237px;
+}
+
 }
 
 @media only screen and (min-width: 768px) {
@@ -1220,6 +1175,20 @@ body {
 .teploizol_form_main .fundam_lenta__form,
 .teploizol_form_main .fundam_shved__form {
 	width: 740px;
+}
+
+.teploizol_form_main .img__odnoskat_roof,
+.teploizol_form_main .img__odnoskat_roof__color,
+.teploizol_form_main .img__dvuskat_roof,
+.teploizol_form_main .img__dvuskat_roof__color,
+.teploizol_form_main .img__shatr_roof,
+.teploizol_form_main .img__shatr_roof__color,
+.teploizol_form_main .img__valm_roof,
+.teploizol_form_main .img__valm_roof__color,
+.teploizol_form_main .img__mansard_roof,
+.teploizol_form_main .img__mansard_roof__color{
+	height: 150px;
+	margin: 0 0 0 80px;
 }
 
 .teploizol_form_main .input_label-wrp {
@@ -1290,7 +1259,7 @@ body {
 }
 
 .teploizol_form_main .fa-question-circle:hover+.shirina_otmostki2 {
-    margin: 20px 0 0 356px;
+    margin: 20px 0 0 357px;
     height: 120px;
     width: 334px;
     display: grid;
@@ -1312,7 +1281,7 @@ body {
 }
 
 .teploizol_form_main .fa-question-circle:hover+.tolshina_uteplit_otmostki2 {
-    margin: -42px 0 0 356px;
+    margin: -42px 0 0 357px;
     height: 120px;
     width: 334px;
     display: grid;
@@ -1335,7 +1304,7 @@ body {
 
 
 .teploizol_form_main .fa-question-circle:hover+.tolshina-uteplit-plity2 {
-    margin: -105px 0 0 356px;
+    margin: -105px 0 0 357px;
     height: 120px;
     width: 334px;
     display: grid;
@@ -1362,7 +1331,6 @@ body {
     margin-top: 10px;
     gap: 42px;
 }
-
 
 .teploizol_form_main .fa-question-circle:hover+.dlina_pola {
     margin: 65px 0 0px 427px;
@@ -1410,6 +1378,331 @@ body {
     border-top: 15px solid transparent;
     border-right: 35px solid #4bc970;
     border-bottom: 15px solid transparent;
+}
+
+}
+
+@media only screen and (min-width: 820px) {
+	.teploizol_form_main {
+		width: 810px;
+	}
+
+	.teploizol_form_main button.accordion {
+		width: 805px;
+		grid-template-rows: 30px;
+		font-size: 25px;
+		gap: 14px;
+	}
+
+	.teploizol_form_main .img__odnoskat_roof,
+.teploizol_form_main .img__odnoskat_roof__color,
+.teploizol_form_main .img__dvuskat_roof,
+.teploizol_form_main .img__dvuskat_roof__color,
+.teploizol_form_main .img__shatr_roof,
+.teploizol_form_main .img__shatr_roof__color,
+.teploizol_form_main .img__valm_roof,
+.teploizol_form_main .img__valm_roof__color,
+.teploizol_form_main .img__mansard_roof,
+.teploizol_form_main .img__mansard_roof__color{
+	margin: 0 0 0 100px;
+}
+
+.teploizol_form_main .img__karkas_wall,
+.teploizol_form_main .img__stone_wall,
+.teploizol_form_main .img__peregor_wall,
+.teploizol_form_main .img__perekrit_wood,
+.teploizol_form_main .img__perekrit_wood,
+.teploizol_form_main .img__perekrit_stone,
+.teploizol_form_main .img__perekrit_stone,
+.teploizol_form_main .img__fundam_lenta,
+.teploizol_form_main .img__fundam_lenta__color,
+.teploizol_form_main .img__fundam_plita,
+.teploizol_form_main .img__fundam_plita__color,
+.teploizol_form_main .img__fundam_shved,
+.teploizol_form_main .img__fundam_shved__color {
+	margin: 0 0 0 120px;
+}
+
+.teploizol_form_main  i.su_icon-home-fundament {
+    font-size: 30px;
+}
+
+.teploizol_form_main i.su_icon-plity-derevo {
+    font-size: 31px;
+}
+
+.teploizol_form_main i.su_icon-home-roof {
+    font-size: 32px;
+}
+
+.teploizol_form_main .dvuskat_roof__form,
+.teploizol_form_main .odnoskat_roof__form,
+.teploizol_form_main .shatr_roof__form,
+.teploizol_form_main .valm_roof__form,
+.teploizol_form_main .mansard_roof__form,
+.teploizol_form_main .karkas_wall__form,
+.teploizol_form_main .karkas_window__form,
+.teploizol_form_main .karkas_door__form,
+.teploizol_form_main .stone_wall__form,
+.teploizol_form_main .stone_window__form,
+.teploizol_form_main .stone_door__form,
+.teploizol_form_main .peregor_wall__form,
+.teploizol_form_main .peregor_window__form,
+.teploizol_form_main .peregor_door__form,
+.teploizol_form_main .perekrit_wood__form,
+.teploizol_form_main .perekrit_stone__form,
+.teploizol_form_main .fundam_plita__form,
+.teploizol_form_main .fundam_lenta__form,
+.teploizol_form_main .fundam_shved__form {
+	width: 803px;
+}
+
+.teploizol_form_main .shirina_pola::after {
+	left: 62px;
+}
+
+.teploizol_form_main .fa-question-circle:hover+.shirina_otmostki {
+    margin: -17px 0 0 364px;
+    height: 110px;
+    width: 388px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    font-size: 17px;
+    line-height: 17px;
+}
+
+.teploizol_form_main .shirina_otmostki::after {
+    content: '';
+    position: absolute;
+    right: 381px;
+    top: 20px;
+}
+
+.teploizol_form_main .fa-question-circle:hover+.tolshina_uteplit_otmostki {
+    margin: -79px 0 0 364px;
+    height: 110px;
+	width: 388px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    font-size: 17px;
+    line-height: 17px;
+}
+
+.teploizol_form_main .tolshina_uteplit_otmostki::after {
+    content: '';
+    position: absolute;
+    right: 381px;
+    top: 84px;
+}
+
+.teploizol_form_main .fa-question-circle:hover+.shirina_otmostki2 {
+    margin: 21px 0 0 364px;
+    height: 110px;
+    width: 388px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    font-size: 17px;
+    line-height: 17px;
+}
+
+.teploizol_form_main .shirina_otmostki2::after {
+    content: '';
+    position: absolute;
+    right: 381px;
+    top: 0px;
+    transform: rotate(25deg);
+    border-top: 9px solid transparent;
+    border-right: 25px solid #4bc970;
+    border-bottom: 9px solid transparent;
+}
+
+.teploizol_form_main .fa-question-circle:hover+.tolshina_uteplit_otmostki2 {
+    margin: -41px 0 0 364px;
+    height: 110px;
+    width: 388px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    font-size: 17px;
+    line-height: 17px;
+}
+
+.teploizol_form_main .tolshina_uteplit_otmostki2::after {
+    right: 381px;
+    top: 48px;
+    transform: rotate(0deg);
+    border-top: 9px solid transparent;
+    border-right: 25px solid #4bc970;
+    border-bottom: 9px solid transparent;
+}
+
+.teploizol_form_main .fa-question-circle:hover+.tolshina-uteplit-plity2 {
+    margin: -113px 0 0 364px;
+    height: 120px;
+    width: 388px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    font-size: 17px;
+    line-height: 17px;
+}
+
+.teploizol_form_main .tolshina-uteplit-plity2::after {
+    content: '';
+    position: absolute;
+    right: 381px;
+    top: 98px;
+    transform: rotate(-25deg);
+    border-top: 9px solid transparent;
+    border-right: 25px solid #4bc970;
+    border-bottom: 9px solid transparent;
+}
+
+
+
+
+}
+
+@media only screen and (min-width: 900px) {
+
+	.teploizol_form_main {
+		width: 900px;
+	}
+
+	.teploizol_form_main button.accordion {
+		width: 893px;
+		grid-template-rows: 30px;
+		font-size: 25px;
+		gap: 14px;
+		padding: 18px 10px 18px 10px;
+	}
+
+	.teploizol_form_main .dvuskat_roof__checkbox,
+	.teploizol_form_main .odnoskat_roof__checkbox,
+	.teploizol_form_main .shatr_roof__checkbox,
+	.teploizol_form_main .valm_roof__checkbox,
+	.teploizol_form_main .mansard_roof__checkbox,
+	.teploizol_form_main .karkas_wall__checkbox,
+	.teploizol_form_main .stone_wall__checkbox,
+	.teploizol_form_main .peregor_wall__checkbox,
+	.teploizol_form_main .perekrit_wood__checkbox,
+	.teploizol_form_main .perekrit_stone__checkbox,
+	.teploizol_form_main .fundam_plita__checkbox,
+	.teploizol_form_main .fundam_lenta__checkbox,
+	.teploizol_form_main .fundam_shved__checkbox {
+		width: 890px;
+	}	
+
+.teploizol_form_main .dvuskat_roof__form,
+.teploizol_form_main .odnoskat_roof__form,
+.teploizol_form_main .shatr_roof__form,
+.teploizol_form_main .valm_roof__form,
+.teploizol_form_main .mansard_roof__form,
+.teploizol_form_main .karkas_wall__form,
+.teploizol_form_main .karkas_window__form,
+.teploizol_form_main .karkas_door__form,
+.teploizol_form_main .stone_wall__form,
+.teploizol_form_main .stone_window__form,
+.teploizol_form_main .stone_door__form,
+.teploizol_form_main .peregor_wall__form,
+.teploizol_form_main .peregor_window__form,
+.teploizol_form_main .peregor_door__form,
+.teploizol_form_main .perekrit_wood__form,
+.teploizol_form_main .perekrit_stone__form,
+.teploizol_form_main .fundam_plita__form,
+.teploizol_form_main .fundam_lenta__form,
+.teploizol_form_main .fundam_shved__form {
+	width: 890px;
+}
+
+.teploizol_form_main .shirina_pola::after {
+	left: 105px;
+}
+
+.teploizol_form_main .fa-question-circle:hover+.shirina_otmostki {
+    margin: -14px 0 0 378px;
+    height: 110px;
+    width: 446px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.teploizol_form_main .shirina_otmostki::after {
+     right: 441px;
+    top: 17px;
+}
+
+.teploizol_form_main .fa-question-circle:hover+.tolshina_uteplit_otmostki {
+    margin: -76px 0 0 378px;
+    height: 110px;
+    width: 446px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.teploizol_form_main .tolshina_uteplit_otmostki::after {
+    right: 441px;
+    top: 80px;
+}
+
+.teploizol_form_main .group_item-second {
+    gap: 2px;
+}
+
+.teploizol_form_main .shirina_pola::after {
+    left: 85px;
+    top: -20px;
+}
+
+.teploizol_form_main .fa-question-circle:hover+.shirina_otmostki2 {
+    margin: 19px 0 0 378px;
+    height: 110px;
+    width: 446px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.teploizol_form_main .shirina_otmostki2::after {
+    right: 439px;
+    top: 1px;
+}
+
+.teploizol_form_main .fa-question-circle:hover+.tolshina_uteplit_otmostki2 {
+    margin: -43px 0 0 378px;
+    height: 110px;
+    width: 446px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.teploizol_form_main .tolshina_uteplit_otmostki2::after {
+    right: 442px;
+    top: 49px;
+    transform: rotate(0deg);
+    border-top: 12px solid transparent;
+    border-right: 21px solid #4bc970;
+    border-bottom: 12px solid transparent;
+}
+
+
+.teploizol_form_main .fa-question-circle:hover+.tolshina-uteplit-plity2 {
+    margin: -105px 0 0 378px;
+    height: 110px;
+    width: 446px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.teploizol_form_main .tolshina-uteplit-plity2::after {
+    right: 441px;
+    top: 90px;
+    transform: rotate(-25deg);
+    border-top: 9px solid transparent;
+    border-right: 25px solid #4bc970;
+    border-bottom: 9px solid transparent;
 }
 
 
